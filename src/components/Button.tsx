@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
   transition: all 120ms ease-in-out;
 
   &:hover {
@@ -40,7 +40,7 @@ const StyledSecondaryButton = styled.button`
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
   transition: all 120ms ease-in-out;
   background: white;
   color: #263238;

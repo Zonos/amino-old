@@ -1,5 +1,5 @@
 export const Color = {
-  primaryColor: '#1757E2',
-  lightPrimaryColor: '#386FE6',
+  primaryColor: '#026CFF',
+  lightPrimaryColor: '#368AFF',
   borderColor: 'rgba(0, 0, 0, 0.07)',
 }

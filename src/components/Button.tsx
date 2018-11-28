@@ -19,6 +19,7 @@ const StyledButton = styled.button`
   display: flex;
   font-size: 15px;
   transition: all 120ms ease-in-out;
+  height: 40px;
 
   &:hover {
     background: ${Theme.Color.lightPrimaryColor};
@@ -31,7 +32,7 @@ const StyledButton = styled.button`
 
 const StyledSecondaryButton = styled.button`
   border-radius: ${Theme.Surface.defaultRadius};
-  font-weight: 500;
+  /* font-weight: 500; */
   padding: 8px 20px;
   border: 0;
   outline: none;
@@ -43,7 +44,7 @@ const StyledSecondaryButton = styled.button`
   font-size: 15px;
   transition: all 120ms ease-in-out;
   background: white;
-  color: #263238;
+  color: #525f7f;
   opacity: 0.7;
   box-shadow: 0 0 0 1px rgba(88, 106, 218, 0.1),
     0 2px 5px 0 rgba(88, 106, 218, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
@@ -52,7 +53,7 @@ const StyledSecondaryButton = styled.button`
   &:hover {
     background: white;
     opacity: 1;
-    color: #263238;
+    color: #525f7f;
   }
 `
 

@@ -2,16 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Theme from '../styles/Theme'
 
-const InputWrapper = styled.div`
-  border-radius: 4px;
-  box-shadow: 0 0 0 1px rgba(88, 106, 218, 0.1),
-    0 2px 5px 0 rgba(88, 106, 218, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
-    0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 0 0 0 transparent;
-`;
-
 const StyledInput = styled.input`
   border-radius: ${Theme.Surface.defaultRadius};
-  border: 0;
+  border: 1px solid ${Theme.Color.borderColor};
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
@@ -27,14 +20,26 @@ const StyledInput = styled.input`
   }
 `;
 
-interface InputProps {}
+const InputLabel = styled.label`
+  color: #525f7f;
+  opacity: .6;
+  margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
+  display: block;
+`;
+
+interface InputProps {
+  label?: String
+}
 
 export class Input extends Component<InputProps, {}> {
   render() {
+    const { label } = this.props;
+
     return (
-      <InputWrapper>
+      <div className="amino-input-wrapper">
+        { label && <InputLabel>{label}</InputLabel>}
         <StyledInput placeholder="Some input" size={50} />
-      </InputWrapper>
+      </div>
     )
   }
 }

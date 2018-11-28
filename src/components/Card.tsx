@@ -8,7 +8,9 @@ const StyledCard = styled.section`
   padding: ${Theme.Density.spacing1};
   /* box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 12px; */
   box-shadow: 0 1px 3px 0 rgba(50, 50, 93, 0.15), 0 4px 6px 0 rgba(112, 157, 199, 0.15);
-  width: 100%;
+  /* width: 100%; */
+  display: flex;
+  flex: 1;
 `
 
 const StyledTitle = styled.h1`

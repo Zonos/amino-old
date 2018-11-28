@@ -11,6 +11,7 @@ const StyledCard = styled.section`
   /* width: 100%; */
   display: flex;
   flex: 1;
+  flex-direction: column;
 `
 
 const StyledTitle = styled.h1`

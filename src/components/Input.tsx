@@ -38,7 +38,7 @@ const StyledInput = styled.input`
 
 interface InputProps {}
 
-export class Input extends Component<Input, {}> {
+export class Input extends Component<InputProps, {}> {
   render() {
     // const { children, cardTitle } = this.props;
 

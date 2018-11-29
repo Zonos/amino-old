@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Theme from '../styles/Theme'
 
 const StyledInputGroup = styled.div`
   .amino-input-wrapper {

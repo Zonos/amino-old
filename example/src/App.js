@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Page, Button, Card, Input, InputGroup } from 'amino'
+import { Page, Button, Card, Input, InputGroup, Badge } from 'amino'
 
 export default class App extends Component {
   render () {
@@ -7,12 +7,14 @@ export default class App extends Component {
       <Page>
         <Card cardTitle={"hello amino"}>
           <InputGroup>
-            <Input label="First name" />
-            <Input label="Last name" />
-            <Input label="Email" />
+            <Input placeholder="John" label="First name" />
+            <Input placeholder="Doe" label="Last name" />
+            <Input placeholder="john.doe@example.com" label="Email" />
           </InputGroup>
           <br /><br />
           <Button secondary>some button</Button>
+          <br /><br />
+          <Badge>Recommended</Badge>
         </Card>
       </Page>
     )

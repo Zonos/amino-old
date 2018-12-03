@@ -15,6 +15,21 @@ const StyledInput = styled.input`
   height: 40px;
   width: 100%;
 
+  &::-webkit-input-placeholder {
+    color: #525f7f;
+    opacity: .6;
+  }
+
+  &::-moz-placeholder {
+    color: #525f7f;
+    opacity: .6;
+  }
+
+  &:-ms-input-placeholder {
+    color: #525f7f;
+    opacity: .6;
+  }
+
   &:focus {
     box-shadow: 0 0 0 1.5px ${Theme.Color.primaryColor};
   }
@@ -28,17 +43,18 @@ const InputLabel = styled.label`
 `;
 
 interface InputProps {
-  label?: String
+  label?: String,
+  placeholder?: string,
 }
 
 export class Input extends Component<InputProps, {}> {
   render() {
-    const { label } = this.props;
+    const { label, placeholder } = this.props;
 
     return (
       <div className="amino-input-wrapper">
         { label && <InputLabel>{label}</InputLabel>}
-        <StyledInput placeholder="Some input" size={50} />
+        <StyledInput placeholder={placeholder} size={50} />
       </div>
     )
   }

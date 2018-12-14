@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Theme from '../styles/Theme'
+import { Theme } from '../styles/Theme'
 
 const StyledCard = styled.section`
   background: white;
   border-radius: ${Theme.Surface.defaultRadius};
   padding: ${Theme.Density.spacing1};
-  /* box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 12px; */
   box-shadow: 0 1px 3px 0 rgba(50, 50, 93, 0.15), 0 4px 6px 0 rgba(112, 157, 199, 0.15);
-  /* width: 100%; */
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -21,13 +19,14 @@ const StyledTitle = styled.h1`
   margin-bottom: ${Theme.Density.spacing1};
   padding: ${Theme.Density.spacing1};
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 17px;
   font-weight: 500;
 `
 
 interface CardProps {
   cardTitle?: String,
+  className?: string,
 }
 
 export class Card extends Component<CardProps, {}> {
@@ -35,7 +34,7 @@ export class Card extends Component<CardProps, {}> {
     const { children, cardTitle } = this.props;
 
     return (
-      <StyledCard>
+      <StyledCard {...this.props}>
         {cardTitle ? <StyledTitle>{cardTitle}</StyledTitle> : null }
         {children}
       </StyledCard>

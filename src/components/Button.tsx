@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import Theme from '../styles/Theme'
+import { Theme } from '../styles/Theme'
 
 const StyledButton = styled.button`
   border-radius: ${Theme.Surface.defaultRadius};
@@ -32,7 +31,6 @@ const StyledButton = styled.button`
 
 const StyledSecondaryButton = styled.button`
   border-radius: ${Theme.Surface.defaultRadius};
-  /* font-weight: 500; */
   padding: 8px 20px;
   border: 0;
   outline: none;
@@ -59,24 +57,20 @@ const StyledSecondaryButton = styled.button`
 `
 
 interface ButtonProps {
-  secondary?: Boolean,
+  primary?: Boolean,
+  onClick?: any,
 }
 
-export class Button extends Component<ButtonProps, {}> {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    secondary: PropTypes.bool
-  }
-
+export class Button extends Component<ButtonProps & React.HTMLProps<HTMLButtonElement>, {}> {
   render() {
-    const { children, secondary } = this.props
+    const { children, primary, onClick } = this.props;
 
     return (
       <React.Fragment>
-        {secondary ? (
-          <StyledSecondaryButton>{children}</StyledSecondaryButton>
+        {primary ? (
+          <StyledButton onClick={() => typeof(onClick) !== 'undefined' && onClick()}>{children}</StyledButton>
         ) : (
-          <StyledButton>{children}</StyledButton>
+          <StyledSecondaryButton onClick={() => typeof(onClick) !== 'undefined' && onClick()}>{children}</StyledSecondaryButton>
         )}
       </React.Fragment>
     );

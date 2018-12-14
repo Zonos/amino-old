@@ -6,4 +6,4 @@ export * from './components/Input'
 export * from './components/InputGroup'
 export * from './components/Badge'
 
-export * from './styles/Theme'
+export { Theme } from './styles/Theme'

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Theme from '../styles/Theme'
+import { Theme } from '../styles/Theme'
 
 const StyledBadge = styled.span`
   padding: 5px 15px;

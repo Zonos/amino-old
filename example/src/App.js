@@ -12,7 +12,8 @@ export default class App extends Component {
             <Input placeholder="john.doe@example.com" label="Email" />
           </InputGroup>
           <br /><br />
-          <Button secondary>some button</Button>
+          <Button>some button</Button>
+          <Button primary>some primary button</Button>
           <br /><br />
           <Badge>Recommended</Badge>
         </Card>

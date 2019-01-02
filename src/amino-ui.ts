@@ -5,5 +5,7 @@ export * from './components/ResponsiveContainer'
 export * from './components/Input'
 export * from './components/InputGroup'
 export * from './components/Badge'
+export * from './components/AppBar'
+export * from './components/StackView'
 
 export { Theme } from './styles/Theme'

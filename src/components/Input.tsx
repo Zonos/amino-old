@@ -4,7 +4,9 @@ import { Theme } from '../styles/Theme'
 
 const StyledInput = styled.input`
   border-radius: ${Theme.Surface.defaultRadius};
-  border: 1px solid ${Theme.Color.borderColor};
+  border: 1.5px solid transparent;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
@@ -31,7 +33,8 @@ const StyledInput = styled.input`
   }
 
   &:focus {
-    box-shadow: 0 0 0 1.5px ${Theme.Color.primaryColor};
+    /* box-shadow: 0 0 0 1.5px ${Theme.Color.primaryColorAlpha}; */
+    border: 1.5px solid ${Theme.Color.primaryColorAlpha};
   }
 `;
 

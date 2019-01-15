@@ -1,6 +1,6 @@
 {
   "name": "amino-ui",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "",
   "keywords": [],
   "main": "dist/amino-ui.umd.js",

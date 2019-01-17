@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { StackView, Page, Button, Card, Input, InputGroup, Badge, AppBar, ResponsiveContainer } from 'amino'
+import { Spinner, StackView, Page, Button, Card, Input, InputGroup, Badge, AppBar, ResponsiveContainer } from 'amino'
 import styled from 'styled-components';
 
 const SquareImg = styled.img`
@@ -44,6 +44,8 @@ export default class App extends Component {
             <Button primary>some primary button</Button>
             <br /><br />
             <Badge>Recommended</Badge>
+            <br /><br />
+            <Spinner compact />
           </Card>
         </Page>
       </Fragment>

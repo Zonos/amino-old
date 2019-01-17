@@ -7,5 +7,6 @@ export * from './components/InputGroup'
 export * from './components/Badge'
 export * from './components/AppBar'
 export * from './components/StackView'
+export * from './components/Spinner'
 
 export { Theme } from './styles/Theme'

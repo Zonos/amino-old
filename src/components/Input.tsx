@@ -19,22 +19,21 @@ const StyledInput = styled.input`
 
   &::-webkit-input-placeholder {
     color: #525f7f;
-    opacity: .6;
+    opacity: .3;
   }
 
   &::-moz-placeholder {
     color: #525f7f;
-    opacity: .6;
+    opacity: .3;
   }
 
   &:-ms-input-placeholder {
     color: #525f7f;
-    opacity: .6;
+    opacity: .3;
   }
 
   &:focus {
-    /* box-shadow: 0 0 0 1.5px ${Theme.Color.primaryColorAlpha}; */
-    border: 1.5px solid ${Theme.Color.primaryColorAlpha};
+    border: 1.5px solid ${Theme.Color.superLightPrimaryColor};
   }
 `;
 

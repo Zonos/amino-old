@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export const ResponsiveContainer = styled.div`
   display: block;
   box-sizing: border-box;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 `
 

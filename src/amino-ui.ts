@@ -8,5 +8,8 @@ export * from './components/Badge'
 export * from './components/AppBar'
 export * from './components/StackView'
 export * from './components/Spinner'
+export * from './components/SidebarLayout'
+export * from './components/Sidebar'
+export * from './components/Content'
 
 export { Theme } from './styles/Theme'

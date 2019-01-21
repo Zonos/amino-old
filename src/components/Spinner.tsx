@@ -12,7 +12,6 @@ const SkBounceDelay = keyframes`
 `
 
 const StyledSpinner = styled.div<SpinnerProps>`
-  margin: 100px auto 0;
   width: 70px;
   text-align: center;
 `

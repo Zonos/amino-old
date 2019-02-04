@@ -22,6 +22,9 @@ const StyledTitle = styled.h1`
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 17px;
   font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 interface CardProps {

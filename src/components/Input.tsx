@@ -16,6 +16,7 @@ const StyledInput = styled.input`
   padding: 5px 15px;
   height: 40px;
   width: 100%;
+  font-family: ${Theme.Typography.defaultFontFamily};
 
   &::-webkit-input-placeholder {
     color: #525f7f;

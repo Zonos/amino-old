@@ -17,7 +17,7 @@ const StyledTitle = styled.h1`
   color: #263238;
   margin: -${Theme.Density.spacing1};
   margin-bottom: ${Theme.Density.spacing1};
-  padding: ${Theme.Density.spacing1};
+  padding: 20px ${Theme.Density.spacing1};
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 17px;

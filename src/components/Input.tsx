@@ -45,18 +45,20 @@ const InputLabel = styled.label`
 `;
 
 interface InputProps {
-  label?: String,
-  placeholder?: string,
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  readonly?: boolean;
 }
 
-export class Input extends Component<InputProps, {}> {
+export class Input extends Component<InputProps & React.InputHTMLAttributes<HTMLInputElement>, {}> {
   render() {
-    const { label, placeholder } = this.props;
+    const { label } = this.props;
 
     return (
       <div className="amino-input-wrapper">
         { label && <InputLabel>{label}</InputLabel>}
-        <StyledInput placeholder={placeholder} size={50} />
+        <StyledInput {...this.props} size={50} />
       </div>
     )
   }

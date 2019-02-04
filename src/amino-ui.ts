@@ -11,5 +11,6 @@ export * from './components/Spinner'
 export * from './components/SidebarLayout'
 export * from './components/Sidebar'
 export * from './components/Content'
+export * from './components/CardStack'
 
 export { Theme } from './styles/Theme'

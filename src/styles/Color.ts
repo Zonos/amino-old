@@ -4,5 +4,6 @@ export const Color = {
   lightPrimaryColor: '#008eff',
   borderColor: 'rgba(0, 0, 0, 0.12)',
   textColor: '#607d8b',
-  headerTextColor: '#263238',
+  darkTextColor: 'rgb(42, 47, 69)',
+  secondaryTextColor: 'rgb(105, 115, 134)',
 }

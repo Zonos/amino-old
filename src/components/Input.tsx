@@ -4,7 +4,7 @@ import { Surface, Typography, Color } from '../styles/Theme'
 
 const StyledInput = styled.input`
   border-radius: ${Surface.defaultRadius};
-  border: 1.5px solid transparent;
+  border: 1px solid transparent;
   box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   font-size: 15px;
   outline: none;
@@ -33,7 +33,7 @@ const StyledInput = styled.input`
   }
 
   &:focus {
-    border: 1.5px solid ${Color.primary.veryLight};
+    border: 1px solid ${Color.primary.veryLight};
   }
 `
 

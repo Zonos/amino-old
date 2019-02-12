@@ -20,6 +20,7 @@ export const Color = {
   primary: new PrimaryColor(),
   text: new TextColor(),
 
+  // DEPRECATED
   primaryColor: '#3784FF',
   superLightPrimaryColor: '#86c8ff',
   lightPrimaryColor: '#008eff',

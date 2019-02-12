@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Theme } from '../styles/Theme'
+import { DropdownIcon } from '../icons/DropdownIcon'
 
 const SelectContainer = styled.div`
   border-radius: ${Theme.Surface.defaultRadius};
@@ -15,16 +16,26 @@ const SelectContainer = styled.div`
   padding: 5px 15px;
   height: 40px;
   width: 100%;
+  position: relative;
   font-family: ${Theme.Typography.defaultFontFamily};
+
+  svg {
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    fill: #525f7f;
+  }
 `
 
 const StyledSelect = styled.select`
   padding: 5px 0;
-  width: 130%;
+  width: 100%;
   font-size: 15px;
   border: none;
   box-shadow: none;
   background: transparent;
+  color: #525f7f;
+  font-family: ${Theme.Typography.defaultFontFamily};
   -webkit-appearance: none;
 
   &:focus {
@@ -32,15 +43,23 @@ const StyledSelect = styled.select`
   }
 `
 
+const SelectLabel = styled.label`
+  color: #525f7f;
+  opacity: 0.6;
+  margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
+  display: block;
+`
+
 interface SelectProps {
   items: Array<any>
   label?: string
   itemLabelPath?: string
   itemValuePath?: string
+  onChange?: any
 }
 
 export const Select = (props: SelectProps) => {
-  const { items, itemValuePath, itemLabelPath } = props
+  const { label, items, itemValuePath, itemLabelPath, onChange } = props
 
   const renderedOptions = items.map((item, index) => {
     const value = itemValuePath ? item[itemValuePath as string] : item.value
@@ -54,8 +73,12 @@ export const Select = (props: SelectProps) => {
   })
 
   return (
-    <SelectContainer>
-      <StyledSelect>{renderedOptions}</StyledSelect>
-    </SelectContainer>
+    <div className="amino-input-wrapper">
+      {label && <SelectLabel>{label}</SelectLabel>}
+      <SelectContainer>
+        <StyledSelect onChange={onChange}>{renderedOptions}</StyledSelect>
+        <DropdownIcon />
+      </SelectContainer>
+    </div>
   )
 }

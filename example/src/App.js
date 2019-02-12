@@ -60,21 +60,22 @@ export default class App extends Component {
             </Card>
             <Card>
               <Select
+                label="Select an item"
                 items={[
                   {
-                    label: 'item name',
+                    label: 'item 1',
                     value: 'value'
                   },
                   {
-                    label: 'item name',
+                    label: 'item 2',
                     value: 'value'
                   },
                   {
-                    label: 'item name',
+                    label: 'item 3',
                     value: 'value'
                   },
                   {
-                    label: 'item name',
+                    label: 'item 4',
                     value: 'value'
                   }
                 ]}

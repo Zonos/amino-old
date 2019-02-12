@@ -1,18 +1,26 @@
 import { IColorScale } from '../schemas/IColorScale'
 
 class PrimaryColor implements IColorScale {
-  veryLight = '#86c8ff'
-  light = '#008eff'
-  base = '#026CFF'
-  dark = '#000' // TODO: define
-  veryDark = '#000' // TODO: define
+  veryLight = '#90BAFF'
+  light = '#649FFF'
+  base = '#3784FF'
+  dark = '#3174DF'
+  veryDark = '#2A63BF'
 }
 
-class TextColor {}
+class TextColor implements IColorScale {
+  veryLight = ''; // TODO: define
+  light = '#595959';
+  base = '#333';
+  dark = '#000';
+  veryDark = ''; // TODO: define
+}
 
 export const Color = {
   primary: new PrimaryColor(),
-  primaryColor: '#026CFF',
+  text: new TextColor(),
+
+  primaryColor: '#3784FF',
   superLightPrimaryColor: '#86c8ff',
   lightPrimaryColor: '#008eff',
   borderColor: 'rgba(0, 0, 0, 0.12)',

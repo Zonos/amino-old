@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Typography, Surface } from '../styles/Theme'
 import { DropdownIcon } from '../icons/DropdownIcon'
+import { Color } from '../styles/Color';
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
@@ -11,7 +12,7 @@ const SelectContainer = styled.div`
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
-  color: #525f7f;
+  color: ${Color.text.light};
   display: block;
   padding: 5px 15px;
   height: 40px;
@@ -23,7 +24,7 @@ const SelectContainer = styled.div`
     position: absolute;
     right: 15px;
     top: 6px;
-    fill: #525f7f;
+    fill: ${Color.text.light};
   }
 `
 
@@ -34,7 +35,7 @@ const StyledSelect = styled.select`
   border: none;
   box-shadow: none;
   background: transparent;
-  color: #525f7f;
+  color: ${Color.text.light};
   font-family: ${Typography.defaultFontFamily};
   -webkit-appearance: none;
 
@@ -44,7 +45,8 @@ const StyledSelect = styled.select`
 `
 
 const SelectLabel = styled.label`
-  color: #525f7f;
+  color: ${Color.text.light};
+  font-size: 15px;
   opacity: 0.6;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;

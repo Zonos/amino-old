@@ -10,7 +10,7 @@ const StyledInput = styled.input`
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
-  color: #525f7f;
+  color: ${Color.text.light};
   display: block;
   padding: 5px 15px;
   height: 40px;
@@ -18,17 +18,17 @@ const StyledInput = styled.input`
   font-family: ${Typography.defaultFontFamily};
 
   &::-webkit-input-placeholder {
-    color: #525f7f;
+    color: ${Color.text.light};
     opacity: 0.3;
   }
 
   &::-moz-placeholder {
-    color: #525f7f;
+    color: ${Color.text.light};
     opacity: 0.3;
   }
 
   &:-ms-input-placeholder {
-    color: #525f7f;
+    color: ${Color.text.light};
     opacity: 0.3;
   }
 
@@ -38,8 +38,9 @@ const StyledInput = styled.input`
 `
 
 const InputLabel = styled.label`
-  color: #525f7f;
+  color: ${Color.text.light};
   opacity: 0.6;
+  font-size: 15px;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;
 `

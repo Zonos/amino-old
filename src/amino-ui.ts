@@ -13,3 +13,8 @@ export * from './components/Sidebar'
 export * from './components/Content'
 export * from './components/CardStack'
 export * from './components/Select'
+
+export * from './styles/Color';
+export * from './styles/Density';
+export * from './styles/Typography';
+export * from './styles/Surface';

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Theme } from '../styles/Theme'
 
 const SkBounceDelay = keyframes`
   0%, 80%, 100% {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Theme } from '../styles/Theme'
+import { Surface, Density, Color } from '../styles/Theme'
 
 const StyledCard = styled.section`
   background: white;
-  border-radius: ${Theme.Surface.defaultRadius};
-  padding: ${Theme.Density.spacing1};
+  border-radius: ${Surface.defaultRadius};
+  padding: ${Density.spacing1};
   box-shadow: 0 1px 3px 0 rgba(50, 50, 93, 0.15), 0 4px 6px 0 rgba(112, 157, 199, 0.15);
   display: flex;
   flex: 1;
@@ -14,10 +14,10 @@ const StyledCard = styled.section`
 
 const StyledTitle = styled.h1`
   margin-top: 0;
-  color: ${Theme.Color.darkTextColor};
-  margin: -${Theme.Density.spacing1};
-  margin-bottom: ${Theme.Density.spacing1};
-  padding: 20px ${Theme.Density.spacing1};
+  color: ${Color.darkTextColor};
+  margin: -${Density.spacing1};
+  margin-bottom: ${Density.spacing1};
+  padding: 20px ${Density.spacing1};
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   font-size: 16px;

@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Theme } from '../styles/Theme'
+import { Typography, Surface } from '../styles/Theme'
 import { DropdownIcon } from '../icons/DropdownIcon'
 
 const SelectContainer = styled.div`
-  border-radius: ${Theme.Surface.defaultRadius};
+  border-radius: ${Surface.defaultRadius};
   border: 1.5px solid transparent;
   box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   font-size: 15px;
@@ -17,7 +17,7 @@ const SelectContainer = styled.div`
   height: 40px;
   width: 100%;
   position: relative;
-  font-family: ${Theme.Typography.defaultFontFamily};
+  font-family: ${Typography.defaultFontFamily};
 
   svg {
     position: absolute;
@@ -35,7 +35,7 @@ const StyledSelect = styled.select`
   box-shadow: none;
   background: transparent;
   color: #525f7f;
-  font-family: ${Theme.Typography.defaultFontFamily};
+  font-family: ${Typography.defaultFontFamily};
   -webkit-appearance: none;
 
   &:focus {

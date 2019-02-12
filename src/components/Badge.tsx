@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Theme } from '../styles/Theme'
+import { Color } from '../styles/Theme'
 
 export const Badge = styled.span`
   padding: 5px 15px;
-  border: 1px solid ${Theme.Color.borderColor};
+  border: 1px solid ${Color.borderColor};
   display: inline-block;
   border-radius: 50px;
   width: fit-content;

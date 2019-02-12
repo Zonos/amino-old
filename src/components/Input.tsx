@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Theme } from '../styles/Theme'
+import { Surface, Typography, Color } from '../styles/Theme'
 
 const StyledInput = styled.input`
-  border-radius: ${Theme.Surface.defaultRadius};
+  border-radius: ${Surface.defaultRadius};
   border: 1.5px solid transparent;
-  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
-    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
@@ -16,49 +15,49 @@ const StyledInput = styled.input`
   padding: 5px 15px;
   height: 40px;
   width: 100%;
-  font-family: ${Theme.Typography.defaultFontFamily};
+  font-family: ${Typography.defaultFontFamily};
 
   &::-webkit-input-placeholder {
     color: #525f7f;
-    opacity: .3;
+    opacity: 0.3;
   }
 
   &::-moz-placeholder {
     color: #525f7f;
-    opacity: .3;
+    opacity: 0.3;
   }
 
   &:-ms-input-placeholder {
     color: #525f7f;
-    opacity: .3;
+    opacity: 0.3;
   }
 
   &:focus {
-    border: 1.5px solid ${Theme.Color.superLightPrimaryColor};
+    border: 1.5px solid ${Color.primary.veryLight};
   }
-`;
+`
 
 const InputLabel = styled.label`
   color: #525f7f;
-  opacity: .6;
+  opacity: 0.6;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;
-`;
+`
 
 interface InputProps {
-  label?: string;
-  placeholder?: string;
-  value?: string;
-  readonly?: boolean;
+  label?: string
+  placeholder?: string
+  value?: string
+  readonly?: boolean
 }
 
 export class Input extends Component<InputProps & React.InputHTMLAttributes<HTMLInputElement>, {}> {
   render() {
-    const { label } = this.props;
+    const { label } = this.props
 
     return (
       <div className="amino-input-wrapper">
-        { label && <InputLabel>{label}</InputLabel>}
+        {label && <InputLabel>{label}</InputLabel>}
         <StyledInput {...this.props} size={50} />
       </div>
     )

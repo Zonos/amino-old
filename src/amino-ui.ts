@@ -1,3 +1,4 @@
+// Components
 export * from './components/Card'
 export * from './components/Button'
 export * from './components/Page'
@@ -13,7 +14,9 @@ export * from './components/Sidebar'
 export * from './components/Content'
 export * from './components/CardStack'
 export * from './components/Select'
+export * from './components/List'
 
+// Theme
 export * from './styles/Color';
 export * from './styles/Density';
 export * from './styles/Typography';

@@ -15,6 +15,7 @@ export * from './components/Content'
 export * from './components/CardStack'
 export * from './components/Select'
 export * from './components/List'
+export * from './components/ListItem'
 
 // Theme
 export * from './styles/Color';

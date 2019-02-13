@@ -8,6 +8,7 @@ interface StackViewProps {
 
 export const StackView = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: ${(props: StackViewProps) => props.column ? "column" : "row"};
   flex-direction: ${(props: StackViewProps) => props.row ? "row" : "column"};
 

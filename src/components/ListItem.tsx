@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Density, Color } from '../styles/Theme';
+import React from 'react'
+import styled from 'styled-components'
+import { Density, Color } from '../styles/Theme'
 
 const StyledItem = styled.div`
   display: flex;
@@ -25,37 +25,35 @@ const StyledItem = styled.div`
   &:hover {
     background: ${(props: any) => (props.onClick ? '#fafafa' : 'inherit')};
   }
-`;
+`
 
-const StyledLabel = styled.span`
-  font-weight: 500;
-`;
+const StyledLabel = styled.span``
 
-const StyledSubtitle = styled.span``;
+const StyledSubtitle = styled.span``
 
 const StyledIcon = styled.img`
   border-radius: 4px;
   width: 34px;
   height: 34px;
   margin-right: ${Density.spacing1};
-`;
+`
 
 const StyledLeft = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-`;
+`
 
 type ListItemProps = {
-  label: string;
-  subtitle?: string;
-  icon?: string;
-  onClick?: any;
-  action?: React.ReactNode;
-};
+  label: string
+  subtitle?: string
+  icon?: string
+  onClick?: any
+  action?: React.ReactNode
+}
 
 export const ListItem: React.SFC<ListItemProps> = props => {
-  const { label, subtitle, icon, action, onClick } = props;
+  const { label, subtitle, icon, action, onClick } = props
 
   return (
     <StyledItem onClick={onClick}>
@@ -66,5 +64,5 @@ export const ListItem: React.SFC<ListItemProps> = props => {
       </StyledLeft>
       {action}
     </StyledItem>
-  );
-};
+  )
+}

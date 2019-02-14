@@ -19,7 +19,7 @@ const StyledTitle = styled.h1`
   margin-bottom: ${Density.spacing1};
   padding: 20px ${Density.spacing1};
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
   font-size: 16px;
   font-weight: 500;
   text-rendering: optimizeLegibility;

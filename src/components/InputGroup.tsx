@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Density } from '../styles/Theme';
 
 export const InputGroup = styled.div`
   .amino-input-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: ${Density.default.base};
   }
 `;
 

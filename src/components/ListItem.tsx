@@ -6,19 +6,19 @@ const StyledItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: ${Density.spacing1};
-  margin: 0 -${Density.spacing1};
+  padding: ${Density.default.base};
+  margin: 0 -${Density.default.base};
   box-sizing: border-box;
   height: 64px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.045);
   cursor: ${(props: any) => (props.onClick ? 'pointer' : 'inherit')};
 
   &:first-of-type {
-    margin-top: -${Density.spacing1};
+    margin-top: -${Density.default.base};
   }
 
   &:last-of-type {
-    margin-bottom: -${Density.spacing1};
+    margin-bottom: -${Density.default.base};
     border-bottom: 0;
   }
 
@@ -35,7 +35,7 @@ const StyledIcon = styled.img`
   border-radius: 4px;
   width: 34px;
   height: 34px;
-  margin-right: ${Density.spacing1};
+  margin-right: ${Density.default.base};
 `
 
 const StyledLeft = styled.div`

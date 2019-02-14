@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Density } from '../styles/Density';
 
 interface StackViewProps {
   column?: boolean;
@@ -13,6 +14,6 @@ export const StackView = styled.div`
   flex-direction: ${(props: StackViewProps) => props.row ? "row" : "column"};
 
   & > * {
-    margin-bottom: ${(props: StackViewProps) => props.spaced ? "25px" : "0"};
+    margin-bottom: ${(props: StackViewProps) => props.spaced ? Density.default.base : "0"};
   }
 `;

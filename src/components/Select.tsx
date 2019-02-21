@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Typography, Surface } from '../styles/Theme'
-import { DropdownIcon } from '../icons/DropdownIcon'
-import { Color } from '../styles/Color'
+import React from "react";
+import styled from "styled-components";
+import { Typography, Surface } from "../styles/Theme";
+import { DropdownIcon } from "../icons/DropdownIcon";
+import { Color } from "../styles/Color";
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
@@ -27,7 +27,7 @@ const SelectContainer = styled.div`
     top: 4px;
     fill: ${Color.text.veryLight};
   }
-`
+`;
 
 const StyledSelect = styled.select`
   padding: 5px 0;
@@ -43,7 +43,7 @@ const StyledSelect = styled.select`
   &:focus {
     outline: none;
   }
-`
+`;
 
 const SelectLabel = styled.label`
   color: ${Color.text.light};
@@ -51,29 +51,29 @@ const SelectLabel = styled.label`
   opacity: 0.6;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;
-`
+`;
 
 type Props = {
-  items: Array<any>
-  label?: string
-  itemLabelPath?: string
-  itemValuePath?: string
-  onChange?: any
-}
+  items: Array<any>;
+  label?: string;
+  itemLabelPath?: string;
+  itemValuePath?: string;
+  onChange?: any;
+};
 
 export const Select: React.FC<Props> = props => {
-  const { label, items, itemValuePath, itemLabelPath, onChange } = props
+  const { label, items, itemValuePath, itemLabelPath, onChange } = props;
 
   const renderedOptions = items.map((item, index) => {
-    const value = itemValuePath ? item[itemValuePath] : item.value
-    const label = itemLabelPath ? item[itemLabelPath] : item.label
+    const value = itemValuePath ? item[itemValuePath] : item.value;
+    const label = itemLabelPath ? item[itemLabelPath] : item.label;
 
     return (
       <option value={value} key={index}>
         {label}
       </option>
-    )
-  })
+    );
+  });
 
   return (
     <div className="amino-input-wrapper">
@@ -83,5 +83,5 @@ export const Select: React.FC<Props> = props => {
         <DropdownIcon />
       </SelectContainer>
     </div>
-  )
-}
+  );
+};

@@ -27,20 +27,18 @@ const StyledTitle = styled.h1`
   -moz-osx-font-smoothing: grayscale;
 `
 
-interface CardProps {
-  cardTitle?: String,
-  className?: string,
+type Props = {
+  cardTitle?: String
+  className?: string
 }
 
-export class Card extends Component<CardProps, {}> {
-  render() {
-    const { children, cardTitle } = this.props;
+export const Card: React.FC<Props> = props => {
+  const { children, cardTitle } = props
 
-    return (
-      <StyledCard {...this.props}>
-        {cardTitle ? <StyledTitle>{cardTitle}</StyledTitle> : null }
-        {children}
-      </StyledCard>
-    )
-  }
+  return (
+    <StyledCard {...props}>
+      {cardTitle ? <StyledTitle>{cardTitle}</StyledTitle> : null}
+      {children}
+    </StyledCard>
+  )
 }

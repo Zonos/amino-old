@@ -1,12 +1,12 @@
 import React from 'react';
 
-type ListProps = {
+type Props = {
   store?: any;
   onClick?: any;
   lastItem?: React.ReactNode;
 };
 
-export const List: React.SFC<ListProps> = props => {
+export const List: React.FC<Props> = props => {
   const { children, lastItem } = props;
 
   return (

@@ -16,6 +16,7 @@ export * from './components/CardStack'
 export * from './components/Select'
 export * from './components/List'
 export * from './components/ListItem'
+export * from './components/CopyInput'
 
 // Theme
 export * from './styles/Color';

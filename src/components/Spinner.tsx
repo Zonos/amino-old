@@ -1,5 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
+
+type Props = {
+  inverted?: boolean
+  compact?: boolean
+}
 
 const SkBounceDelay = keyframes`
   0%, 80%, 100% {
@@ -10,15 +15,15 @@ const SkBounceDelay = keyframes`
   }
 `
 
-const StyledSpinner = styled.div<SpinnerProps>`
+const StyledSpinner = styled.div`
   width: 70px;
   text-align: center;
 `
 
 const SpinnerDiv = styled.div`
-  background-color: ${(props: SpinnerProps) => (props.inverted ? '#fff' : '#333')};
-  width: ${(props: SpinnerProps) => (props.compact ? '10px' : '18px')};
-  height: ${(props: SpinnerProps) => (props.compact ? '10px' : '18px')};
+  background-color: ${(props: Props) => (props.inverted ? '#fff' : '#333')};
+  width: ${(props: Props) => (props.compact ? '10px' : '18px')};
+  height: ${(props: Props) => (props.compact ? '10px' : '18px')};
   border-radius: 100%;
   display: inline-block;
   animation: ${SkBounceDelay} 1.4s infinite ease-in-out both;
@@ -34,19 +39,10 @@ const Bounce2 = styled(SpinnerDiv)`
 
 const Bounce3 = SpinnerDiv
 
-interface SpinnerProps {
-  inverted?: boolean
-  compact?: boolean
-}
-
-export class Spinner extends Component<SpinnerProps, {}> {
-  render() {
-    return (
-      <StyledSpinner {...this.props}>
-        <Bounce1 {...this.props} />
-        <Bounce2 {...this.props} />
-        <Bounce3 {...this.props} />
-      </StyledSpinner>
-    )
-  }
-}
+export const Spinner: React.FC<Props> = props => (
+  <StyledSpinner {...props}>
+    <Bounce1 {...props} />
+    <Bounce2 {...props} />
+    <Bounce3 {...props} />
+  </StyledSpinner>
+)

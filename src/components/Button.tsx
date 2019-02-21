@@ -62,28 +62,22 @@ const StyledSecondaryButton = styled.button`
   }
 `
 
-interface ButtonProps {
-  primary?: Boolean
-  onClick?: any
-  saving?: Boolean
-}
+type Props = any & React.HTMLProps<HTMLButtonElement>
 
-export class Button extends Component<ButtonProps & React.HTMLProps<HTMLButtonElement>, {}> {
-  render() {
-    const { children, primary, onClick, saving } = this.props
+export const Button: React.FC<Props> = props => {
+  const { children, primary, onClick, saving } = props
 
-    return (
-      <React.Fragment>
-        {primary ? (
-          <StyledButton onClick={() => typeof onClick !== 'undefined' && onClick()}>
-            {saving ? <Spinner compact inverted /> : children}
-          </StyledButton>
-        ) : (
-          <StyledSecondaryButton onClick={() => typeof onClick !== 'undefined' && onClick()}>
-            {saving ? <Spinner compact /> : children}
-          </StyledSecondaryButton>
-        )}
-      </React.Fragment>
-    )
-  }
+  return (
+    <React.Fragment>
+      {primary ? (
+        <StyledButton onClick={() => typeof onClick !== 'undefined' && onClick()}>
+          {saving ? <Spinner compact inverted /> : children}
+        </StyledButton>
+      ) : (
+        <StyledSecondaryButton onClick={() => typeof onClick !== 'undefined' && onClick()}>
+          {saving ? <Spinner compact /> : children}
+        </StyledSecondaryButton>
+      )}
+    </React.Fragment>
+  )
 }

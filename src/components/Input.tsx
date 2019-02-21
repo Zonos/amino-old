@@ -13,7 +13,7 @@ const StyledInput = styled.input`
   color: ${Color.text.light};
   display: block;
   padding: 5px 15px;
-  height: 40px;
+  height: 34px;
   width: 100%;
   font-family: ${Typography.defaultFontFamily};
 
@@ -45,22 +45,20 @@ const InputLabel = styled.label`
   display: block;
 `
 
-interface InputProps {
+type Props = {
   label?: string
   placeholder?: string
   value?: string
   readonly?: boolean
 }
 
-export class Input extends Component<InputProps & React.InputHTMLAttributes<HTMLInputElement>, {}> {
-  render() {
-    const { label } = this.props
+export const Input: React.FC<Props> = props => {
+  const { label } = props
 
-    return (
-      <div className="amino-input-wrapper">
-        {label && <InputLabel>{label}</InputLabel>}
-        <StyledInput {...this.props} size={50} />
-      </div>
-    )
-  }
+  return (
+    <div className="amino-input-wrapper">
+      {label && <InputLabel>{label}</InputLabel>}
+      <StyledInput {...props} size={50} />
+    </div>
+  )
 }

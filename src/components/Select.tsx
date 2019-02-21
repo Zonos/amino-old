@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Typography, Surface } from '../styles/Theme'
 import { DropdownIcon } from '../icons/DropdownIcon'
-import { Color } from '../styles/Color';
+import { Color } from '../styles/Color'
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
@@ -14,17 +14,18 @@ const SelectContainer = styled.div`
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 5px 15px;
-  height: 40px;
+  padding: 0 15px;
+  height: 34px;
   width: 100%;
   position: relative;
   font-family: ${Typography.defaultFontFamily};
+  background: white;
 
   svg {
     position: absolute;
     right: 15px;
-    top: 6px;
-    fill: ${Color.text.light};
+    top: 4px;
+    fill: ${Color.text.veryLight};
   }
 `
 
@@ -52,7 +53,7 @@ const SelectLabel = styled.label`
   display: block;
 `
 
-interface SelectProps {
+type Props = {
   items: Array<any>
   label?: string
   itemLabelPath?: string
@@ -60,12 +61,12 @@ interface SelectProps {
   onChange?: any
 }
 
-export const Select = (props: SelectProps) => {
+export const Select: React.FC<Props> = props => {
   const { label, items, itemValuePath, itemLabelPath, onChange } = props
 
   const renderedOptions = items.map((item, index) => {
-    const value = itemValuePath ? item[itemValuePath as string] : item.value
-    const label = itemLabelPath ? item[itemLabelPath as string] : item.label
+    const value = itemValuePath ? item[itemValuePath] : item.value
+    const label = itemLabelPath ? item[itemLabelPath] : item.label
 
     return (
       <option value={value} key={index}>

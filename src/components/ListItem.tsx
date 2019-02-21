@@ -35,7 +35,7 @@ const StyledIcon = styled.img`
   border-radius: 4px;
   width: 34px;
   height: 34px;
-  margin-right: ${Density.default.base};
+  margin-right: ${Density.compact.base};
 `
 
 const StyledLeft = styled.div`
@@ -44,7 +44,7 @@ const StyledLeft = styled.div`
   align-items: center;
 `
 
-type ListItemProps = {
+type Props = {
   label: string
   subtitle?: string
   icon?: string
@@ -52,7 +52,7 @@ type ListItemProps = {
   action?: React.ReactNode
 }
 
-export const ListItem: React.SFC<ListItemProps> = props => {
+export const ListItem: React.FC<Props> = props => {
   const { label, subtitle, icon, action, onClick } = props
 
   return (

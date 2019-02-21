@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 import { ResponsiveContainer } from './ResponsiveContainer'
 
@@ -10,20 +9,12 @@ const StyledPage = styled.div`
   display: block;
 `
 
-export class Page extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired
-  }
+export const Page: React.FC = props => {
+  const { children } = props
 
-  render() {
-    const { children } = this.props
-
-    return (
-      <StyledPage>
-        <ResponsiveContainer>
-          {children}
-        </ResponsiveContainer>
-      </StyledPage>
-    )
-  }
+  return (
+    <StyledPage>
+      <ResponsiveContainer>{children}</ResponsiveContainer>
+    </StyledPage>
+  )
 }

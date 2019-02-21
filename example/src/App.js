@@ -11,7 +11,8 @@ import {
   AppBar,
   ResponsiveContainer,
   Select,
-  CardStack
+  CardStack,
+  CopyInput,
 } from 'amino'
 import styled from 'styled-components'
 
@@ -59,27 +60,30 @@ export default class App extends Component {
               <Spinner compact />
             </Card>
             <Card>
-              <Select
-                label="Select an item"
-                items={[
-                  {
-                    label: 'item 1',
-                    value: 'value'
-                  },
-                  {
-                    label: 'item 2',
-                    value: 'value'
-                  },
-                  {
-                    label: 'item 3',
-                    value: 'value'
-                  },
-                  {
-                    label: 'item 4',
-                    value: 'value'
-                  }
-                ]}
-              />
+              <InputGroup>
+                <Select
+                  label="Select an item"
+                  items={[
+                    {
+                      label: 'item 1',
+                      value: 'value'
+                    },
+                    {
+                      label: 'item 2',
+                      value: 'value'
+                    },
+                    {
+                      label: 'item 3',
+                      value: 'value'
+                    },
+                    {
+                      label: 'item 4',
+                      value: 'value'
+                    }
+                  ]}
+                />
+                <CopyInput label="API key" value="asbsb-sdfsdf-234424-sdfasdf" />
+              </InputGroup>
             </Card>
           </CardStack>
         </Page>

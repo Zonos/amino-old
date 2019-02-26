@@ -53,46 +53,22 @@ const InputLabel = styled.label`
 type InputProps = {
   label?: string;
   onChange?: any;
-  constraints?: IDataConstraints;
+  className?: string;
+  valid?: boolean;
 };
 
 type Props = InputProps & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
 export const Input: React.FC<Props> = props => {
-  const { label, constraints, onChange } = props;
-
-  const [validClass, setValidClass] = useState("");
-
-  const validate = (value: string) => {
-    let valid = false;
-
-    if (constraints === undefined) {
-      valid = true;
-      return valid;
-    }
-
-    if (constraints.required && value.length === 0) {
-      valid = false;
-    }
-
-    setValidClass(valid ? "" : "invalid");
-    return valid;
-  };
-
-  const onInputChange = (e: any) => {
-    validate(e.target.value);
-    onChange(e);
-  };
+  const { className, label, onChange } = props;
 
   return (
     <div className="amino-input-wrapper">
       {label && <InputLabel>{label}</InputLabel>}
       <StyledInput
         {...props}
-        onChange={(e: any) => {
-          onChange && onInputChange(e);
-        }}
-        className={validClass}
+        onChange={onChange}
+        // className={`${className} ${validClass}`}
       />
     </div>
   );

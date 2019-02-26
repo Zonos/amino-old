@@ -19,13 +19,14 @@ export default {
       sourcemap: true,
       globals: {
         'styled-components': 'styled',
-        'react': 'React'
+        'react': 'React',
+        'react-dom': 'ReactDOM',
       }
     },
     { file: pkg.module, format: 'es', sourcemap: true }
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
-  external: ['styled-components', 'react'],
+  external: ['styled-components', 'react', 'react-dom'],
   watch: {
     include: 'src/**'
   },

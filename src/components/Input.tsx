@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Surface, Typography, Color } from "../styles/Theme";
+import { IDataConstraints } from "../../dist/types/schemas/IDataConstraints.d";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${Surface.defaultRadius};
@@ -49,17 +50,28 @@ type InputProps = {
   label?: string;
   onChange?: any;
   valid?: boolean;
+  constraints?: IDataConstraints;
 };
 
 type Props = InputProps & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
 export const Input: React.FC<Props> = props => {
-  const { label, onChange } = props;
+  const { label, constraints, onChange } = props;
+
+  const onInvalid = (e: any) => {
+    console.log("its invalid");
+    e.target.classList.add("invalid");
+  };
 
   return (
     <div className="amino-input-wrapper">
       {label && <InputLabel>{label}</InputLabel>}
-      <StyledInput {...props} onChange={onChange} />
+      <StyledInput
+        // required={constraints && constraints.required}
+        onChange={onChange}
+        onInvalid={onInvalid}
+        {...props}
+      />
     </div>
   );
 };

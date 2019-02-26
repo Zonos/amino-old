@@ -34,6 +34,7 @@ export const Form: React.FC<Props> = props => {
   });
 
   const [formData, setFormData] = useState({ ...initialFormData });
+  const [previousFormData, setPreviousFormData] = useState({ ...initialFormData });
 
   useEffect(() => {
     onChange && onChange(formData);
@@ -46,6 +47,7 @@ export const Form: React.FC<Props> = props => {
    * @param field Form field
    */
   const fieldChanged = (e: any, field: string) => {
+    setPreviousFormData(formData);
     setFormData({
       ...formData,
       [field as any]: e.target.value
@@ -66,22 +68,41 @@ export const Form: React.FC<Props> = props => {
   };
 
   /**
+   * Validates a single form field (but doesn't show required fields red on page laod)
+   * @param fieldName Name of the field (for lookup)
+   * @param field Form field object
+   */
+  const validateForUI = (fieldName: string, field: IFormField) => {
+    const { constraints } = field;
+
+    if (constraints === undefined) {
+      return true;
+    }
+
+    if (
+      constraints.required &&
+      (previousFormData[fieldName].length > 0 && formData[fieldName].length === 0)
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
+  /**
    * Validates a single form field
    * @param fieldName Name of the field (for lookup)
    * @param field Form field object
    */
   const validate = (fieldName: string, field: IFormField) => {
-    const fieldConstraints = fields[fieldName as any].constraints;
+    let valid = validateForUI(fieldName, field);
+    const { constraints } = field;
 
-    if (fieldConstraints === undefined) {
-      return true;
+    if (constraints && constraints.required && formData[fieldName].length === 0) {
+      valid = false;
     }
 
-    if (fieldConstraints.required && formData[fieldName].length === 0) {
-      return false;
-    }
-
-    return true;
+    return valid;
   };
 
   /**
@@ -91,7 +112,10 @@ export const Form: React.FC<Props> = props => {
    * @param key Key (from iterator)
    */
   const renderField = (fieldName: string, field: IFormField, key: number) => {
-    const fieldProps = { label: field.label, placeholder: field.placeholder };
+    const fieldProps = {
+      label: field.label,
+      placeholder: field.placeholder
+    };
 
     switch (field.type) {
       case FieldType.Text:
@@ -99,7 +123,7 @@ export const Form: React.FC<Props> = props => {
           <InputGroup key={key}>
             <Input
               {...fieldProps}
-              valid={validate(fieldName, field)}
+              valid={validateForUI(fieldName, field)}
               value={formData[fieldName as any]}
               onChange={(e: any) => fieldChanged(e, fieldName)}
             />

@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { Surface, Typography, Color } from '../styles/Theme'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Surface, Typography, Color } from "../styles/Theme";
+import { IDataConstraints } from "../schemas/IDataConstraints";
 
 const StyledInput = styled.input`
   border-radius: ${Surface.defaultRadius};
@@ -35,7 +36,11 @@ const StyledInput = styled.input`
   &:focus {
     border: 1px solid ${Color.primary.veryLight};
   }
-`
+
+  &.invalid {
+    border: 1px solid red;
+  }
+`;
 
 const InputLabel = styled.label`
   color: ${Color.text.light};
@@ -43,22 +48,52 @@ const InputLabel = styled.label`
   font-size: 15px;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;
-`
+`;
 
-type Props = {
-  label?: string
-  placeholder?: string
-  value?: string
-  readonly?: boolean
-}
+type InputProps = {
+  label?: string;
+  onChange?: any;
+  constraints?: IDataConstraints;
+};
+
+type Props = InputProps & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
 export const Input: React.FC<Props> = props => {
-  const { label } = props
+  const { label, constraints, onChange } = props;
+
+  const [validClass, setValidClass] = useState("");
+
+  const validate = (value: string) => {
+    let valid = false;
+
+    if (constraints === undefined) {
+      valid = true;
+      return valid;
+    }
+
+    if (constraints.required && value.length === 0) {
+      valid = false;
+    }
+
+    setValidClass(valid ? "" : "invalid");
+    return valid;
+  };
+
+  const onInputChange = (e: any) => {
+    validate(e.target.value);
+    onChange(e);
+  };
 
   return (
     <div className="amino-input-wrapper">
       {label && <InputLabel>{label}</InputLabel>}
-      <StyledInput {...props} size={50} />
+      <StyledInput
+        {...props}
+        onChange={(e: any) => {
+          onChange && onInputChange(e);
+        }}
+        className={validClass}
+      />
     </div>
-  )
-}
+  );
+};

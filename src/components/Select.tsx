@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Typography, Surface } from "../styles/Theme";
+
 import { DropdownIcon } from "../icons/DropdownIcon";
 import { Color } from "../styles/Color";
+import { Surface, Typography } from "../styles/Theme";
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
@@ -79,7 +80,9 @@ export const Select: React.FC<Props> = props => {
     <div className="amino-input-wrapper">
       {label && <SelectLabel>{label}</SelectLabel>}
       <SelectContainer>
-        <StyledSelect onChange={onChange}>{renderedOptions}</StyledSelect>
+        <StyledSelect onChange={(e: any) => onChange && onChange(e.target.value)}>
+          {renderedOptions}
+        </StyledSelect>
         <DropdownIcon />
       </SelectContainer>
     </div>

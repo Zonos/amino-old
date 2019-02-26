@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { Color, Surface, Typography } from '../styles/Theme'
-import { Spinner } from './Spinner'
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Color, Surface, Typography } from "../styles/Theme";
+import { Spinner } from "./Spinner";
 
 const StyledButton = styled.button`
   border-radius: ${Surface.defaultRadius};
@@ -30,7 +30,7 @@ const StyledButton = styled.button`
     box-shadow: 0 0 0 1px rgba(88, 106, 218, 0.1), 0 2px 5px 0 rgba(88, 106, 218, 0.08),
       0 1px 1.5px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 0 0 0 transparent;
   }
-`
+`;
 
 const StyledSecondaryButton = styled.button`
   border-radius: ${Surface.defaultRadius};
@@ -60,24 +60,30 @@ const StyledSecondaryButton = styled.button`
     opacity: 1;
     color: ${Color.text.light};
   }
-`
+`;
 
-type Props = any & React.HTMLProps<HTMLButtonElement>
+type ButtonProps = {
+  primary?: boolean;
+  saving?: boolean;
+  onClick?: any;
+};
+
+type Props = ButtonProps & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
 
 export const Button: React.FC<Props> = props => {
-  const { children, primary, onClick, saving } = props
+  const { children, primary, onClick, saving } = props;
 
   return (
     <React.Fragment>
       {primary ? (
-        <StyledButton onClick={() => typeof onClick !== 'undefined' && onClick()}>
+        <StyledButton onClick={e => typeof onClick !== "undefined" && onClick(e)}>
           {saving ? <Spinner compact inverted /> : children}
         </StyledButton>
       ) : (
-        <StyledSecondaryButton onClick={() => typeof onClick !== 'undefined' && onClick()}>
+        <StyledSecondaryButton onClick={e => typeof onClick !== "undefined" && onClick(e)}>
           {saving ? <Spinner compact /> : children}
         </StyledSecondaryButton>
       )}
     </React.Fragment>
-  )
-}
+  );
+};

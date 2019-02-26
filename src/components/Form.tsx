@@ -99,7 +99,7 @@ export const Form: React.FC<Props> = props => {
           <InputGroup key={key}>
             <Input
               {...fieldProps}
-              // valid={validate(fieldName, field)}
+              valid={validate(fieldName, field)}
               value={formData[fieldName as any]}
               onChange={(e: any) => fieldChanged(e, fieldName)}
             />

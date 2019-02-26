@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Surface, Typography, Color } from "../styles/Theme";
-import { IDataConstraints } from "../schemas/IDataConstraints";
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<Props>`
   border-radius: ${Surface.defaultRadius};
-  border: 1px solid transparent;
+  border: 1px solid ${(p: Props) => (p.valid ? "transparent" : "red")};
   box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   font-size: 15px;
   outline: none;
@@ -36,10 +35,6 @@ const StyledInput = styled.input`
   &:focus {
     border: 1px solid ${Color.primary.veryLight};
   }
-
-  &.invalid {
-    border: 1px solid red;
-  }
 `;
 
 const InputLabel = styled.label`
@@ -53,23 +48,22 @@ const InputLabel = styled.label`
 type InputProps = {
   label?: string;
   onChange?: any;
-  className?: string;
   valid?: boolean;
 };
 
 type Props = InputProps & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
 export const Input: React.FC<Props> = props => {
-  const { className, label, onChange } = props;
+  const { label, onChange } = props;
 
   return (
     <div className="amino-input-wrapper">
       {label && <InputLabel>{label}</InputLabel>}
-      <StyledInput
-        {...props}
-        onChange={onChange}
-        // className={`${className} ${validClass}`}
-      />
+      <StyledInput {...props} onChange={onChange} />
     </div>
   );
+};
+
+Input.defaultProps = {
+  valid: true
 };

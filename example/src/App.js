@@ -14,7 +14,9 @@ import {
   CardStack,
   CopyInput,
   Form,
-  FieldType
+  FieldType,
+  List,
+  ListItem,
 } from "amino-ui";
 import styled from "styled-components";
 
@@ -56,7 +58,9 @@ export const App = () => {
             <Badge>Recommended</Badge>
             <br />
             <br />
+            <Spinner />
             <Spinner compact />
+            <Button primary saving />
           </Card>
           <Card>
             <InputGroup>
@@ -105,6 +109,15 @@ export const App = () => {
             <Button primary onClick={handleSubmit}>
               Submit
             </Button>
+          </Card>
+          <Card>
+            <List>
+              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+            </List>
           </Card>
         </CardStack>
       </Page>

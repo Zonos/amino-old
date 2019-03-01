@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
 type Props = {
-  store?: any;
   onClick?: any;
   lastItem?: React.ReactNode;
 };

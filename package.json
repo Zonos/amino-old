@@ -9,12 +9,12 @@
   "files": [
     "dist"
   ],
-  "author": "Joshua Beitler <hello@joshbeitler.com>",
+  "author": "Joshua Beitler <josh@zonos.com>",
   "repository": {
     "type": "git",
     "url": ""
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">=6.0.0"
   },

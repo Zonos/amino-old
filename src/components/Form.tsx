@@ -17,12 +17,12 @@ interface IFormField {
   placeholder?: string;
 }
 
-type Props = {
-  fields: [IFormField];
+interface Props {
+  fields: { [key: string]: IFormField };
   onChange?: any;
   onValidate?: any;
   data?: [any];
-};
+}
 
 export const Form: React.FC<Props> = props => {
   const { fields, data, onChange, onValidate } = props;

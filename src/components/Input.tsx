@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Surface, Typography, Color } from "../styles/Theme";
-import { IDataConstraints } from "../../dist/types/schemas/IDataConstraints.d";
+
+import { IDataConstraints } from "../schemas/IDataConstraints";
+import { Color, Surface, Typography } from "../styles/Theme";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${Surface.defaultRadius};

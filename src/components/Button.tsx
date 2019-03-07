@@ -4,6 +4,10 @@ import { Color, Surface } from "../styles/Theme";
 import { Spinner } from "./Spinner";
 
 const StyledButton = styled.button`
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   border: 0;
   border-radius: ${Surface.defaultRadius};
   font-weight: 500;
@@ -18,24 +22,17 @@ const StyledButton = styled.button`
   font-size: 15px;
   transition: all 100ms ease-in-out;
   height: 34px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-shadow: 0 0 0 1px rgba(88, 106, 218, 0.1), 0 2px 5px 0 rgba(88, 106, 218, 0.08),
+    0 1px 1.5px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 0 0 0 transparent;
 
   color: ${(p: any) => (p.primary ? "#fff" : Color.text.light)};
   background: ${(p: any) => (p.primary ? Color.primary.base : "#fff")};
-  box-shadow: ${(p: any) =>
-    p.primary
-      ? "rgba(50, 50, 93, 0.15) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 1px 0px"
-      : "0 0 0 1px rgba(88,106,218,.1), 0 2px 5px 0 rgba(88,106,218,.08), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08), 0 0 0 0 transparent"};
 
   &:hover {
     background: ${(p: any) => (p.primary ? Color.primary.dark : "rgba(0, 0, 0, 0.008)")};
     color: ${(p: any) => (p.primary ? "#fff" : Color.text.light)};
-    box-shadow: ${(p: any) =>
-      p.primary
-        ? ""
-        : "0 0 0 1px rgba(88,106,218,.1), 0 2px 5px 0 rgba(88,106,218,.08), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08), 0 0 0 0 transparent"};
+    box-shadow: 0 0 0 1px rgba(88, 106, 218, 0.1), 0 2px 5px 0 rgba(88, 106, 218, 0.08),
+      0 1px 1.5px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 0 0 0 transparent;
   }
 
   &[disabled] {
@@ -57,7 +54,7 @@ export const Button: React.FC<Props> = props => {
   const { children, primary, onClick, saving, disabled } = props;
 
   return (
-    <StyledButton disabled={disabled || saving} onClick={onClick && onClick()} {...props}>
+    <StyledButton disabled={disabled || saving} onClick={onClick} {...props}>
       {saving ? <Spinner compact inverted={primary} /> : children}
     </StyledButton>
   );

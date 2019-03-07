@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Density, Color } from '../styles/Theme'
+import React from "react";
+import styled from "styled-components";
+import { Density, Color } from "../styles/Theme";
 
 const StyledItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: ${Density.default.base};
+  padding: ${Density.comfortable.base} ${Density.default.base};
   margin: 0 -${Density.default.base};
   box-sizing: border-box;
   height: 64px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.045);
-  cursor: ${(props: any) => (props.onClick ? 'pointer' : 'inherit')};
+  cursor: ${(props: any) => (props.onClick ? "pointer" : "inherit")};
 
   &:first-of-type {
     margin-top: -${Density.default.base};
@@ -23,37 +23,37 @@ const StyledItem = styled.div`
   }
 
   &:hover {
-    background: ${(props: any) => (props.onClick ? '#fafafa' : 'inherit')};
+    background: ${(props: any) => (props.onClick ? "#fafafa" : "inherit")};
   }
-`
+`;
 
-const StyledLabel = styled.span``
+const StyledLabel = styled.span``;
 
-const StyledSubtitle = styled.span``
+const StyledSubtitle = styled.span``;
 
 const StyledIcon = styled.img`
   border-radius: 4px;
   width: 34px;
   height: 34px;
   margin-right: ${Density.compact.base};
-`
+`;
 
 const StyledLeft = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-`
+`;
 
 type Props = {
-  label: string
-  subtitle?: string
-  icon?: string
-  onClick?: any
-  action?: React.ReactNode
-}
+  label: string;
+  subtitle?: string;
+  icon?: string;
+  onClick?: any;
+  action?: React.ReactNode;
+};
 
 export const ListItem: React.FC<Props> = props => {
-  const { label, subtitle, icon, action, onClick } = props
+  const { label, subtitle, icon, action, onClick } = props;
 
   return (
     <StyledItem onClick={onClick}>
@@ -64,5 +64,5 @@ export const ListItem: React.FC<Props> = props => {
       </StyledLeft>
       {action}
     </StyledItem>
-  )
-}
+  );
+};

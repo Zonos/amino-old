@@ -7,7 +7,8 @@ import { InputGroup } from "./InputGroup";
 export enum FieldType {
   Text,
   Select,
-  Number
+  Number,
+  Email
 }
 
 interface IFormField {
@@ -119,6 +120,7 @@ export const Form: React.FC<Props> = props => {
 
     switch (field.type) {
       case FieldType.Text:
+      case FieldType.Email:
         return (
           <InputGroup key={key}>
             <Input

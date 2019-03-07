@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment } from "react";
 import {
   Spinner,
   StackView,
@@ -21,26 +21,8 @@ import {
 import styled from "styled-components";
 
 export const App = () => {
-  const [valid, setValid] = useState(false);
-
-  const handleFormChange = e => {
-    // console.log(e);
-  };
-
-  const handleFormValidate = e => {
-    setValid(e);
-  };
-
-  const handleSubmit = e => {
-    if (valid) {
-      alert("its all ok");
-    } else {
-      alert("not valid!!");
-    }
-  };
-
   return (
-    <>
+    <Fragment>
       <Page>
         <CardStack>
           <Card cardTitle={"hello amino"}>
@@ -51,8 +33,9 @@ export const App = () => {
             </InputGroup>
             <br />
             <br />
-            <Button>some button</Button>
+            {/* <Button>some button</Button> */}
             <Button primary>some primary button</Button>
+            <Button primary disabled>Its not clickable</Button>
             <br />
             <br />
             <Badge>Recommended</Badge>
@@ -88,39 +71,17 @@ export const App = () => {
               <CopyInput label='API key' value='asbsb-sdfsdf-234424-sdfasdf' />
             </InputGroup>
           </Card>
-          <Card cardTitle='Form validation example'>
-            <Form
-              onChange={handleFormChange}
-              onValidate={handleFormValidate}
-              fields={{
-                myField: {
-                  type: FieldType.Text,
-                  label: "Field name",
-                  placeholder: "Enter the value here",
-                  constraints: {
-                    required: true
-                  }
-                }
-              }}
-              // data={{
-              //   myField: "initial value",
-              // }}
-            />
-            <Button primary onClick={handleSubmit}>
-              Submit
-            </Button>
-          </Card>
-          <Card>
-            <List>
-              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
-              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
-              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
-              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
-              <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
-            </List>
-          </Card>
+        <Card>
+          <List>
+            <ListItem icon="//placehold.it/64x64" label="List item" action={<Button>Action</Button>}></ListItem>
+            <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+            <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+            <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+            <ListItem icon="//placehold.it/64x64" label="List item" action={<Button primary>Action</Button>}></ListItem>
+          </List>
+        </Card>
         </CardStack>
       </Page>
-    </>
+    </Fragment>
   );
 };

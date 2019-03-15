@@ -37,6 +37,11 @@ const StyledInput = styled.input<Props>`
   &:focus {
     border: 1px solid ${Color.primary.veryLight};
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 const InputLabel = styled.label`

@@ -30,6 +30,7 @@ export const App = () => {
               <Input placeholder='John' label='First name' />
               <Input placeholder='Doe' label='Last name' />
               <Input placeholder='john.doe@example.com' label='Email' />
+              <Input placeholder='Disabled' disabled label='Disabled Input' value="You can't change me" />
             </InputGroup>
             <br />
             <br />
@@ -52,21 +53,22 @@ export const App = () => {
                 items={[
                   {
                     label: "item 1",
-                    value: "value"
+                    value: "value1"
                   },
                   {
                     label: "item 2",
-                    value: "value"
+                    value: "value1"
                   },
                   {
                     label: "item 3",
-                    value: "value"
+                    value: "value3"
                   },
                   {
                     label: "item 4",
-                    value: "value"
+                    value: "value4"
                   }
                 ]}
+                defaultValue="value 3"
               />
               <CopyInput label='API key' value='asbsb-sdfsdf-234424-sdfasdf' />
             </InputGroup>

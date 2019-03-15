@@ -60,10 +60,11 @@ type Props = {
   itemLabelPath?: string;
   itemValuePath?: string;
   onChange?: any;
+  defaultValue?: any;
 };
 
 export const Select: React.FC<Props> = props => {
-  const { label, items, itemValuePath, itemLabelPath, onChange } = props;
+  const { label, items, itemValuePath, itemLabelPath, onChange, defaultValue } = props;
 
   const renderedOptions = items.map((item, index) => {
     const value = itemValuePath ? item[itemValuePath] : item.value;
@@ -80,7 +81,10 @@ export const Select: React.FC<Props> = props => {
     <div className="amino-input-wrapper">
       {label && <SelectLabel>{label}</SelectLabel>}
       <SelectContainer>
-        <StyledSelect onChange={(e: any) => onChange && onChange(e.target.value)}>
+        <StyledSelect
+          onChange={(e: any) => onChange && onChange(e.target.value)}
+          defaultValue={defaultValue}
+        >
           {renderedOptions}
         </StyledSelect>
         <DropdownIcon />

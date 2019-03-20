@@ -7,8 +7,8 @@ import { Surface, Typography } from "../styles/Theme";
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
-  border: 1.5px solid transparent;
-  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px; */
   font-size: 15px;
   outline: none;
   box-sizing: border-box;

@@ -6,15 +6,15 @@ import { Color, Surface, Typography } from "../styles/Theme";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${Surface.defaultRadius};
-  border: 1px solid ${(p: Props) => (p.valid ? "transparent" : "red")};
-  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 1px solid ${(p: Props) => (p.valid ? "rgba(0, 0, 0, 0.1)" : "red")};
+  // box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 5px 15px;
+  padding: 10px 12px;
   height: 34px;
   width: 100%;
   font-family: ${Typography.defaultFontFamily};
@@ -35,7 +35,8 @@ const StyledInput = styled.input<Props>`
   }
 
   &:focus {
-    border: 1px solid ${Color.primary.veryLight};
+    border: 1px solid rgba(0, 0, 0, 0.045);
+    box-shadow: 0 0 0 2px ${Color.primary.veryLight}99;
   }
 
   &:disabled {

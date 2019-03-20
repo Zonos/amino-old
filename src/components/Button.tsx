@@ -22,19 +22,22 @@ const StyledButton = styled.button`
   font-size: 15px;
   transition: all 100ms ease-in-out;
   height: 34px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  border: ${(p: any) => (p.primary ? "0" : "1px solid rgba(0, 0, 0, 0.1)")};
   color: ${(p: any) => (p.primary ? "#fff" : Color.text.light)};
   background: ${(p: any) => (p.primary ? Color.primary.base : "#fff")};
 
   &:hover {
     background: ${(p: any) => (p.primary ? Color.primary.dark : "rgba(0, 0, 0, 0.008)")};
     color: ${(p: any) => (p.primary ? "#fff" : Color.text.light)};
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    box-shadow: 0 0 0 2px ${Color.primary.veryLight}99;
+    background: ${(p: any) => (p.primary ? Color.primary.veryDark : "rgba(0, 0, 0, 0.015)")};
   }
 
   &[disabled] {
-    opacity: 0.8;
+    opacity: 0.5;
     pointer-events: none;
     cursor: not-allowed;
   }

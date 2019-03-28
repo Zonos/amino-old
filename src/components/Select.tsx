@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { DropdownIcon } from "../icons/DropdownIcon";
 import { Color } from "../styles/Color";
 import { Surface, Typography } from "../styles/Theme";
+import { Density } from "../styles/Density";
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
@@ -14,7 +15,7 @@ const SelectContainer = styled.div`
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 0 12px; /* TODO: density */
+  padding: 0 ${Density.spacing.sm};
   height: 34px;
   width: 100%;
   padding-top: 1.5px;

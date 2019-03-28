@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { IDataConstraints } from "../schemas/IDataConstraints";
-import { Color, Surface, Typography } from "../styles/Theme";
+import { Color, Surface, Typography, Density } from "../styles/Theme";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${Surface.defaultRadius};
@@ -14,7 +14,7 @@ const StyledInput = styled.input<Props>`
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 10px 12px; /* TODO: density */
+  padding: ${Density.spacing.xs} ${Density.spacing.sm};
   height: 34px;
   width: 100%;
   font-family: ${Typography.defaultFontFamily};

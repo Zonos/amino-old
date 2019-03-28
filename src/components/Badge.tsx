@@ -1,11 +1,13 @@
-import styled from 'styled-components'
-import { Color } from '../styles/Theme'
+import styled from "styled-components";
+import { Color } from "../styles/Theme";
+import { Density } from "../styles/Density";
 
 export const Badge = styled.span`
-  padding: 5px 15px;
+  padding: ${Density.spacing.xxxs} ${Density.spacing.md};
   border: 1px solid ${Color.borderColor};
   display: inline-block;
   border-radius: 50px;
   width: fit-content;
-  color: #525f7f;
-`
+  font-size: 15px;
+  color: ${Color.text.base};
+`;

@@ -8,23 +8,23 @@ import { Surface, Typography } from "../styles/Theme";
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
   border: 1px solid rgba(0, 0, 0, 0.1);
-  /* box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px; */
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 0 15px;
+  padding: 0 12px; /* TODO: density */
   height: 34px;
   width: 100%;
+  padding-top: 1.5px;
   position: relative;
   font-family: ${Typography.defaultFontFamily};
   background: white;
 
   svg {
     position: absolute;
-    right: 15px;
+    right: 12px;
     top: 4px;
     fill: ${Color.text.veryLight};
   }

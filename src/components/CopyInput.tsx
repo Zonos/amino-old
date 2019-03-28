@@ -17,5 +17,11 @@ type Props = {
 export const CopyInput: React.FC<Props> = props => {
   const { value, label, className } = props;
 
-  return <StyledInput className={className} label={label} readOnly value={value} />;
+  const select = (e: any) => {
+    e.target.select();
+  };
+
+  return (
+    <StyledInput onClick={select} className={className} label={label} readOnly value={value} />
+  );
 };

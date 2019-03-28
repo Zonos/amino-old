@@ -5,7 +5,7 @@ import { Surface, Density, Color } from "../styles/Theme";
 const StyledCard = styled.section`
   background: white;
   border-radius: ${Surface.defaultRadius};
-  padding: ${Density.default.base};
+  padding: ${Density.spacing.md};
   box-shadow: 0 1px 3px 0 rgba(50, 50, 93, 0.15), 0 4px 6px 0 rgba(150, 150, 199, 0.15);
   display: flex;
   flex: 1;
@@ -15,9 +15,9 @@ const StyledCard = styled.section`
 const StyledTitle = styled.h1`
   margin-top: 0;
   color: ${Color.text.dark};
-  margin: -${Density.default.base};
-  margin-bottom: ${Density.default.base};
-  padding: 20px ${Density.default.base};
+  margin: -${Density.spacing.md};
+  margin-bottom: ${Density.spacing.md};
+  padding: ${Density.spacing.md};
   box-sizing: border-box;
   border-bottom: 1px solid rgba(0, 0, 0, 0.045);
   font-size: 16px;

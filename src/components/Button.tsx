@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Color, Surface } from "../styles/Theme";
 import { Spinner } from "./Spinner";
+import { Density } from "../styles/Density";
 
 const StyledButton = styled.button`
   text-rendering: optimizeLegibility;
@@ -11,8 +12,8 @@ const StyledButton = styled.button`
   border: 0;
   border-radius: ${Surface.defaultRadius};
   font-weight: 500;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: ${Density.spacing.md};
+  padding-right: ${Density.spacing.md};
   outline: none;
   cursor: pointer;
   flex-direction: row;

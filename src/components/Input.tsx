@@ -14,7 +14,7 @@ const StyledInput = styled.input<Props>`
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 10px 12px;
+  padding: 10px 12px; /* TODO: density */
   height: 34px;
   width: 100%;
   font-family: ${Typography.defaultFontFamily};

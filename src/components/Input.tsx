@@ -35,8 +35,8 @@ const StyledInput = styled.input<Props>`
   }
 
   &:focus {
-    border: 1px solid rgba(0, 0, 0, 0.045);
-    box-shadow: 0 0 0 2px ${Color.primary.veryLight}99;
+    border: 1px solid ${Color.primary.veryLight};
+    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
   }
 
   &:disabled {

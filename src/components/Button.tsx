@@ -33,7 +33,7 @@ const StyledButton = styled.button`
   }
 
   &:active {
-    box-shadow: 0 0 0 2px ${Color.primary.veryLight}99;
+    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
     background: ${(p: any) => (p.primary ? Color.primary.veryDark : "rgba(0, 0, 0, 0.015)")};
   }
 

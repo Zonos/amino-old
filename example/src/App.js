@@ -23,6 +23,11 @@ import styled from "styled-components";
 export const App = () => {
   return (
     <Fragment>
+      <AppBar>
+        <ResponsiveContainer>
+          the app bar
+        </ResponsiveContainer>
+      </AppBar>
       <Page>
         <CardStack>
           <Card cardTitle={"hello amino"}>

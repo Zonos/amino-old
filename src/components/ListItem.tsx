@@ -29,6 +29,7 @@ const StyledItem = styled.div`
 
 const StyledLabel = styled.span`
   font-size: 15px;
+  font-weight: 500;
 `;
 
 const StyledSubtitle = styled.span`
@@ -49,6 +50,11 @@ const StyledLeft = styled.div`
   align-items: center;
 `;
 
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 type Props = {
   label: string;
   subtitle?: string;
@@ -64,8 +70,10 @@ export const ListItem: React.FC<Props> = props => {
     <StyledItem onClick={onClick}>
       <StyledLeft>
         {icon && <StyledIcon src={icon} />}
-        <StyledLabel>{label}</StyledLabel>
-        {subtitle && <StyledSubtitle />}
+        <Info>
+          <StyledLabel>{label}</StyledLabel>
+          {subtitle && <StyledSubtitle>{subtitle}</StyledSubtitle>}
+        </Info>
       </StyledLeft>
       {action}
     </StyledItem>

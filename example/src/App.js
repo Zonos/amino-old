@@ -90,21 +90,25 @@ export const App = () => {
               <ListItem
                 icon='//placehold.it/64x64'
                 label='List item'
+                subtitle="its a great item"
                 action={<Button>Action</Button>}
               />
               <ListItem
                 icon='//placehold.it/64x64'
                 label='List item'
+                subtitle="its a great item"
                 action={<Button primary>Action</Button>}
               />
               <ListItem
                 icon='//placehold.it/64x64'
                 label='List item'
+                subtitle="its a great item"
                 action={<Button primary>Action</Button>}
               />
               <ListItem
                 icon='//placehold.it/64x64'
                 label='List item'
+                subtitle="its a great item"
                 action={<Button primary>Action</Button>}
               />
               <ListItem

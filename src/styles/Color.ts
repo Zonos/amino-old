@@ -9,11 +9,11 @@ class PrimaryColor implements IColorScale {
 }
 
 class TextColor implements IColorScale {
-  veryLight = "#A5A5A5"; // TODO: define
-  light = "#595959";
-  base = "#5D6D81";
-  dark = "#1A3547";
-  veryDark = ""; // TODO: define
+  veryLight = "#7B8B9A";
+  light = "#66788A";
+  base = "#425A70";
+  dark = "#234361";
+  veryDark = "";
 }
 
 export const Color = {

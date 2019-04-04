@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Surface, Density, Color } from "../styles/Theme";
 
@@ -25,6 +25,7 @@ const StyledTitle = styled.h1`
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.03px;
 `;
 
 type Props = {

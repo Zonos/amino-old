@@ -6,6 +6,6 @@ export const CardStack = styled.div`
   box-sizing: border-box;
 
   section {
-    margin-bottom: ${Density.spacing.xl};
+    margin-bottom: ${Density.spacing.lg};
   }
 `;

@@ -26,6 +26,7 @@ const StyledButton = styled.button`
   border: ${(p: any) => (p.primary ? "0" : "1px solid rgba(0, 0, 0, 0.1)")};
   color: ${(p: any) => (p.primary ? "#fff" : Color.text.light)};
   background: ${(p: any) => (p.primary ? Color.primary.base : "#fff")};
+  text-decoration: none;
 
   &:hover {
     background: ${(p: any) => (p.primary ? Color.primary.dark : "rgba(0, 0, 0, 0.008)")};

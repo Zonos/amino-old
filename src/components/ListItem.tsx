@@ -20,6 +20,8 @@ const StyledItem = styled.div`
   &:last-of-type {
     margin-bottom: -${Density.spacing.md};
     border-bottom: 0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 
   &:hover {

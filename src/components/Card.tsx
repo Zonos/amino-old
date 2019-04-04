@@ -6,7 +6,7 @@ const StyledCard = styled.section`
   background: white;
   border-radius: ${Surface.defaultRadius};
   padding: ${Density.spacing.md};
-  box-shadow: 0 1px 3px 0 rgba(50, 50, 93, 0.15), 0 4px 6px 0 rgba(150, 150, 199, 0.15);
+  box-shadow: ${Surface.shadow.base};
   display: flex;
   flex: 1;
   flex-direction: column;

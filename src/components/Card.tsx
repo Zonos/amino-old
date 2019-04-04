@@ -12,33 +12,53 @@ const StyledCard = styled.section`
   flex-direction: column;
 `;
 
-const StyledTitle = styled.h1`
-  margin-top: 0;
+const Title = styled.h1`
+  margin: 0;
   color: ${Color.text.dark};
-  margin: -${Density.spacing.md};
-  margin-bottom: ${Density.spacing.md};
-  padding: ${Density.spacing.md};
   box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
   font-size: 16px;
   font-weight: 500;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.03px;
+  flex: 1;
+  display: flex;
+`;
+
+const Header = styled.header`
+  box-sizing: border-box;
+  display: flex;
+  height: 64px;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
+  margin: -${Density.spacing.md};
+  margin-bottom: ${Density.spacing.md};
+  padding: 0 ${Density.spacing.md};
 `;
 
 type Props = {
-  cardTitle?: String;
   className?: string;
+  actions?: React.ReactNode;
+  cardTitle?: string;
 };
 
 export const Card: React.FC<Props> = props => {
-  const { children, cardTitle } = props;
+  const { children, cardTitle, actions } = props;
+
+  const headerVisible = Boolean(cardTitle) || (Boolean(actions) && Boolean(cardTitle));
+
+  const cardHeader = (
+    <Header>
+      <Title>{cardTitle}</Title>
+      {actions && actions}
+    </Header>
+  );
 
   return (
     <StyledCard {...props}>
-      {cardTitle ? <StyledTitle>{cardTitle}</StyledTitle> : null}
+      {headerVisible && cardHeader}
       {children}
     </StyledCard>
   );

@@ -85,7 +85,7 @@ export const App = () => {
               <CopyInput label='API key' value='asbsb-sdfsdf-234424-sdfasdf' />
             </InputGroup>
           </Card>
-          <Card>
+          <Card cardTitle="ListView demo" actions={<Button primary>Add new item</Button>}>
             <List>
               <ListItem
                 icon='//placehold.it/64x64'

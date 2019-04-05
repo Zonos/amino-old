@@ -41,6 +41,7 @@ const Heading3 = styled.h3`
 const Subtitle = styled.p`
   color: ${Color.text.light};
   font-size: 15px;
+  margin: 0;
 `;
 
 type Props = {

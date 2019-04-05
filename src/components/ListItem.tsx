@@ -16,6 +16,8 @@ const StyledItem = styled.div`
 
   &:first-of-type {
     margin-top: -${Density.spacing.md};
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
   &:last-of-type {

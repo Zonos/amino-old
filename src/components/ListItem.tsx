@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Density, Color } from "../styles/Theme";
+import { Text, TextStyle } from "./Text";
 
 const StyledItem = styled.div`
   display: flex;
@@ -25,18 +26,8 @@ const StyledItem = styled.div`
   }
 
   &:hover {
-    background: ${(props: any) => (props.onClick ? "#fafafa" : "inherit")};
+    background: ${(props: any) => (props.onClick ? "#fafafa" : "transparent")};
   }
-`;
-
-const StyledLabel = styled.span`
-  font-size: 15px;
-  font-weight: 500;
-`;
-
-const StyledSubtitle = styled.span`
-  font-size: 15px;
-  opacity: 0.5;
 `;
 
 const StyledIcon = styled.img`
@@ -73,8 +64,8 @@ export const ListItem: React.FC<Props> = props => {
       <StyledLeft>
         {icon && <StyledIcon src={icon} />}
         <Info>
-          <StyledLabel>{label}</StyledLabel>
-          {subtitle && <StyledSubtitle>{subtitle}</StyledSubtitle>}
+          <Text style={TextStyle.Heading3}>{label}</Text>
+          {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
         </Info>
       </StyledLeft>
       {action}

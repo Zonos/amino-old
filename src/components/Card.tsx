@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Surface, Density, Color } from "../styles/Theme";
+import { Surface, Density } from "../styles/Theme";
+import { Text, TextStyle } from "./Text";
 
 const StyledCard = styled.section`
   background: white;
@@ -10,20 +11,6 @@ const StyledCard = styled.section`
   display: flex;
   flex: 1;
   flex-direction: column;
-`;
-
-const Title = styled.h1`
-  margin: 0;
-  color: ${Color.text.dark};
-  box-sizing: border-box;
-  font-size: 16px;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.03px;
-  flex: 1;
-  display: flex;
 `;
 
 const Header = styled.header`
@@ -36,6 +23,11 @@ const Header = styled.header`
   margin: -${Density.spacing.md};
   margin-bottom: ${Density.spacing.md};
   padding: 0 ${Density.spacing.md};
+
+  h1 {
+    flex: 1;
+    display: flex;
+  }
 `;
 
 type Props = {
@@ -51,7 +43,7 @@ export const Card: React.FC<Props> = props => {
 
   const cardHeader = (
     <Header>
-      <Title>{cardTitle}</Title>
+      <Text style={TextStyle.Heading1}>{cardTitle}</Text>
       {actions && actions}
     </Header>
   );

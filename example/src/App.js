@@ -85,41 +85,35 @@ export const App = () => {
               <CopyInput label='API key' value='asbsb-sdfsdf-234424-sdfasdf' />
             </InputGroup>
           </Card>
-          <Card>
+          <Card cardTitle="Title" actions={<Button primary raised>Hi</Button>}>
             <List>
               <ListItem
-                icon='//placehold.it/64x64'
+                compact
                 label='List item'
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}
                 action={<Button>Action</Button>}
               />
               <ListItem
-                icon='//placehold.it/64x64'
+                compact
                 label='List item'
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}
-                action={<Button primary>Action</Button>}
+                action={<Button>Action</Button>}
               />
               <ListItem
-                icon='//placehold.it/64x64'
-                onClick={() => {console.log("hi")}}
+                compact
                 label='List item'
                 subtitle="its a great item"
-                action={<Button primary>Action</Button>}
+                onClick={() => {console.log("hi")}}
+                action={<Button>Action</Button>}
               />
               <ListItem
-                icon='//placehold.it/64x64'
+                compact
                 label='List item'
-                onClick={() => {console.log("hi")}}
                 subtitle="its a great item"
-                action={<Button primary>Action</Button>}
-              />
-              <ListItem
-                icon='//placehold.it/64x64'
                 onClick={() => {console.log("hi")}}
-                label='List item'
-                action={<Button primary>Action</Button>}
+                action={<Button>Action</Button>}
               />
             </List>
           </Card>

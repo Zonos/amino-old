@@ -32,6 +32,11 @@ const StyledItem = styled.div`
   }
 `;
 
+const CompactItem = styled(StyledItem)`
+  padding: ${Density.spacing.xs} ${Density.spacing.md};
+  height: 42px;
+`;
+
 const StyledIcon = styled.img`
   border-radius: 4px;
   width: 34px;
@@ -50,27 +55,65 @@ const Info = styled.div`
   flex-direction: column;
 `;
 
+const CompactInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  *:not(:first-child) {
+    margin-left: ${Density.spacing.sm};
+  }
+`;
+
 type Props = {
   label: string;
   subtitle?: string;
   icon?: string;
   onClick?: any;
   action?: React.ReactNode;
+  compact?: boolean;
 };
 
+// TODO: refactor styling and compact/non-compact mode
+
 export const ListItem: React.FC<Props> = props => {
-  const { label, subtitle, icon, action, onClick } = props;
+  const { label, subtitle, icon, action, onClick, compact } = props;
+
+  const ItemInfo = () => (
+    <Info>
+      <Text style={TextStyle.Heading3}>{label}</Text>
+      {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
+    </Info>
+  );
+
+  const CompactItemInfo = () => (
+    <CompactInfo>
+      <Text style={TextStyle.Heading3}>{label}</Text>
+      {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
+    </CompactInfo>
+  );
+
+  const ItemBody = () => (
+    <StyledLeft>
+      {icon && <StyledIcon src={icon} />}
+      {!compact && <ItemInfo />}
+      {compact && <CompactItemInfo />}
+    </StyledLeft>
+  );
 
   return (
-    <StyledItem onClick={onClick}>
-      <StyledLeft>
-        {icon && <StyledIcon src={icon} />}
-        <Info>
-          <Text style={TextStyle.Heading3}>{label}</Text>
-          {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
-        </Info>
-      </StyledLeft>
-      {action}
-    </StyledItem>
+    <>
+      {!compact && (
+        <StyledItem onClick={onClick}>
+          <ItemBody />
+          {action}
+        </StyledItem>
+      )}
+
+      {compact && (
+        <CompactItem onClick={onClick}>
+          <ItemBody />
+        </CompactItem>
+      )}
+    </>
   );
 };

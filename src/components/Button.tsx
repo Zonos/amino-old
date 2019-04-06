@@ -26,6 +26,7 @@ const StyledButton = styled.button`
   border: ${(p: any) => (p.primary ? "0" : "1px solid rgba(0, 0, 0, 0.1)")};
   color: ${(p: any) => (p.primary ? "#fff" : Color.text.light)};
   background: ${(p: any) => (p.primary ? Color.primary.base : "#fff")};
+  box-shadow: ${(p: any) => (p.raised ? Surface.shadow.high : "0")};
   text-decoration: none;
 
   &:hover {
@@ -49,15 +50,21 @@ type ButtonProps = {
   primary?: boolean;
   saving?: boolean;
   onClick?: any;
+  raised?: boolean;
 };
 
 type Props = ButtonProps & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
 
 export const Button: React.FC<Props> = props => {
-  const { children, primary, onClick, saving, disabled } = props;
+  const { children, primary, onClick, saving, disabled, raised } = props;
 
   return (
-    <StyledButton disabled={disabled || saving} onClick={onClick} {...props}>
+    <StyledButton
+      raised={raised || false}
+      disabled={disabled || saving}
+      onClick={onClick}
+      {...props}
+    >
       {saving ? <Spinner compact inverted={primary} /> : children}
     </StyledButton>
   );

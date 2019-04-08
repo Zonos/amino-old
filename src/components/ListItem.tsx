@@ -64,6 +64,10 @@ const CompactInfo = styled.div`
   }
 `;
 
+const Width = styled.div<any>`
+  width: ${(p: any) => p.width}px;
+`;
+
 type Props = {
   label: string;
   subtitle?: string;
@@ -71,12 +75,13 @@ type Props = {
   onClick?: any;
   action?: React.ReactNode;
   compact?: boolean;
+  labelWidth?: number;
 };
 
 // TODO: refactor styling and compact/non-compact mode
 
 export const ListItem: React.FC<Props> = props => {
-  const { label, subtitle, icon, action, onClick, compact } = props;
+  const { label, subtitle, icon, action, onClick, compact, labelWidth } = props;
 
   const ItemInfo = () => (
     <Info>
@@ -87,7 +92,15 @@ export const ListItem: React.FC<Props> = props => {
 
   const CompactItemInfo = () => (
     <CompactInfo>
-      <Text style={TextStyle.Heading3}>{label}</Text>
+      {labelWidth && (
+        // yo dawg, I heard you like width...
+        <Width width={labelWidth}>
+          <Text style={TextStyle.Heading3}>{label}</Text>
+        </Width>
+      )}
+
+      {!labelWidth && <Text style={TextStyle.Heading3}>{label}</Text>}
+
       {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
     </CompactInfo>
   );

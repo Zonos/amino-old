@@ -93,6 +93,7 @@ export const App = () => {
             <List>
               <ListItem
                 compact
+                labelWidth={300}
                 label='List item'
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}
@@ -101,19 +102,22 @@ export const App = () => {
               <ListItem
                 compact
                 label='List item'
+                labelWidth={300}
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}
                 action={<Button>Action</Button>}
               />
               <ListItem
                 compact
-                label='List item'
+                labelWidth={300}
+                label='asdfasdfasdf List item'
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}
                 action={<Button>Action</Button>}
               />
               <ListItem
                 compact
+                labelWidth={300}
                 label='List item'
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}

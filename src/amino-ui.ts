@@ -29,3 +29,4 @@ export * from "./styles/Surface";
 // Schemas
 export * from "./schemas/IDataConstraints";
 export { FieldType } from "./components/Form";
+export { Intent } from "./schemas/Intent";

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Color, Surface } from "../styles/Theme";
 import { Spinner } from "./Spinner";
 import { Density } from "../styles/Density";
+import { Intent } from "../schemas/Intent";
 
 const StyledButton = styled.button`
   text-rendering: optimizeLegibility;
@@ -81,16 +82,11 @@ const DangerButton = styled(StyledButton)`
   }
 `;
 
-export enum ButtonIntent {
-  Primary = "primary",
-  Danger = "danger"
-}
-
 type ButtonProps = {
   primary?: boolean;
   saving?: boolean;
   onClick?: any;
-  intent?: ButtonIntent;
+  intent?: Intent;
 };
 
 type Props = ButtonProps & React.PropsWithoutRef<JSX.IntrinsicElements["button"]>;
@@ -99,40 +95,38 @@ export const Button: React.FC<Props> = props => {
   const { intent, children, onClick, saving, disabled } = props;
 
   const ButtonInner = () => (
-    <>{saving ? <Spinner compact inverted={intent === ButtonIntent.Primary} /> : children}</>
+    <>{saving ? <Spinner compact inverted={intent === Intent.Primary} /> : children}</>
   );
+
+  const buttonProps = { disabled: disabled || saving, onClick: onClick, ...props };
 
   const BuildButton = () => {
     switch (intent) {
-      case ButtonIntent.Primary:
+      case Intent.Primary:
         return (
-          <PrimaryButton disabled={disabled || saving} onClick={onClick} {...props}>
+          <PrimaryButton {...buttonProps}>
             <ButtonInner />
           </PrimaryButton>
         );
-      case ButtonIntent.Danger:
+      case Intent.Danger:
         return (
-          <DangerButton disabled={disabled || saving} onClick={onClick} {...props}>
+          <DangerButton {...buttonProps}>
             <ButtonInner />
           </DangerButton>
         );
+      case Intent.None:
       default:
         return (
-          <StyledButton disabled={disabled || saving} onClick={onClick} {...props}>
+          <StyledButton {...buttonProps}>
             <ButtonInner />
           </StyledButton>
         );
     }
   };
 
-  return (
-    <BuildButton />
-    // <StyledButton
-    //   disabled={disabled || saving}
-    //   onClick={onClick}
-    //   {...props}
-    // >
-    //   {saving ? <Spinner compact inverted={primary} /> : children}
-    // </StyledButton>
-  );
+  return <BuildButton />;
+};
+
+Button.defaultProps = {
+  intent: Intent.None
 };

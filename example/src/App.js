@@ -17,6 +17,7 @@ import {
   FieldType,
   List,
   ListItem,
+  ButtonIntent,
 } from "amino-ui";
 import styled from "styled-components";
 
@@ -45,8 +46,11 @@ export const App = () => {
             <br />
             <br />
             {/* <Button>some button</Button> */}
-            <Button primary>some primary button</Button>
-            <Button primary disabled>
+            <Button intent="primary">some primary button</Button>
+            <br />
+            <Button intent="danger">warning, this is scary</Button>
+            <br />
+            <Button intent="primary" disabled>
               Its not clickable
             </Button>
             <br />
@@ -56,7 +60,7 @@ export const App = () => {
             <br />
             <Spinner />
             <Spinner compact />
-            <Button primary saving />
+            <Button intent="primary" saving />
           </Card>
           <Card>
             <InputGroup>

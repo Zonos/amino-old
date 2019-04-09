@@ -54,6 +54,7 @@ export const App = () => {
               Its not clickable
             </Button>
             <br />
+            <Button>its a button</Button>
             <br />
             <Badge>Recommended</Badge>
             <br />
@@ -103,12 +104,14 @@ export const App = () => {
                 compact
                 label='List item'
                 labelWidth={300}
+                active={false}
                 subtitle="its a great item"
                 onClick={() => {console.log("hi")}}
                 action={<Button>Action</Button>}
               />
               <ListItem
                 compact
+                active={false}
                 labelWidth={300}
                 label='asdfasdfasdf List item'
                 subtitle="its a great item"

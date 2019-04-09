@@ -50,18 +50,24 @@ const StyledLeft = styled.div`
   align-items: center;
 `;
 
-const Info = styled.div`
+const Info = styled.div<any>`
   display: flex;
   flex-direction: column;
+
+  opacity: ${(p: any) => (p.active ? "1" : "0.5")};
+  text-decoration: ${(p: any) => (p.active ? "none" : "line-through")};
 `;
 
-const CompactInfo = styled.div`
+const CompactInfo = styled.div<any>`
   display: flex;
   flex-direction: row;
 
   *:not(:first-child) {
     margin-left: ${Density.spacing.sm};
   }
+
+  opacity: ${(p: any) => (p.active ? "1" : "0.5")};
+  text-decoration: ${(p: any) => (p.active ? "none" : "line-through")};
 `;
 
 const Width = styled.div<any>`
@@ -76,22 +82,23 @@ type Props = {
   action?: React.ReactNode;
   compact?: boolean;
   labelWidth?: number;
+  active?: boolean;
 };
 
 // TODO: refactor styling and compact/non-compact mode
 
 export const ListItem: React.FC<Props> = props => {
-  const { label, subtitle, icon, action, onClick, compact, labelWidth } = props;
+  const { label, subtitle, icon, action, onClick, compact, labelWidth, active } = props;
 
   const ItemInfo = () => (
-    <Info>
+    <Info active={active}>
       <Text style={TextStyle.Heading3}>{label}</Text>
       {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
     </Info>
   );
 
   const CompactItemInfo = () => (
-    <CompactInfo>
+    <CompactInfo active={active}>
       {labelWidth && (
         // yo dawg, I heard you like width...
         <Width width={labelWidth}>
@@ -130,3 +137,5 @@ export const ListItem: React.FC<Props> = props => {
     </>
   );
 };
+
+ListItem.defaultProps = { active: true };

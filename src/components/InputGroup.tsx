@@ -6,6 +6,10 @@ export const InputGroup = styled.div`
   .amino-input-wrapper {
     margin-bottom: ${Density.spacing.md};
   }
+
+  .amino-input-wrapper:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 // export class InputGroup extends Component<any, {}> {

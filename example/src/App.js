@@ -18,6 +18,7 @@ import {
   List,
   ListItem,
   ButtonIntent,
+  EmptyState,
 } from "amino-ui";
 import styled from "styled-components";
 
@@ -97,7 +98,7 @@ export const App = () => {
                 labelWidth={300}
                 label='List item'
                 subtitle="its a great item"
-                onClick={() => {console.log("hi")}}
+              onClick={() => {console.log("hi")}}
                 action={<Button>Action</Button>}
               />
               <ListItem
@@ -127,6 +128,9 @@ export const App = () => {
                 action={<Button>Action</Button>}
               />
             </List>
+          </Card>
+          <Card>
+            <EmptyState label="No widgets found" subtitle="Create a widget to start doing the thing" action={<Button>Add foo</Button>} />
           </Card>
         </CardStack>
       </Page>

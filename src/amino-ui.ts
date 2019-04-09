@@ -19,6 +19,7 @@ export * from "./components/ListItem";
 export * from "./components/CopyInput";
 export * from "./components/Form";
 export * from "./components/Text";
+export * from "./components/EmptyState";
 
 // Theme
 export * from "./styles/Color";

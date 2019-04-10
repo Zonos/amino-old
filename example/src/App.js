@@ -130,7 +130,7 @@ export const App = () => {
             </List>
           </Card>
           <Card>
-            <EmptyState label="No widgets found" subtitle="Create a widget to start doing the thing" action={<Button>Add foo</Button>} />
+            <EmptyState label="You don't have any coupons." url="https://docs.zonos.com" action={<Button>Create your first coupon</Button>} />
           </Card>
         </CardStack>
       </Page>

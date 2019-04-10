@@ -1,5 +1,6 @@
 export enum Intent {
   None = "none",
   Primary = "primary",
-  Danger = "danger"
+  Danger = "danger",
+  Warning = "warning"
 }

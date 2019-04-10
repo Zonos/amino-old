@@ -44,6 +44,12 @@ const Subtitle = styled.p`
   margin: 0;
 `;
 
+const Unstyled = styled.div`
+  font-size: 15px;
+  font-weight: normal;
+  color: ${Color.text.base};
+`;
+
 type Props = {
   style?: TextStyle;
 };
@@ -53,7 +59,7 @@ export const Text: React.FC<Props> = props => {
 
   const buildTag = () => {
     if (style === undefined) {
-      return <Paragraph>{children}</Paragraph>;
+      return <Unstyled>{children}</Unstyled>;
     }
 
     switch (style) {
@@ -67,6 +73,8 @@ export const Text: React.FC<Props> = props => {
         return <Paragraph>{children}</Paragraph>;
       case TextStyle.Subtitle:
         return <Subtitle>{children}</Subtitle>;
+      default:
+        return <Unstyled>{children}</Unstyled>;
     }
   };
 

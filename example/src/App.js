@@ -30,7 +30,7 @@ export const App = () => {
       </AppBar>
       <Page>
         <CardStack>
-          <Notice action={<Button>Dismiss</Button>} intent={Intent.Primary}>
+          <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>
 

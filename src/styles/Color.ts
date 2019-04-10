@@ -16,6 +16,14 @@ class DangerColor implements IColorScale {
   veryDark = "";
 }
 
+class WarningColor implements IColorScale {
+  veryLight = "#E8B480";
+  light = "#DE9347";
+  base = "#D9822B";
+  dark = "#BE7226";
+  veryDark = "";
+}
+
 class TextColor implements IColorScale {
   veryLight = "#7B8B9A";
   light = "#66788A";
@@ -27,6 +35,7 @@ class TextColor implements IColorScale {
 export const Color = {
   primary: new PrimaryColor(),
   danger: new DangerColor(),
+  warning: new WarningColor(),
   text: new TextColor(),
 
   // DEPRECATED

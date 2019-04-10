@@ -20,6 +20,7 @@ export * from "./components/CopyInput";
 export * from "./components/Form";
 export * from "./components/Text";
 export * from "./components/EmptyState";
+export * from "./components/Notice";
 
 // Theme
 export * from "./styles/Color";

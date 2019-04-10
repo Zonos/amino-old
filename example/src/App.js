@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import {
   Spinner,
-  StackView,
   Page,
   Button,
   Card,
@@ -13,12 +12,11 @@ import {
   Select,
   CardStack,
   CopyInput,
-  Form,
-  FieldType,
   List,
   ListItem,
-  ButtonIntent,
+  Intent,
   EmptyState,
+  Notice
 } from "amino-ui";
 import styled from "styled-components";
 
@@ -32,6 +30,10 @@ export const App = () => {
       </AppBar>
       <Page>
         <CardStack>
+          <Notice action={<Button>Dismiss</Button>} intent={Intent.Primary}>
+            what's up, this is a notice
+          </Notice>
+
           <Card cardTitle={"hello amino"}>
             <InputGroup>
               <Input placeholder='John' label='First name' />

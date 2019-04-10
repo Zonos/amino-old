@@ -35,6 +35,7 @@ const Link = styled.a`
 const Label = styled.span`
   font-size: 16px;
   color: ${Color.text.veryLight};
+  font-weight: 500;
 `;
 
 export const EmptyState: React.FC<Props> = props => {
@@ -44,7 +45,9 @@ export const EmptyState: React.FC<Props> = props => {
     <EmptyContainer>
       <Label>
         {label}
-        <Link href={url}>Learn more</Link>
+        <Link target="_blank" href={url}>
+          Learn more
+        </Link>
       </Label>
       {action && <Action>{action}</Action>}
     </EmptyContainer>

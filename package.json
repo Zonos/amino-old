@@ -1,6 +1,6 @@
 {
   "name": "amino-ui",
-  "version": "0.3.56",
+  "version": "0.3.59",
   "description": "",
   "keywords": [],
   "main": "dist/amino-ui.umd.js",
@@ -116,6 +116,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
-    "react": "^16.8.3"
+    "@types/react-transition-group": "^2.9.0",
+    "react-transition-group": "^2.9.0"
   }
 }

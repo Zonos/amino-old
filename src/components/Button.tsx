@@ -29,6 +29,10 @@ const StyledButton = styled.button`
   background: #fff;
   text-decoration: none;
 
+  svg {
+    fill: ${Color.text.light};
+  }
+
   &:hover {
     background: rgba(0, 0, 0, 0.015);
     color: ${Color.text.light};

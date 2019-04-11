@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { CSSTransition } from "react-transition-group";
+
 import { Density, Color } from "../styles/Theme";
 import { Text, TextStyle } from "./Text";
 
@@ -13,6 +15,25 @@ const StyledItem = styled.div`
   height: 64px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.045);
   cursor: ${(props: any) => (props.onClick ? "pointer" : "inherit")};
+
+  .amino-pop-enter {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  .amino-pop-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 150ms, transform 150ms;
+  }
+  .amino-pop-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .amino-pop-exit-active {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 150ms, transform 150ms;
+  }
 
   &:first-of-type {
     margin-top: -${Density.spacing.md};
@@ -83,12 +104,25 @@ type Props = {
   compact?: boolean;
   labelWidth?: number;
   active?: boolean;
+  revealActions?: boolean;
 };
 
 // TODO: refactor styling and compact/non-compact mode
 
 export const ListItem: React.FC<Props> = props => {
-  const { label, subtitle, icon, action, onClick, compact, labelWidth, active } = props;
+  const {
+    revealActions,
+    label,
+    subtitle,
+    icon,
+    action,
+    onClick,
+    compact,
+    labelWidth,
+    active
+  } = props;
+
+  const [hover, setHover] = useState(false);
 
   const ItemInfo = () => (
     <Info active={active}>
@@ -123,9 +157,19 @@ export const ListItem: React.FC<Props> = props => {
   return (
     <>
       {!compact && (
-        <StyledItem onClick={onClick}>
+        <StyledItem
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          onClick={onClick}
+        >
           <ItemBody />
-          {action}
+          {revealActions && (
+            <CSSTransition unmountOnExit in={hover} timeout={150} classNames="amino-pop">
+              <div>{action}</div>
+            </CSSTransition>
+          )}
+
+          {!revealActions && { action }}
         </StyledItem>
       )}
 

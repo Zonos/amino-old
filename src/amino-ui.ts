@@ -21,6 +21,7 @@ export * from "./components/Form";
 export * from "./components/Text";
 export * from "./components/EmptyState";
 export * from "./components/Notice";
+export * from "./components/SaveHeader";
 
 // Theme
 export * from "./styles/Color";

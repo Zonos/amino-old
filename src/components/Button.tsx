@@ -83,6 +83,11 @@ const DangerButton = styled(StyledButton)`
   }
 `;
 
+const IconButton = styled(StyledButton)`
+  padding-left: ${Density.spacing.sm};
+  padding-right: ${Density.spacing.sm};
+`;
+
 type ButtonProps = {
   primary?: boolean;
   saving?: boolean;
@@ -114,6 +119,12 @@ export const Button: React.FC<Props> = props => {
           <DangerButton {...buttonProps}>
             <ButtonInner />
           </DangerButton>
+        );
+      case Intent.Icon:
+        return (
+          <IconButton {...buttonProps}>
+            <ButtonInner />
+          </IconButton>
         );
       case Intent.None:
       default:

@@ -18,7 +18,7 @@ const StyledItem = styled.div`
 
   .amino-pop-enter {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   .amino-pop-enter-active {
     opacity: 1;
@@ -31,7 +31,7 @@ const StyledItem = styled.div`
   }
   .amino-pop-exit-active {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
     transition: opacity 150ms, transform 150ms;
   }
 
@@ -169,7 +169,7 @@ export const ListItem: React.FC<Props> = props => {
             </CSSTransition>
           )}
 
-          {!revealActions && { action }}
+          {!revealActions && <>{action}</>}
         </StyledItem>
       )}
 

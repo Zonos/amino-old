@@ -16,9 +16,9 @@ import {
   ListItem,
   Intent,
   EmptyState,
-  Notice
+  Notice,
+  SaveHeader
 } from "amino-ui";
-import styled from "styled-components";
 
 export const App = () => {
   return (
@@ -30,6 +30,8 @@ export const App = () => {
       </AppBar>
       <Page>
         <CardStack>
+          <SaveHeader />
+
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>
@@ -154,7 +156,7 @@ export const App = () => {
               <ListItem
                 label='List item'
                 subtitle="its a great item"
-                action={<Button>Action</Button>}
+                action={<Button intent={Intent.Icon}>i</Button>}
                 revealActions
               />
             </List>

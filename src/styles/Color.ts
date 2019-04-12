@@ -32,10 +32,19 @@ class TextColor implements IColorScale {
   veryDark = "";
 }
 
+class DarkColor implements IColorScale {
+  veryLight = "#7B8B9A";
+  light = "#66788A";
+  base = "#425A70";
+  dark = "#234361";
+  veryDark = "";
+}
+
 export const Color = {
   primary: new PrimaryColor(),
   danger: new DangerColor(),
   warning: new WarningColor(),
+  dark: new DarkColor(),
   text: new TextColor(),
 
   // DEPRECATED

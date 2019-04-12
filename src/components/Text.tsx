@@ -50,16 +50,38 @@ const Unstyled = styled.div`
   color: ${Color.text.base};
 `;
 
+const LightHeading3 = styled(Heading3)`
+  color: white;
+`;
+
+const LightSubtitle = styled(Subtitle)`
+  color: white;
+  opacity: 0.7;
+`;
+
 type Props = {
   style?: TextStyle;
+  light?: boolean;
 };
 
 export const Text: React.FC<Props> = props => {
-  const { children, style } = props;
+  const { children, style, light } = props;
 
   const buildTag = () => {
     if (style === undefined) {
       return <Unstyled>{children}</Unstyled>;
+    }
+
+    if (light) {
+      /* TODO: all styles */
+      switch (style) {
+        case TextStyle.Heading3:
+          return <LightHeading3>{children}</LightHeading3>;
+        case TextStyle.Subtitle:
+          return <LightSubtitle>{children}</LightSubtitle>;
+        default:
+          return <Unstyled>{children}</Unstyled>;
+      }
     }
 
     switch (style) {

@@ -23,6 +23,7 @@ export * from "./components/EmptyState";
 export * from "./components/Notice";
 export * from "./components/SaveHeader";
 export * from "./components/Checkbox";
+export * from "./components/Textarea";
 
 // Theme
 export * from "./styles/Color";

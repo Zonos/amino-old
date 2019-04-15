@@ -18,7 +18,9 @@ import {
   EmptyState,
   Notice,
   SaveHeader,
-  Checkbox
+  Checkbox,
+  Radio,
+  RadioGroup
 } from "amino-ui";
 
 export const App = () => {
@@ -27,9 +29,7 @@ export const App = () => {
   return (
     <Fragment>
       <AppBar>
-        <ResponsiveContainer>
-          the app bar
-        </ResponsiveContainer>
+        <ResponsiveContainer>the app bar</ResponsiveContainer>
       </AppBar>
       <Page>
         <CardStack>
@@ -40,19 +40,23 @@ export const App = () => {
           </Notice>
 
           <Card>
-            <Button onClick={() => setChecked(!checked) }>toggle</Button>
+            <RadioGroup items={[{ value: 123, label: "asdf" }, { value: 456, label: "qwerty" }]} />
+          </Card>
+
+          <Card>
+            <Button onClick={() => setChecked(!checked)}>toggle</Button>
             <Checkbox checked={checked} onChange={setChecked} />
           </Card>
 
           <Card cardTitle={"hello amino"}>
             <InputGroup>
-              <Input placeholder='John' label='First name' />
-              <Input placeholder='Doe' label='Last name' />
-              <Input placeholder='john.doe@example.com' label='Email' />
+              <Input placeholder="John" label="First name" />
+              <Input placeholder="Doe" label="Last name" />
+              <Input placeholder="john.doe@example.com" label="Email" />
               <Input
-                placeholder='Disabled'
+                placeholder="Disabled"
                 disabled
-                label='Disabled Input'
+                label="Disabled Input"
                 value="You can't change me"
               />
             </InputGroup>
@@ -79,7 +83,7 @@ export const App = () => {
           <Card>
             <InputGroup>
               <Select
-                label='Select an item'
+                label="Select an item"
                 items={[
                   {
                     label: "item 1",
@@ -98,71 +102,93 @@ export const App = () => {
                     value: "value4"
                   }
                 ]}
-                defaultValue='value 3'
+                defaultValue="value 3"
               />
-              <CopyInput label='API key' value='asbsb-sdfsdf-234424-sdfasdf' />
+              <CopyInput label="API key" value="asbsb-sdfsdf-234424-sdfasdf" />
             </InputGroup>
           </Card>
-          <Card cardTitle="Title" actions={<Button primary raised>Hi</Button>}>
+          <Card
+            cardTitle="Title"
+            actions={
+              <Button primary raised>
+                Hi
+              </Button>
+            }
+          >
             <List>
               <ListItem
                 compact
                 labelWidth={300}
-                label='List item'
+                label="List item"
                 subtitle="its a great item"
-              onClick={() => {console.log("hi")}}
+                onClick={() => {
+                  console.log("hi");
+                }}
                 action={<Button>Action</Button>}
               />
               <ListItem
                 compact
-                label='List item'
+                label="List item"
                 labelWidth={300}
                 active={false}
                 subtitle="its a great item"
-                onClick={() => {console.log("hi")}}
+                onClick={() => {
+                  console.log("hi");
+                }}
                 action={<Button>Action</Button>}
               />
               <ListItem
                 compact
                 active={false}
                 labelWidth={300}
-                label='asdfasdfasdf List item'
+                label="asdfasdfasdf List item"
                 subtitle="its a great item"
-                onClick={() => {console.log("hi")}}
+                onClick={() => {
+                  console.log("hi");
+                }}
                 action={<Button>Action</Button>}
               />
               <ListItem
                 compact
                 labelWidth={300}
-                label='List item'
+                label="List item"
                 subtitle="its a great item"
-                onClick={() => {console.log("hi")}}
+                onClick={() => {
+                  console.log("hi");
+                }}
                 action={<Button>Action</Button>}
               />
             </List>
           </Card>
-          <Card cardTitle="Title" actions={<Button primary raised>Hi</Button>}>
+          <Card
+            cardTitle="Title"
+            actions={
+              <Button primary raised>
+                Hi
+              </Button>
+            }
+          >
             <List>
               <ListItem
-                label='List item'
+                label="List item"
                 subtitle="its a great item"
                 action={<Button>Action</Button>}
                 revealActions
               />
               <ListItem
-                label='List item'
+                label="List item"
                 subtitle="its a great item"
                 action={<Button>Action</Button>}
                 revealActions
               />
               <ListItem
-                label='List item'
+                label="List item"
                 subtitle="its a great item"
                 action={<Button>Action</Button>}
                 revealActions
               />
               <ListItem
-                label='List item'
+                label="List item"
                 subtitle="its a great item"
                 action={<Button intent={Intent.Icon}>i</Button>}
                 revealActions
@@ -170,7 +196,11 @@ export const App = () => {
             </List>
           </Card>
           <Card>
-            <EmptyState label="You don't have any coupons." url="https://docs.zonos.com" action={<Button>Create your first coupon</Button>} />
+            <EmptyState
+              label="You don't have any coupons."
+              url="https://docs.zonos.com"
+              action={<Button>Create your first coupon</Button>}
+            />
           </Card>
         </CardStack>
       </Page>

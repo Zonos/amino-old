@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Color, Density } from "../styles/Theme";
+import { Color } from "../styles/Theme";
 
 const StyledCheckbox = styled.div`
   width: 16px;

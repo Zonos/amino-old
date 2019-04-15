@@ -17,7 +17,8 @@ import {
   Intent,
   EmptyState,
   Notice,
-  SaveHeader
+  SaveHeader,
+  Checkbox
 } from "amino-ui";
 
 export const App = () => {
@@ -35,6 +36,10 @@ export const App = () => {
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>
+
+          <Card>
+            <Checkbox />
+          </Card>
 
           <Card cardTitle={"hello amino"}>
             <InputGroup>

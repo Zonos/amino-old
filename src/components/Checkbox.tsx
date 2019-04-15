@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Color, Density } from "../styles/Theme";
 
@@ -45,30 +45,12 @@ type Props = {
 export const Checkbox: React.FC<Props> = props => {
   const { checked, onChange } = props;
 
-  const [value, setValue] = useState(false);
-
-  useEffect(() => {
-    if (checked !== undefined) {
-      setValue(checked);
-    } else {
-      setValue(false);
-    }
-  }, [checked]);
-
-  useEffect(() => {
-    console.log(value);
-
-    if (onChange) {
-      onChange(value);
-    }
-  }, [value]);
-
   return (
     <>
-      {!value && <StyledCheckbox onClick={() => setValue(!value)} />}
-      {value && (
+      {!checked && <StyledCheckbox onClick={() => onChange(!checked)} />}
+      {checked && (
         // TODO: animate in
-        <SelectedCheckbox onClick={() => setValue(!value)}>
+        <SelectedCheckbox onClick={() => onChange(!checked)}>
           <CheckIcon />
         </SelectedCheckbox>
       )}

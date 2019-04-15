@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   Spinner,
   Page,
@@ -22,6 +22,8 @@ import {
 } from "amino-ui";
 
 export const App = () => {
+  const [checked, setChecked] = useState(false);
+
   return (
     <Fragment>
       <AppBar>
@@ -38,7 +40,8 @@ export const App = () => {
           </Notice>
 
           <Card>
-            <Checkbox />
+            <Button onClick={() => setChecked(!checked) }>toggle</Button>
+            <Checkbox checked={checked} onChange={setChecked} />
           </Card>
 
           <Card cardTitle={"hello amino"}>

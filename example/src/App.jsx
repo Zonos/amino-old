@@ -40,7 +40,7 @@ export const App = () => {
           </Notice>
 
           <Card>
-            <RadioGroup items={[{ value: 123, label: "asdf" }, { value: 456, label: "qwerty" }]} />
+            <RadioGroup onChange={v => console.log(v)} items={[{ value: 123, label: "asdf" }, { value: 456, label: "qwerty" }]} />
           </Card>
 
           <Card>

@@ -27,8 +27,9 @@ export const RadioGroup: React.FC<Props> = props => {
   const [active, setActive] = useState(-1);
 
   useEffect(() => {
-    if (onChange) {
-      onChange(itemValuePath ? items[active][itemValuePath] : items[active].value);
+    if (onChange && items[active]) {
+      const value = itemValuePath ? items[active][itemValuePath] : items[active].value;
+      onChange(value);
     }
   }, [active]);
 

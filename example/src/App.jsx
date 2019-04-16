@@ -20,8 +20,15 @@ import {
   SaveHeader,
   Checkbox,
   Radio,
-  RadioGroup
+  RadioGroup,
+  Grid
 } from "amino-ui";
+
+import styled from 'styled-components';
+
+const GridWrap = styled.div`
+  margin: -20px;
+`;
 
 export const App = () => {
   const [checked, setChecked] = useState(false);
@@ -38,6 +45,24 @@ export const App = () => {
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>
+
+          <Card>
+            <GridWrap>
+
+            <Grid
+              data={[
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
+              ]}
+            />
+
+            </GridWrap>
+          </Card>
 
           <Card>
             <RadioGroup

@@ -19,19 +19,31 @@ type Props = {
   onChange?: any;
   itemValuePath?: string;
   itemLabelPath?: string;
+  initialValue?: string;
 };
 
 export const RadioGroup: React.FC<Props> = props => {
-  const { items, onChange, itemValuePath, itemLabelPath } = props;
+  const { items, onChange, itemValuePath, itemLabelPath, initialValue } = props;
 
   const [active, setActive] = useState(-1);
 
   useEffect(() => {
-    if (onChange && items[active]) {
+    if (onChange && items[active] && items[active] !== initialValue) {
       const value = itemValuePath ? items[active][itemValuePath] : items[active].value;
       onChange(value);
     }
   }, [active]);
+
+  useEffect(() => {
+    const initial = items.findIndex(el => {
+      const value = itemValuePath ? el[itemValuePath] : el.value;
+      return value === initialValue;
+    });
+
+    if (initial > -1) {
+      setActive(initial);
+    }
+  }, [initialValue]);
 
   const checked = (index: number) => {
     return index === active;

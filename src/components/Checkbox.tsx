@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Color } from "../styles/Theme";
+import { Color, Density } from "../styles/Theme";
+import { Text } from "./Text";
 
 const StyledCheckbox = styled.div`
   width: 16px;
@@ -28,6 +29,19 @@ const SelectedCheckbox = styled(StyledCheckbox)`
   }
 `;
 
+const CheckboxContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  label {
+    margin-left: ${Density.spacing.sm};
+    cursor: pointer;
+  }
+`;
+
 const CheckIcon = () => (
   <svg width={10} height={7} viewBox="0 0 10 7">
     <path
@@ -40,13 +54,14 @@ const CheckIcon = () => (
 type Props = {
   checked?: boolean;
   onChange?: any;
+  label?: string;
 };
 
 export const Checkbox: React.FC<Props> = props => {
-  const { checked, onChange } = props;
+  const { label, checked, onChange } = props;
 
   return (
-    <>
+    <CheckboxContainer onClick={() => onChange(!checked)}>
       {!checked && <StyledCheckbox onClick={() => onChange(!checked)} />}
       {checked && (
         // TODO: animate in
@@ -54,7 +69,12 @@ export const Checkbox: React.FC<Props> = props => {
           <CheckIcon />
         </SelectedCheckbox>
       )}
-    </>
+      {label && (
+        <label>
+          <Text>{label}</Text>
+        </label>
+      )}
+    </CheckboxContainer>
   );
 };
 

@@ -21,7 +21,7 @@ const LinkButton = styled.button`
   transition: all 150ms ease-in-out;
   background: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
 
   &:hover {

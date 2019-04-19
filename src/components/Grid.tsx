@@ -15,7 +15,7 @@ const StyledGrid = styled.div`
     font-size: 14px;
     height: 44px;
     color: ${Color.text.base};
-    padding: 0 ${Density.spacing.sm};
+    padding: 0 ${Density.spacing.md};
   }
 
   & .griddle-table {
@@ -28,7 +28,7 @@ const StyledGrid = styled.div`
     padding: 0;
     margin: 0;
     border: 0;
-    padding: 0 ${Density.spacing.sm};
+    padding: 0 ${Density.spacing.md};
     border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     text-align: left;
     color: ${Color.text.base};

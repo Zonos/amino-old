@@ -9,7 +9,7 @@ import { Density } from "../styles/Density";
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
   border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
@@ -34,7 +34,7 @@ const SelectContainer = styled.div`
 const StyledSelect = styled.select`
   padding: 5px 0;
   width: 100%;
-  font-size: 15px;
+  font-size: 14px;
   border: none;
   box-shadow: none;
   background: transparent;
@@ -49,7 +49,7 @@ const StyledSelect = styled.select`
 
 const SelectLabel = styled.label`
   color: ${Color.text.light};
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.6;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;

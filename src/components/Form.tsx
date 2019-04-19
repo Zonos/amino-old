@@ -122,14 +122,13 @@ export const Form: React.FC<Props> = props => {
       case FieldType.Text:
       case FieldType.Email:
         return (
-          <InputGroup key={key}>
-            <Input
-              {...fieldProps}
-              valid={validateForUI(fieldName, field)}
-              value={formData[fieldName as any]}
-              onChange={(e: any) => fieldChanged(e, fieldName)}
-            />
-          </InputGroup>
+          <Input
+            {...fieldProps}
+            key={key}
+            valid={validateForUI(fieldName, field)}
+            value={formData[fieldName as any]}
+            onChange={(e: any) => fieldChanged(e, fieldName)}
+          />
         );
     }
   };
@@ -140,5 +139,9 @@ export const Form: React.FC<Props> = props => {
     formFields.push(renderField(field, fields[field], index));
   });
 
-  return <form>{formFields}</form>;
+  return (
+    <form>
+      <InputGroup>{formFields}</InputGroup>
+    </form>
+  );
 };

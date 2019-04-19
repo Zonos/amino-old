@@ -21,7 +21,9 @@ import {
   Checkbox,
   Radio,
   RadioGroup,
-  Grid
+  Grid,
+  Form,
+  FieldType
 } from "amino-ui";
 
 import styled from 'styled-components';
@@ -45,6 +47,43 @@ export const App = () => {
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>
+
+          <Card>
+            <Form
+              onChange={() => {}}
+              fields={{
+                address1: {
+                  type: FieldType.Text,
+                  placeholder: "Address line 1",
+                  constraints: { required: true }
+                },
+                address2: {
+                  type: FieldType.Text,
+                  placeholder: "Address line 2"
+                },
+                city: {
+                  type: FieldType.Text,
+                  placeholder: "City",
+                  constraints: { required: true }
+                },
+                state: {
+                  type: FieldType.Text,
+                  placeholder: "State/province",
+                  constraints: { required: true }
+                },
+                postal: {
+                  type: FieldType.Text,
+                  placeholder: "Postal code",
+                  constraints: { required: true }
+                },
+                country: {
+                  type: FieldType.Text,
+                  placeholder: "Country",
+                  constraints: { required: true }
+                }
+              }}
+            />
+          </Card>
 
           <Card>
             <GridWrap>

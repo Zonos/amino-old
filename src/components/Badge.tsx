@@ -8,6 +8,6 @@ export const Badge = styled.span`
   display: inline-block;
   border-radius: 50px;
   width: fit-content;
-  font-size: 14px;
+  font-size: 15px;
   color: ${Color.text.base};
 `;

@@ -12,7 +12,7 @@ const StyledGrid = styled.div`
     margin: 0;
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.045);
-    font-size: 14px;
+    font-size: 15px;
     height: 44px;
     color: ${Color.text.base};
     padding: 0 ${Density.spacing.md};
@@ -32,7 +32,7 @@ const StyledGrid = styled.div`
     border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     text-align: left;
     color: ${Color.text.base};
-    font-size: 14px;
+    font-size: 15px;
     height: 44px;
     font-weight: 700;
   }

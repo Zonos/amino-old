@@ -51,10 +51,11 @@ const Info = styled.div`
 type Props = {
   onSave?: any;
   onCancel?: any;
+  saving: boolean;
 };
 
 export const SaveHeader: React.FC<Props> = props => {
-  const { onSave, onCancel } = props;
+  const { onSave, onCancel, saving } = props;
 
   return (
     <SaveCard>
@@ -70,7 +71,7 @@ export const SaveHeader: React.FC<Props> = props => {
 
         <Buttons>
           <LinkButton onClick={onCancel}>Cancel</LinkButton>
-          <Button onClick={onSave} intent={Intent.Primary}>
+          <Button saving={saving} onClick={onSave} intent={Intent.Primary}>
             Save
           </Button>
         </Buttons>

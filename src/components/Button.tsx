@@ -13,8 +13,8 @@ const StyledButton = styled.button`
   border: 0;
   border-radius: ${Surface.defaultRadius};
   font-weight: 500;
-  padding-left: ${Density.spacing.md};
-  padding-right: ${Density.spacing.md};
+  padding-left: ${Density.spacing.sm};
+  padding-right: ${Density.spacing.sm};
   outline: none;
   cursor: pointer;
   flex-direction: row;

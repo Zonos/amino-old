@@ -49,6 +49,36 @@ export const App = () => {
           </Notice>
 
           <Card>
+            <form>
+              <Input label="hi" />
+              <Input label="hi" />
+              <Input label="hi" />
+              <Select
+                label="Select an item"
+                items={[
+                  {
+                    label: "item 1",
+                    value: "value1"
+                  },
+                  {
+                    label: "item 2",
+                    value: "value1"
+                  },
+                  {
+                    label: "item 3",
+                    value: "value3"
+                  },
+                  {
+                    label: "item 4",
+                    value: "value4"
+                  }
+                ]}
+                defaultValue="value 3"
+              />
+            </form>
+          </Card>
+
+          <Card>
             <Form
               onChange={() => {}}
               fields={{

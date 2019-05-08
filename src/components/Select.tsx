@@ -8,34 +8,35 @@ import { Density } from "../styles/Density";
 
 const SelectContainer = styled.div`
   border-radius: ${Surface.defaultRadius};
-  border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
   color: ${Color.text.light};
   display: block;
-  padding: 0 ${Density.spacing.sm};
   height: 34px;
   width: 100%;
-  padding-top: 1.5px;
+  padding: 0;
   position: relative;
   font-family: ${Typography.defaultFontFamily};
   background: white;
 
   svg {
     position: absolute;
-    right: 12px;
+    right: ${Density.spacing.sm};
     top: 4px;
     fill: ${Color.text.veryLight};
   }
 `;
 
 const StyledSelect = styled.select`
-  padding: 5px 0;
-  width: 100%;
-  font-size: 15px;
+  padding: ${Density.spacing.xs} ${Density.spacing.sm};
   border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 34px;
+  font-size: 15px;
+  line-height: 17px;
   box-shadow: none;
   background: transparent;
   color: ${Color.text.light};
@@ -44,6 +45,8 @@ const StyledSelect = styled.select`
 
   &:focus {
     outline: none;
+    border: 1px solid ${Color.primary.veryLight};
+    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
   }
 `;
 

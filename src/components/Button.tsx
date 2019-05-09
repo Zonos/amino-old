@@ -10,10 +10,10 @@ const StyledButton = styled.button`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  border-radius: ${Surface.defaultRadius};
+  border-radius: ${props => props.theme.Surface.defaultRadius};
   font-weight: 500;
-  padding-left: ${Density.spacing.sm};
-  padding-right: ${Density.spacing.sm};
+  padding-left: ${props => props.theme.Density.spacing.sm};
+  padding-right: ${props => props.theme.Density.spacing.sm};
   outline: none;
   cursor: pointer;
   flex-direction: row;
@@ -24,12 +24,12 @@ const StyledButton = styled.button`
   transition: all 100ms ease-in-out;
   height: 34px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  color: ${Color.text.light};
+  color: ${props => props.theme.Color.text.light};
   background: #fff;
   text-decoration: none;
 
   svg {
-    fill: ${Color.text.light};
+    fill: ${props => props.theme.Color.text.light};
   }
 
   &:hover {
@@ -66,25 +66,25 @@ const PrimaryButton = styled(StyledButton)`
 `;
 
 const DangerButton = styled(StyledButton)`
-  background: ${Color.danger.base};
+  background: ${props => props.theme.Color.danger.base};
   color: #fff;
   border: 0;
 
   &:hover {
-    background: ${Color.danger.dark};
+    background: ${props => props.theme.Color.danger.dark};
     color: #fff;
   }
 
   &:active {
-    background: ${Color.danger.dark};
-    box-shadow: 0 0 0 3px ${Color.danger.light};
+    background: ${props => props.theme.Color.danger.dark};
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.danger.light};
     color: #fff;
   }
 `;
 
 const IconButton = styled(StyledButton)`
-  padding-left: ${Density.spacing.sm};
-  padding-right: ${Density.spacing.sm};
+  padding-left: ${props => props.theme.Density.spacing.sm};
+  padding-right: ${props => props.theme.Density.spacing.sm};
 `;
 
 type ButtonProps = {

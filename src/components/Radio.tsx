@@ -17,7 +17,7 @@ const StyledRadio = styled.div`
   user-select: none;
 
   &:active {
-    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
     background: rgba(0, 0, 0, 0.015);
   }
 `;
@@ -29,7 +29,7 @@ const CircleIcon = () => (
 );
 
 const SelectedRadio = styled(StyledRadio)`
-  background: ${Color.primary.base} !important;
+  background: ${props => props.theme.Color.primary.base} !important;
 
   svg {
     fill: white;
@@ -44,7 +44,7 @@ const RadioContainer = styled.div`
   user-select: none;
 
   label {
-    margin-left: ${Density.spacing.sm};
+    margin-left: ${props => props.theme.Density.spacing.sm};
     cursor: pointer;
   }
 `;

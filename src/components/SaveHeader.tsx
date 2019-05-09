@@ -8,12 +8,12 @@ import { Color, Density, Surface } from "../styles/Theme";
 import { Intent } from "../schemas/Intent";
 
 const SaveCard = styled(Card)`
-  box-shadow: ${Surface.shadow.high};
-  background: ${Color.dark.base};
+  box-shadow: ${props => props.theme.Surface.shadow.high};
+  background: ${props => props.theme.Color.dark.base};
 `;
 
 const LinkButton = styled.button`
-  margin-right: ${Density.spacing.md};
+  margin-right: ${props => props.theme.Density.spacing.md};
   color: white;
   border: 0;
   padding: 0;

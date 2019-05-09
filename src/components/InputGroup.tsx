@@ -4,7 +4,7 @@ import { Density } from "../styles/Theme";
 
 export const InputGroup = styled.div`
   .amino-input-wrapper {
-    margin-bottom: ${Density.spacing.md};
+    margin-bottom: ${props => props.theme.Density.spacing.md};
   }
 
   .amino-input-wrapper:last-of-type {

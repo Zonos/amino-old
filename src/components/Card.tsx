@@ -5,9 +5,9 @@ import { Text, TextStyle } from "./Text";
 
 const StyledCard = styled.section`
   background: white;
-  border-radius: ${Surface.defaultRadius};
-  padding: ${Density.spacing.md};
-  box-shadow: ${Surface.shadow.base};
+  border-radius: ${props => props.theme.Surface.defaultRadius};
+  padding: ${props => props.theme.Density.spacing.md};
+  box-shadow: ${props => props.theme.Surface.shadow.base};
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -20,9 +20,9 @@ const Header = styled.header`
   flex-direction: row;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.045);
-  margin: -${Density.spacing.md};
-  margin-bottom: ${Density.spacing.md};
-  padding: 0 ${Density.spacing.md};
+  margin: -${props => props.theme.Density.spacing.md};
+  margin-bottom: ${props => props.theme.Density.spacing.md};
+  padding: 0 ${props => props.theme.Density.spacing.md};
 
   h1 {
     flex: 1;

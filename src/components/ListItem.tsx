@@ -9,12 +9,12 @@ const StyledItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: ${Density.spacing.md};
-  margin: 0 -${Density.spacing.md};
+  padding: ${props => props.theme.Density.spacing.md};
+  margin: 0 -${props => props.theme.Density.spacing.md};
   box-sizing: border-box;
   height: 64px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.045);
-  cursor: ${(props: any) => (props.onClick ? "pointer" : "inherit")};
+  cursor: ${props => (props.onClick ? "pointer" : "inherit")};
 
   .amino-pop-enter {
     opacity: 0;
@@ -36,25 +36,25 @@ const StyledItem = styled.div`
   }
 
   &:first-of-type {
-    margin-top: -${Density.spacing.md};
+    margin-top: -${props => props.theme.Density.spacing.md};
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
   }
 
   &:last-of-type {
-    margin-bottom: -${Density.spacing.md};
+    margin-bottom: -${props => props.theme.Density.spacing.md};
     border-bottom: 0;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
   }
 
   &:hover {
-    background: ${(props: any) => (props.onClick ? "#fafafa" : "transparent")};
+    background: ${props => (props.onClick ? "#fafafa" : "transparent")};
   }
 `;
 
 const CompactItem = styled(StyledItem)`
-  padding: ${Density.spacing.xs} ${Density.spacing.md};
+  padding: ${props => props.theme.Density.spacing.xs} ${props => props.theme.Density.spacing.md};
   height: 42px;
 `;
 
@@ -62,7 +62,7 @@ const StyledIcon = styled.img`
   border-radius: 4px;
   width: 34px;
   height: 34px;
-  margin-right: ${Density.spacing.sm};
+  margin-right: ${props => props.theme.Density.spacing.sm};
 `;
 
 const StyledLeft = styled.div`
@@ -75,8 +75,8 @@ const Info = styled.div<any>`
   display: flex;
   flex-direction: column;
 
-  opacity: ${(p: any) => (p.active ? "1" : "0.5")};
-  text-decoration: ${(p: any) => (p.active ? "none" : "line-through")};
+  opacity: ${props => (props.active ? "1" : "0.5")};
+  text-decoration: ${props => (props.active ? "none" : "line-through")};
 `;
 
 const CompactInfo = styled.div<any>`
@@ -84,15 +84,15 @@ const CompactInfo = styled.div<any>`
   flex-direction: row;
 
   *:not(:first-child) {
-    margin-left: ${Density.spacing.sm};
+    margin-left: ${props => props.theme.Density.spacing.sm};
   }
 
-  opacity: ${(p: any) => (p.active ? "1" : "0.5")};
-  text-decoration: ${(p: any) => (p.active ? "none" : "line-through")};
+  opacity: ${props => (props.active ? "1" : "0.5")};
+  text-decoration: ${props => (props.active ? "none" : "line-through")};
 `;
 
 const Width = styled.div<any>`
-  width: ${(p: any) => p.width}px;
+  width: ${props => props.width}px;
 `;
 
 type Props = {

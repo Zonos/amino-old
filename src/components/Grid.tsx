@@ -8,14 +8,13 @@ const StyledGrid = styled.div`
   width: 100%;
 
   & .griddle-cell {
-    padding: 0;
     margin: 0;
     border: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     font-size: 15px;
     height: 44px;
-    color: ${Color.text.base};
-    padding: 0 ${Density.spacing.md};
+    color: ${props => props.theme.Color.text.base};
+    padding: 0 ${props => props.theme.Density.spacing.md};
   }
 
   & .griddle-table {
@@ -25,13 +24,12 @@ const StyledGrid = styled.div`
   }
 
   & .griddle-table-heading-cell {
-    padding: 0;
     margin: 0;
     border: 0;
-    padding: 0 ${Density.spacing.md};
+    padding: 0 ${props => props.theme.Density.spacing.md};
     border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     text-align: left;
-    color: ${Color.text.base};
+    color: ${props => props.theme.Color.text.base};
     font-size: 15px;
     height: 44px;
     font-weight: 700;

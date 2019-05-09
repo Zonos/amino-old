@@ -7,11 +7,11 @@ import "./index.css";
 import { App } from "./App";
 
 class CustomPrimaryColor {
-  veryLight = "#F1FBFC";
-  light = "#D2EEF3";
-  base = "#14B5D0";
-  dark = "#007489";
-  veryDark = "#007489";
+  veryLight = "#EAE7F8";
+  light = "#EAE7F8";
+  base = "#735DD0";
+  dark = "#37248F";
+  veryDark = "#37248F";
 }
 
 const CustomTheme = ExtendTheme({
@@ -19,8 +19,6 @@ const CustomTheme = ExtendTheme({
     primary: new CustomPrimaryColor()
   }
 });
-
-console.log(CustomTheme);
 
 ReactDOM.render(
   <ThemeProvider theme={CustomTheme}>

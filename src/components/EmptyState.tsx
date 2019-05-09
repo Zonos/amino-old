@@ -18,13 +18,13 @@ const EmptyContainer = styled.div`
 `;
 
 const Action = styled.div`
-  margin-top: ${Density.spacing.sm};
+  margin-top: ${props => props.theme.Density.spacing.sm};
 `;
 
 const Link = styled.a`
   text-decoration: none;
-  margin-left: ${Density.spacing.xs};
-  color: ${Color.primary.base};
+  margin-left: ${props => props.theme.Density.spacing.xs};
+  color: ${props => props.theme.Color.primary.base};
 
   &:hover {
     text-decoration: underline;
@@ -34,7 +34,7 @@ const Link = styled.a`
 // TODO: use text style
 const Label = styled.span`
   font-size: 16px;
-  color: ${Color.text.veryLight};
+  color: ${props => props.theme.Color.text.veryLight};
   font-weight: 500;
 `;
 

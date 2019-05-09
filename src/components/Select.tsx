@@ -7,31 +7,29 @@ import { Surface, Typography } from "../styles/Theme";
 import { Density } from "../styles/Density";
 
 const SelectContainer = styled.div`
-  border-radius: ${Surface.defaultRadius};
+  border-radius: ${props => props.theme.Surface.defaultRadius};
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
-  color: ${Color.text.light};
+  color: ${props => props.theme.Color.text.light};
   display: block;
   height: 34px;
   width: 100%;
   padding: 0;
   position: relative;
-  font-family: ${Typography.defaultFontFamily};
   background: white;
 
   svg {
     position: absolute;
-    right: ${Density.spacing.sm};
+    right: ${props => props.theme.Density.spacing.sm};
     top: 4px;
-    fill: ${Color.text.veryLight};
+    fill: ${props => props.theme.Color.text.veryLight};
   }
 `;
 
 const StyledSelect = styled.select`
-  padding: ${Density.spacing.xs} ${Density.spacing.sm};
-  border: none;
+  padding: ${props => props.theme.Density.spacing.xs} ${props => props.theme.Density.spacing.sm};
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 34px;
@@ -39,19 +37,19 @@ const StyledSelect = styled.select`
   line-height: 17px;
   box-shadow: none;
   background: transparent;
-  color: ${Color.text.light};
+  color: ${props => props.theme.Color.text.light};
   font-family: ${Typography.defaultFontFamily};
   -webkit-appearance: none;
 
   &:focus {
     outline: none;
-    border: 1px solid ${Color.primary.veryLight};
-    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
+    border: 1px solid ${props => props.theme.Color.primary.veryLight};
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
   }
 `;
 
 const SelectLabel = styled.label`
-  color: ${Color.text.light};
+  color: ${props => props.theme.Color.text.light};
   font-size: 15px;
   opacity: 0.6;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */

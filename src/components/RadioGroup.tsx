@@ -6,7 +6,7 @@ import { Density } from "../styles/Density";
 
 const RadioContainer = styled.div`
   * {
-    margin-bottom: ${Density.spacing.sm};
+    margin-bottom: ${props => props.theme.Density.spacing.sm};
   }
 
   *:last-of-type {

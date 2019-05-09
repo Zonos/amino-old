@@ -5,38 +5,36 @@ import { IDataConstraints } from "../schemas/IDataConstraints";
 import { Color, Surface, Typography, Density } from "../styles/Theme";
 
 const StyledInput = styled.input<Props>`
-  border-radius: ${Surface.defaultRadius};
-  border: 1px solid ${(p: Props) => (p.valid ? "rgba(0, 0, 0, 0.1)" : "red")};
-  // box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border-radius: ${props => props.theme.Surface.defaultRadius};
+  border: 1px solid ${props => (props.valid ? "rgba(0, 0, 0, 0.1)" : "red")};
   font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
-  color: ${Color.text.light};
+  color: ${props => props.theme.Color.text.light};
   display: block;
-  padding: ${Density.spacing.xs} ${Density.spacing.sm};
+  padding: ${props => props.theme.Density.spacing.xs} ${props => props.theme.Density.spacing.sm};
   height: 34px;
   width: 100%;
-  font-family: ${Typography.defaultFontFamily};
 
   &::-webkit-input-placeholder {
-    color: ${Color.text.light};
+    color: ${props => props.theme.Color.text.light};
     opacity: 0.3;
   }
 
   &::-moz-placeholder {
-    color: ${Color.text.light};
+    color: ${props => props.theme.Color.text.light};
     opacity: 0.3;
   }
 
   &:-ms-input-placeholder {
-    color: ${Color.text.light};
+    color: ${props => props.theme.Color.text.light};
     opacity: 0.3;
   }
 
   &:focus {
-    border: 1px solid ${Color.primary.veryLight};
-    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
+    border: 1px solid ${props => props.theme.Color.primary.veryLight};
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
   }
 
   &:disabled {
@@ -46,7 +44,7 @@ const StyledInput = styled.input<Props>`
 `;
 
 const InputLabel = styled.label`
-  color: ${Color.text.light};
+  color: ${props => props.theme.Color.text.light};
   opacity: 0.6;
   font-size: 15px;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */

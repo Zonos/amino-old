@@ -16,25 +16,25 @@ type Props = {
 
 const Ribbon = styled.div`
   width: 4px;
-  margin-left: -${Density.spacing.md};
-  margin-top: -${Density.spacing.md};
-  margin-bottom: -${Density.spacing.md};
+  margin-left: -${props => props.theme.Density.spacing.md};
+  margin-top: -${props => props.theme.Density.spacing.md};
+  margin-bottom: -${props => props.theme.Density.spacing.md};
   content: " ";
-  margin-right: ${Density.spacing.md};
+  margin-right: ${props => props.theme.Density.spacing.md};
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 `;
 
 const PrimaryIntent = styled(Ribbon)`
-  background: ${Color.primary.base};
+  background: ${props => props.theme.Color.primary.base};
 `;
 
 const DangerIntent = styled(Ribbon)`
-  background: ${Color.danger.base};
+  background: ${props => props.theme.Color.danger.base};
 `;
 
 const WarningIntent = styled(Ribbon)`
-  background: ${Color.warning.base};
+  background: ${props => props.theme.Color.warning.base};
 `;
 
 const IntentStack = styled.div`
@@ -49,7 +49,7 @@ const NoticeInfo = styled.div`
   flex: 1;
 
   svg {
-    margin-right: ${Density.spacing.sm};
+    margin-right: ${props => props.theme.Density.spacing.sm};
   }
 `;
 
@@ -58,7 +58,7 @@ const PrimaryIntentIcon = styled.div`
   display: flex;
 
   svg {
-    fill: ${Color.primary.base};
+    fill: ${props => props.theme.Color.primary.base};
   }
 `;
 
@@ -67,7 +67,7 @@ const WarningIntentIcon = styled.div`
   display: flex;
 
   svg {
-    fill: ${Color.warning.base};
+    fill: ${props => props.theme.Color.warning.base};
   }
 `;
 
@@ -76,7 +76,7 @@ const DangerIntentIcon = styled.div`
   display: flex;
 
   svg {
-    fill: ${Color.danger.base};
+    fill: ${props => props.theme.Color.danger.base};
   }
 `;
 

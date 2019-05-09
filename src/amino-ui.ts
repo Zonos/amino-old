@@ -33,6 +33,7 @@ export * from "./styles/Color";
 export * from "./styles/Density";
 export * from "./styles/Typography";
 export * from "./styles/Surface";
+export * from "./styles/DefaultTheme";
 
 // Schemas
 export * from "./schemas/IDataConstraints";

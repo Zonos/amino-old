@@ -10,7 +10,6 @@ const StyledButton = styled.button`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  border: 0;
   border-radius: ${Surface.defaultRadius};
   font-weight: 500;
   padding-left: ${Density.spacing.sm};
@@ -35,11 +34,11 @@ const StyledButton = styled.button`
 
   &:hover {
     background: rgba(0, 0, 0, 0.015);
-    color: ${Color.text.light};
+    color: ${props => props.theme.Color.text.light};
   }
 
   &:active {
-    box-shadow: 0 0 0 3px ${Color.primary.veryLight}33;
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
     background: rgba(0, 0, 0, 0.015);
   }
 
@@ -51,17 +50,17 @@ const StyledButton = styled.button`
 `;
 
 const PrimaryButton = styled(StyledButton)`
-  background: ${Color.primary.base};
+  background: ${props => props.theme.Color.primary.base};
   color: #fff;
   border: 0;
 
   &:hover {
-    background: ${Color.primary.dark};
+    background: ${props => props.theme.Color.primary.dark};
     color: #fff;
   }
 
   &:active {
-    background: ${Color.primary.veryDark};
+    background: ${props => props.theme.Color.primary.veryDark};
     color: #fff;
   }
 `;

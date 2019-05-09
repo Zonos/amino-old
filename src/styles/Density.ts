@@ -1,6 +1,6 @@
 import { IDensityScale } from "../schemas/IDensityScale";
 
-class Padding implements IDensityScale {
+export class Padding implements IDensityScale {
   xxxxs = "2px";
   xxxs = "4px";
   xxs = "6px";

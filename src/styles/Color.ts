@@ -1,6 +1,6 @@
 import { IColorScale } from "../schemas/IColorScale";
 
-class PrimaryColor implements IColorScale {
+export class PrimaryColor implements IColorScale {
   veryLight = "#64AAF6";
   light = "#2D8BF3";
   base = "#2285F2";
@@ -8,7 +8,7 @@ class PrimaryColor implements IColorScale {
   veryDark = "#1D71CE";
 }
 
-class DangerColor implements IColorScale {
+export class DangerColor implements IColorScale {
   veryLight = "#FEF6F6";
   light = "#FAE2E2";
   base = "#EC4C47";
@@ -16,7 +16,7 @@ class DangerColor implements IColorScale {
   veryDark = "";
 }
 
-class WarningColor implements IColorScale {
+export class WarningColor implements IColorScale {
   veryLight = "#E8B480";
   light = "#DE9347";
   base = "#D9822B";
@@ -24,7 +24,7 @@ class WarningColor implements IColorScale {
   veryDark = "";
 }
 
-class TextColor implements IColorScale {
+export class TextColor implements IColorScale {
   veryLight = "#7B8B9A";
   light = "#66788A";
   base = "#425A70";
@@ -32,7 +32,7 @@ class TextColor implements IColorScale {
   veryDark = "";
 }
 
-class DarkColor implements IColorScale {
+export class DarkColor implements IColorScale {
   veryLight = "#7B8B9A";
   light = "#66788A";
   base = "#425A70";

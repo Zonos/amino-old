@@ -16,14 +16,15 @@ const SpinnerAnimation = keyframes`
   }
 `;
 
-export const Spinner = styled.div`
+export const Spinner = styled.div<any>`
   display: inline-block;
   border: 4px solid rgba(0, 0, 0, 0.1);
-  border-width: ${(p: Props) => (p.compact ? "2px" : "4px")};
-  border-color: ${(p: Props) => (p.inverted ? "#fff" : "rgba(0, 0, 0, 0.1)")};
-  border-left-color: ${(p: Props) => (p.inverted ? "transparent" : p.theme.Color.primary.base)};
+  border-width: ${(props: any) => (props.compact ? "2px" : "4px")};
+  border-color: ${(props: any) => (props.inverted ? "#fff" : "rgba(0, 0, 0, 0.1)")};
+  border-left-color: ${(props: any) =>
+    props.inverted ? "transparent" : props.theme.Color.primary.base};
   border-radius: 50%;
-  width: ${(p: Props) => (p.compact ? "15px" : "30px")};
-  height: ${(p: Props) => (p.compact ? "15px" : "30px")};
+  width: ${(props: any) => (props.compact ? "15px" : "30px")};
+  height: ${(props: any) => (props.compact ? "15px" : "30px")};
   animation: ${SpinnerAnimation} 800ms linear infinite;
 `;

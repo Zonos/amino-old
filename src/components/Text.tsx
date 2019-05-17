@@ -13,7 +13,7 @@ export enum TextStyle {
 
 const Paragraph = styled.p`
   color: ${props => props.theme.Color.text.base};
-  font-size: 15px;
+  font-size: 14px;
 `;
 
 // TODO: Is this H2 maybe?
@@ -32,7 +32,7 @@ const Heading1 = styled.h1`
 const Heading2 = styled.h2``;
 
 const Heading3 = styled.h3`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: ${props => props.theme.Color.text.base};
   margin: 0;
@@ -40,12 +40,12 @@ const Heading3 = styled.h3`
 
 const Subtitle = styled.p`
   color: ${props => props.theme.Color.text.veryLight};
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
 `;
 
 const Unstyled = styled.div`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
   color: ${props => props.theme.Color.text.base};
 `;

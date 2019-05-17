@@ -7,7 +7,7 @@ import { Color, Surface, Typography, Density } from "../styles/Theme";
 const StyledInput = styled.input<Props>`
   border-radius: ${props => props.theme.Surface.defaultRadius};
   border: 1px solid ${props => (props.valid ? "rgba(0, 0, 0, 0.1)" : "red")};
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
@@ -46,7 +46,7 @@ const StyledInput = styled.input<Props>`
 const InputLabel = styled.label`
   color: ${props => props.theme.Color.text.light};
   opacity: 0.6;
-  font-size: 15px;
+  font-size: 14px;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;
 `;

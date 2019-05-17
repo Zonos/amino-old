@@ -21,11 +21,11 @@ export const DefaultTheme = {
 };
 
 interface ThemeColors {
-  primary: IColorScale;
-  danger: IColorScale;
-  warning: IColorScale;
-  dark: IColorScale;
-  text: IColorScale;
+  primary?: IColorScale;
+  danger?: IColorScale;
+  warning?: IColorScale;
+  dark?: IColorScale;
+  text?: IColorScale;
 }
 
 interface ThemeSurface {
@@ -38,9 +38,9 @@ interface ThemeDensity {
 }
 
 interface ITheme {
-  Color: ThemeColors;
-  Surface: ThemeSurface;
-  Density: ThemeDensity;
+  Color?: ThemeColors;
+  Surface?: ThemeSurface;
+  Density?: ThemeDensity;
 }
 
 export const ExtendTheme = (newTheme: ITheme) => {

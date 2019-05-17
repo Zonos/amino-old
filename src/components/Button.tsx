@@ -20,7 +20,7 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 100ms ease-in-out;
   height: 34px;
   border: 1px solid rgba(0, 0, 0, 0.1);

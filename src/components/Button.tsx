@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  border: 0;
   border-radius: ${props => props.theme.Surface.defaultRadius};
   font-weight: 500;
   padding-left: ${props => props.theme.Density.spacing.sm};
@@ -23,7 +24,9 @@ const StyledButton = styled.button`
   font-size: 14px;
   transition: all 100ms ease-in-out;
   height: 34px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  //border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
   color: ${props => props.theme.Color.text.light};
   background: #fff;
   text-decoration: none;
@@ -53,6 +56,7 @@ const PrimaryButton = styled(StyledButton)`
   background: ${props => props.theme.Color.primary.base};
   color: #fff;
   border: 0;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 85, 255, 0.3);
 
   &:hover {
     background: ${props => props.theme.Color.primary.dark};

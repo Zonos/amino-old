@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Text, TextStyle } from "./Text";
-import { Density } from "../styles/Density";
-import { Color } from "../styles/Color";
 
 type Props = {
   label: string;
-  url: string;
+  url?: string;
   action?: React.ReactNode;
 };
 
@@ -33,7 +30,7 @@ const Link = styled.a`
 
 // TODO: use text style
 const Label = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   color: ${props => props.theme.Color.text.veryLight};
   font-weight: 500;
 `;
@@ -45,9 +42,11 @@ export const EmptyState: React.FC<Props> = props => {
     <EmptyContainer>
       <Label>
         {label}
-        <Link target="_blank" href={url}>
-          Learn more
-        </Link>
+        {url && (
+          <Link target="_blank" href={url}>
+            Learn more
+          </Link>
+        )}
       </Label>
       {action && <Action>{action}</Action>}
     </EmptyContainer>

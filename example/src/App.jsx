@@ -148,8 +148,8 @@ export const App = () => {
 
           <Card cardTitle={"hello amino"}>
             <InputGroup>
-              <Input placeholder="John" label="First name" />
-              <Input placeholder="Doe" label="Last name" />
+              <Input prefix="$" placeholder="John" label="First name" />
+              <Input postfix="%" placeholder="Doe" label="Last name" />
               <Input placeholder="john.doe@example.com" label="Email" />
               <Input
                 placeholder="Disabled"

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { IDataConstraints } from "../schemas/IDataConstraints";
-import { Color, Surface, Typography, Density } from "../styles/Theme";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${props => props.theme.Surface.defaultRadius};
@@ -14,6 +13,8 @@ const StyledInput = styled.input<Props>`
   color: ${props => props.theme.Color.text.light};
   display: block;
   padding: ${props => props.theme.Density.spacing.xs} ${props => props.theme.Density.spacing.sm};
+  padding-left: ${props => (props.prefix ? "42px" : props.theme.Density.spacing.sm)};
+  padding-right: ${props => (props.postfix ? "42px" : props.theme.Density.spacing.sm)};
   height: 34px;
   width: 100%;
 
@@ -51,32 +52,70 @@ const InputLabel = styled.label`
   display: block;
 `;
 
+const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+`;
+
+const Prefix = styled.div`
+  background: #fafafa;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: ${props => props.theme.Color.text.light};
+  padding: 0 ${props => props.theme.Density.spacing.sm};
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+  user-select: none;
+`;
+
+const Postfix = styled.div`
+  background: #fafafa;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: ${props => props.theme.Color.text.light};
+  padding: 0 ${props => props.theme.Density.spacing.sm};
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 0;
+  user-select: none;
+`;
+
 type InputProps = {
   label?: string;
   onChange?: any;
   valid?: boolean;
   constraints?: IDataConstraints;
+  prefix?: string;
+  postfix?: string;
 };
 
 type Props = InputProps & React.PropsWithoutRef<JSX.IntrinsicElements["input"]>;
 
 export const Input: React.FC<Props> = props => {
-  const { label, constraints, onChange } = props;
+  const { label, onChange, prefix, postfix } = props;
 
   const onInvalid = (e: any) => {
-    console.log("its invalid");
     e.target.classList.add("invalid");
   };
 
   return (
     <div className="amino-input-wrapper">
       {label && <InputLabel>{label}</InputLabel>}
-      <StyledInput
-        // required={constraints && constraints.required}
-        onChange={onChange}
-        onInvalid={onInvalid}
-        {...props}
-      />
+      <InputWrapper>
+        {prefix && <Prefix>{prefix}</Prefix>}
+        <StyledInput onChange={onChange} onInvalid={onInvalid} {...props} />
+        {postfix && <Postfix>{postfix}</Postfix>}
+      </InputWrapper>
     </div>
   );
 };

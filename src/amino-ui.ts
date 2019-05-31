@@ -23,6 +23,7 @@ export * from "./components/EmptyState";
 export * from "./components/Notice";
 export * from "./components/SaveHeader";
 export * from "./components/Checkbox";
+export * from "./components/CheckboxGroup";
 export * from "./components/Textarea";
 export * from "./components/RadioGroup";
 export * from "./components/Radio";

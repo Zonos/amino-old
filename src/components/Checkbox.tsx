@@ -41,6 +41,12 @@ const CheckboxContainer = styled.div<any>`
   }
 `;
 
+const Title = styled.div`
+  * {
+    font-weight: 600;
+  }
+`;
+
 const CheckIcon = () => (
   <svg width={10} height={7} viewBox="0 0 10 7">
     <path
@@ -71,7 +77,9 @@ export const Checkbox: React.FC<Props> = props => {
       )}
       {label && (
         <label>
-          <Text>{label}</Text>
+          <Title>
+            <Text>{label}</Text>
+          </Title>
           {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
         </label>
       )}

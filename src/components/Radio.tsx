@@ -16,6 +16,10 @@ const StyledRadio = styled.div`
   justify-content: center;
   user-select: none;
 
+  * {
+    font-weight: 600;
+  }
+
   &:active {
     box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
     background: rgba(0, 0, 0, 0.015);

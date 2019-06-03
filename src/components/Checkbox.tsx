@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Color, Density } from "../styles/Theme";
-import { Text } from "./Text";
+import { Text, TextStyle } from "./Text";
 
 const StyledCheckbox = styled.div`
   width: 16px;
@@ -29,10 +28,10 @@ const SelectedCheckbox = styled(StyledCheckbox)`
   }
 `;
 
-const CheckboxContainer = styled.div`
+const CheckboxContainer = styled.div<any>`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: ${props => (props.multiline ? "flex-start" : "center")};
   cursor: pointer;
   user-select: none;
 
@@ -55,13 +54,14 @@ type Props = {
   checked?: boolean;
   onChange?: any;
   label?: string;
+  subtitle?: string;
 };
 
 export const Checkbox: React.FC<Props> = props => {
-  const { label, checked, onChange } = props;
+  const { label, checked, onChange, subtitle } = props;
 
   return (
-    <CheckboxContainer onClick={() => onChange(!checked)}>
+    <CheckboxContainer multiline={subtitle} onClick={() => onChange(!checked)}>
       {!checked && <StyledCheckbox onClick={() => onChange(!checked)} />}
       {checked && (
         // TODO: animate in
@@ -72,6 +72,7 @@ export const Checkbox: React.FC<Props> = props => {
       {label && (
         <label>
           <Text>{label}</Text>
+          {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
         </label>
       )}
     </CheckboxContainer>

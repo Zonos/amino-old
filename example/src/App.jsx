@@ -143,7 +143,10 @@ export const App = () => {
 
           <Card>
             <Button onClick={() => setChecked(!checked)}>toggle</Button>
+            <br />
             <Checkbox checked={checked} onChange={setChecked} label="Checkbox label" />
+            <br />
+            <Checkbox subtitle="This is a description of the checkbox content" checked={checked} onChange={setChecked} label="Checkbox label" />
           </Card>
 
           <Card cardTitle={"hello amino"}>

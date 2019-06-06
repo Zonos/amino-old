@@ -57,8 +57,8 @@ const CheckIcon = () => (
 );
 
 type Props = {
-  checked?: boolean;
-  onChange?: any;
+  checked: boolean;
+  onChange: (newVal: boolean) => any;
   label?: string;
   subtitle?: string;
 };

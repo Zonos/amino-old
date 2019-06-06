@@ -56,6 +56,10 @@ const SelectLabel = styled.label`
   display: block;
 `;
 
+const StyledDropdownIcon = styled(DropdownIcon)`
+  pointer-events: none;
+`;
+
 type Props = {
   items: Array<any>;
   label?: string;
@@ -89,7 +93,7 @@ export const Select: React.FC<Props> = props => {
         >
           {renderedOptions}
         </StyledSelect>
-        <DropdownIcon />
+        <StyledDropdownIcon />
       </SelectContainer>
     </div>
   );

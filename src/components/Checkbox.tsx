@@ -35,6 +35,9 @@ const CheckboxContainer = styled.div<any>`
   cursor: pointer;
   user-select: none;
 
+  pointer-events: ${props => (props.disabled ? "none" : "auto")};
+  opacity: ${props => (props.disabled ? "0.3" : "1")};
+
   label {
     margin-left: ${props => props.theme.Density.spacing.sm};
     cursor: pointer;
@@ -61,13 +64,14 @@ type Props = {
   onChange: (newVal: boolean) => any;
   label?: string;
   subtitle?: string;
+  disabled?: boolean;
 };
 
 export const Checkbox: React.FC<Props> = props => {
-  const { label, checked, onChange, subtitle } = props;
+  const { disabled, label, checked, onChange, subtitle } = props;
 
   return (
-    <CheckboxContainer multiline={subtitle} onClick={() => onChange(!checked)}>
+    <CheckboxContainer disabled={disabled} multiline={subtitle} onClick={() => onChange(!checked)}>
       {!checked && <StyledCheckbox onClick={() => onChange(!checked)} />}
       {checked && (
         // TODO: animate in

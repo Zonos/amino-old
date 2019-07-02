@@ -5,7 +5,7 @@ import { Text, TextStyle } from "./Text";
 
 const StyledCard = styled.section`
   background: white;
-  border-radius: ${props => props.theme.Surface.defaultRadius};
+  border-radius: 8px;
   padding: ${props => props.theme.Density.spacing.md};
   box-shadow: ${props => props.theme.Surface.shadow.base};
   display: flex;

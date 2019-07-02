@@ -243,6 +243,7 @@ export const App = () => {
                 labelWidth={300}
                 label="asdfasdfasdf List item"
                 subtitle="its a great item"
+                subtitleComponent={<div><Badge>its a greater item</Badge> <Spinner compact /></div>}
                 onClick={() => {
                   console.log("hi");
                 }}
@@ -288,11 +289,12 @@ export const App = () => {
                 revealActions
               />
               <ListItem
-                label="List item"
-                subtitle="its a great item"
-                action={<Button intent={Intent.Icon}>i</Button>}
-                revealActions
-              />
+              label="List item"
+              subtitle="its a great item"
+              subtitleComponent={<div><Badge>its a greater item</Badge> <Spinner compact /></div>}
+              action={<Button intent={Intent.Icon}>i</Button>}
+              revealActions
+            />
             </List>
           </Card>
           <Card>

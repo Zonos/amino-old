@@ -98,6 +98,7 @@ const Width = styled.div<any>`
 type Props = {
   label: string;
   subtitle?: string;
+  subtitleComponent?: React.ReactNode;
   icon?: string;
   onClick?: any;
   action?: React.ReactNode;
@@ -114,6 +115,7 @@ export const ListItem: React.FC<Props> = props => {
     revealActions,
     label,
     subtitle,
+    subtitleComponent,
     icon,
     action,
     onClick,
@@ -124,10 +126,18 @@ export const ListItem: React.FC<Props> = props => {
 
   const [hover, setHover] = useState(false);
 
+  const SubtitleNode = () => (
+    <>
+      { subtitleComponent ||
+        subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>
+      }
+    </>
+  );
+
   const ItemInfo = () => (
     <Info active={active}>
       <Text style={TextStyle.Heading3}>{label}</Text>
-      {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
+      <SubtitleNode/>
     </Info>
   );
 
@@ -142,7 +152,7 @@ export const ListItem: React.FC<Props> = props => {
 
       {!labelWidth && <Text style={TextStyle.Heading3}>{label}</Text>}
 
-      {subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>}
+      <SubtitleNode/>
     </CompactInfo>
   );
 

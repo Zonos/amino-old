@@ -21,8 +21,8 @@ const Ribbon = styled.div`
   margin-bottom: -${props => props.theme.Density.spacing.md};
   content: " ";
   margin-right: ${props => props.theme.Density.spacing.md};
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 `;
 
 const PrimaryIntent = styled(Ribbon)`
@@ -50,6 +50,9 @@ const NoticeInfo = styled.div`
 
   svg {
     margin-right: ${props => props.theme.Density.spacing.sm};
+    width: 22px;
+    height: 22px;
+    fill: black;
   }
 `;
 

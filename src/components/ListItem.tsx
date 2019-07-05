@@ -37,15 +37,15 @@ const StyledItem = styled.div`
 
   &:first-of-type {
     margin-top: -${props => props.theme.Density.spacing.md};
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   &:last-of-type {
     margin-bottom: -${props => props.theme.Density.spacing.md};
     border-bottom: 0;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 
   &:hover {
@@ -127,17 +127,13 @@ export const ListItem: React.FC<Props> = props => {
   const [hover, setHover] = useState(false);
 
   const SubtitleNode = () => (
-    <>
-      { subtitleComponent ||
-        subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>
-      }
-    </>
+    <>{subtitleComponent || (subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>)}</>
   );
 
   const ItemInfo = () => (
     <Info active={active}>
       <Text style={TextStyle.Heading3}>{label}</Text>
-      <SubtitleNode/>
+      <SubtitleNode />
     </Info>
   );
 
@@ -152,7 +148,7 @@ export const ListItem: React.FC<Props> = props => {
 
       {!labelWidth && <Text style={TextStyle.Heading3}>{label}</Text>}
 
-      <SubtitleNode/>
+      <SubtitleNode />
     </CompactInfo>
   );
 

@@ -148,6 +148,10 @@ export const App = () => {
             <Checkbox disabled subtitle="This is a description of the checkbox content" checked={checked} onChange={setChecked} label="Checkbox label" />
           </Card>
 
+          <Notice intent={Intent.Primary}>
+            info!
+          </Notice>
+
           <Card cardTitle={"hello amino"}>
             <InputGroup>
               <Input prefix="$" placeholder="John" label="First name" />

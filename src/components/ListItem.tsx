@@ -74,7 +74,7 @@ const StyledLeft = styled.div`
 const Info = styled.div<any>`
   display: flex;
   flex-direction: column;
-
+  flex: 1;
   opacity: ${props => (props.active ? "1" : "0.5")};
   text-decoration: ${props => (props.active ? "none" : "line-through")};
 `;

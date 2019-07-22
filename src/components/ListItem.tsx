@@ -49,7 +49,7 @@ const StyledItem = styled.div`
   }
 
   &:hover {
-    background: ${props => (props.onClick ? "#fafafa" : "transparent")};
+    background: ${props => (props.onClick ? "#E7F0FA33" : "transparent")};
   }
 `;
 
@@ -75,6 +75,7 @@ const Info = styled.div<any>`
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 100%;
   opacity: ${props => (props.active ? "1" : "0.5")};
   text-decoration: ${props => (props.active ? "none" : "line-through")};
 `;
@@ -82,6 +83,8 @@ const Info = styled.div<any>`
 const CompactInfo = styled.div<any>`
   display: flex;
   flex-direction: row;
+  flex: 1;
+  width: 100%;
 
   *:not(:first-child) {
     margin-left: ${props => props.theme.Density.spacing.sm};
@@ -95,6 +98,13 @@ const Width = styled.div<any>`
   width: ${props => props.width}px;
 `;
 
+const Right = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+`;
+
 type Props = {
   label: string;
   subtitle?: string;
@@ -106,6 +116,7 @@ type Props = {
   labelWidth?: number;
   active?: boolean;
   revealActions?: boolean;
+  alignSubtitleRight?: boolean;
 };
 
 // TODO: refactor styling and compact/non-compact mode
@@ -121,7 +132,8 @@ export const ListItem: React.FC<Props> = props => {
     onClick,
     compact,
     labelWidth,
-    active
+    active,
+    alignSubtitleRight
   } = props;
 
   const [hover, setHover] = useState(false);
@@ -133,7 +145,13 @@ export const ListItem: React.FC<Props> = props => {
   const ItemInfo = () => (
     <Info active={active}>
       <Text style={TextStyle.Heading3}>{label}</Text>
-      <SubtitleNode />
+      {alignSubtitleRight ? (
+        <Right>
+          <SubtitleNode />
+        </Right>
+      ) : (
+        <SubtitleNode />
+      )}
     </Info>
   );
 
@@ -148,7 +166,13 @@ export const ListItem: React.FC<Props> = props => {
 
       {!labelWidth && <Text style={TextStyle.Heading3}>{label}</Text>}
 
-      <SubtitleNode />
+      {alignSubtitleRight ? (
+        <Right>
+          <SubtitleNode />
+        </Right>
+      ) : (
+        <SubtitleNode />
+      )}
     </CompactInfo>
   );
 

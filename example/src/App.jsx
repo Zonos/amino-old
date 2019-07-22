@@ -222,6 +222,7 @@ export const App = () => {
             <List>
               <ListItem
                 compact
+                alignSubtitleRight
                 labelWidth={300}
                 label="List item"
                 subtitle="its a great item"

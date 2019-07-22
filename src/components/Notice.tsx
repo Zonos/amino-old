@@ -15,14 +15,14 @@ type Props = {
 };
 
 const Ribbon = styled.div`
-  width: 4px;
+  height: 4px;
   margin-left: -${props => props.theme.Density.spacing.md};
+  margin-right: -${props => props.theme.Density.spacing.md};
   margin-top: -${props => props.theme.Density.spacing.md};
-  margin-bottom: -${props => props.theme.Density.spacing.md};
+  margin-bottom: ${props => props.theme.Density.spacing.md};
   content: " ";
-  margin-right: ${props => props.theme.Density.spacing.md};
   border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
 `;
 
 const PrimaryIntent = styled(Ribbon)`
@@ -126,9 +126,9 @@ export const Notice: React.FC<Props> = props => {
 
   return (
     <Card>
-      <IntentStack>
-        {buildIntentRibbon()}
+      {buildIntentRibbon()}
 
+      <IntentStack>
         <NoticeInfo>
           {buildIntentIcon()}
           <Text>{children}</Text>

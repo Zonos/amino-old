@@ -110,6 +110,7 @@ type Props = {
   subtitle?: string;
   subtitleComponent?: React.ReactNode;
   icon?: string;
+  iconComponent?: React.ReactNode;
   onClick?: any;
   action?: React.ReactNode;
   compact?: boolean;
@@ -128,6 +129,7 @@ export const ListItem: React.FC<Props> = props => {
     subtitle,
     subtitleComponent,
     icon,
+    iconComponent,
     action,
     onClick,
     compact,
@@ -141,6 +143,8 @@ export const ListItem: React.FC<Props> = props => {
   const SubtitleNode = () => (
     <>{subtitleComponent || (subtitle && <Text style={TextStyle.Subtitle}>{subtitle}</Text>)}</>
   );
+
+  const IconNode = () => <>{iconComponent || (icon && <StyledIcon src={icon} />)}</>;
 
   const ItemInfo = () => (
     <Info active={active}>
@@ -178,7 +182,7 @@ export const ListItem: React.FC<Props> = props => {
 
   const ItemBody = () => (
     <StyledLeft>
-      {icon && <StyledIcon src={icon} />}
+      <IconNode />
       {!compact && <ItemInfo />}
       {compact && <CompactItemInfo />}
     </StyledLeft>

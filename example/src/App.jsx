@@ -44,6 +44,10 @@ export const App = () => {
         <CardStack>
           <SaveHeader />
 
+          <Notice intent={Intent.Primary}>
+            what's up, this is a notice
+          </Notice>
+
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>

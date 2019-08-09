@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Surface, Density } from "../styles/Theme";
 import { Text, TextStyle } from "./Text";
 
 const StyledCard = styled.section`
@@ -19,7 +18,7 @@ const Header = styled.header`
   height: 64px;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
+  border-bottom: 1px solid ${props => props.theme.Color.border};
   margin: -${props => props.theme.Density.spacing.md};
   margin-bottom: ${props => props.theme.Density.spacing.md};
   padding: 0 ${props => props.theme.Density.spacing.md};

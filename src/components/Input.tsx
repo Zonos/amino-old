@@ -5,7 +5,7 @@ import { IDataConstraints } from "../schemas/IDataConstraints";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${props => props.theme.Surface.defaultRadius};
-  border: 1px solid ${props => (props.valid ? "rgba(0, 0, 0, 0.1)" : "red")};
+  border: 1px solid ${props => (props.valid ? props.theme.Color.border : "red")};
   font-size: 14px;
   outline: none;
   box-sizing: border-box;
@@ -15,7 +15,8 @@ const StyledInput = styled.input<Props>`
   padding: ${props => props.theme.Density.spacing.xs} ${props => props.theme.Density.spacing.sm};
   padding-left: ${props => (props.prefix ? "42px" : props.theme.Density.spacing.sm)};
   padding-right: ${props => (props.postfix ? "42px" : props.theme.Density.spacing.sm)};
-  height: 34px;
+  //height: 34px;
+  height: 40px;
   width: 100%;
 
   &::-webkit-input-placeholder {
@@ -35,7 +36,7 @@ const StyledInput = styled.input<Props>`
 
   &:focus {
     border: 1px solid ${props => props.theme.Color.primary.veryLight};
-    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
   }
 
   &:disabled {
@@ -62,8 +63,10 @@ const Prefix = styled.div`
   background: #fafafa;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  height: 32px;
-  line-height: 32px;
+  //height: 32px;
+  //line-height: 32px;
+  height: 38px;
+  line-height: 38px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: ${props => props.theme.Color.text.light};
   padding: 0 ${props => props.theme.Density.spacing.sm};

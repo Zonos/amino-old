@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { CSSTransition } from "react-transition-group";
 
-import { Density, Color } from "../styles/Theme";
 import { Text, TextStyle } from "./Text";
 
 const StyledItem = styled.div`
@@ -13,7 +12,7 @@ const StyledItem = styled.div`
   margin: 0 -${props => props.theme.Density.spacing.md};
   box-sizing: border-box;
   height: 64px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.045);
+  border-bottom: 1px solid ${props => props.theme.Color.border};
   cursor: ${props => (props.onClick ? "pointer" : "inherit")};
 
   .amino-pop-enter {

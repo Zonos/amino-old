@@ -23,7 +23,8 @@ const StyledButton = styled.button`
   display: flex;
   font-size: 14px;
   transition: all 100ms ease-in-out;
-  height: 34px;
+  //height: 34px;
+  height: 40px;
   //border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.05),
     0 1px 3px rgba(0, 0, 0, 0.1);

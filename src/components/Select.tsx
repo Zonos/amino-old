@@ -14,7 +14,8 @@ const SelectContainer = styled.div`
   transition: all 100ms ease-in-out;
   color: ${props => props.theme.Color.text.light};
   display: block;
-  height: 34px;
+  //height: 34px;
+  height: 40px;
   width: 100%;
   padding: 0;
   position: relative;
@@ -23,16 +24,17 @@ const SelectContainer = styled.div`
   svg {
     position: absolute;
     right: ${props => props.theme.Density.spacing.sm};
-    top: 4px;
-    fill: ${props => props.theme.Color.text.veryLight};
+    top: 8px;
+    fill: ${props => props.theme.Color.text.veryLight}88;
   }
 `;
 
 const StyledSelect = styled.select`
   padding: ${props => props.theme.Density.spacing.xs} ${props => props.theme.Density.spacing.sm};
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid ${props => props.theme.Color.border};
   width: 100%;
-  height: 34px;
+  //height: 34px;
+  height: 40px;
   font-size: 14px;
   line-height: 17px;
   box-shadow: none;
@@ -44,7 +46,7 @@ const StyledSelect = styled.select`
   &:focus {
     outline: none;
     border: 1px solid ${props => props.theme.Color.primary.veryLight};
-    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
   }
 `;
 

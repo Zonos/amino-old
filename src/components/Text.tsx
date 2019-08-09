@@ -21,9 +21,9 @@ const Heading1 = styled.h1`
   color: ${props => props.theme.Color.text.dark};
   margin: 0;
   box-sizing: border-box;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.03px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.05px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

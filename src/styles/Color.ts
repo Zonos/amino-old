@@ -1,19 +1,24 @@
 import { IColorScale } from "../schemas/IColorScale";
 
 export class PrimaryColor implements IColorScale {
-  veryLight = "#64AAF6";
-  light = "#2D8BF3";
-  base = "#2285F2";
-  dark = "#207BE0";
-  veryDark = "#1D71CE";
+  // veryLight = "#64AAF6";
+  // light = "#2D8BF3";
+  // base = "#2285F2";
+  // dark = "#207BE0";
+  // veryDark = "#1D71CE";
+  veryLight = "#BEE3F8";
+  light = "#63B3ED";
+  base = "#4299E1";
+  dark = "#3182CE";
+  veryDark = "#2A6CB0";
 }
 
 export class DangerColor implements IColorScale {
-  veryLight = "#FEF6F6";
-  light = "#FAE2E2";
-  base = "#EC4C47";
-  dark = "#CF433E";
-  veryDark = "";
+  veryLight = "#FED7D7";
+  light = "#FC8181";
+  base = "#F56565";
+  dark = "#E53E3E";
+  veryDark = "#C43030";
 }
 
 export class WarningColor implements IColorScale {
@@ -46,6 +51,7 @@ export const Color = {
   warning: new WarningColor(),
   dark: new DarkColor(),
   text: new TextColor(),
+  border: "#EDF0F2",
 
   // DEPRECATED
   primaryColor: "#2285F2",

@@ -1,4 +1,4 @@
-import { PrimaryColor, DangerColor, WarningColor, DarkColor, TextColor } from "./Color";
+import { PrimaryColor, DangerColor, WarningColor, DarkColor, TextColor, Color } from "./Color";
 import { Padding } from "./Density";
 import { Shadow } from "./Surface";
 import { IColorScale } from "../schemas/IColorScale";
@@ -9,7 +9,8 @@ export const DefaultTheme = {
     danger: new DangerColor(),
     warning: new WarningColor(),
     dark: new DarkColor(),
-    text: new TextColor()
+    text: new TextColor(),
+    border: Color.border
   },
   Surface: {
     defaultRadius: "4px",
@@ -26,6 +27,7 @@ interface ThemeColors {
   warning?: IColorScale;
   dark?: IColorScale;
   text?: IColorScale;
+  border?: string;
 }
 
 interface ThemeSurface {

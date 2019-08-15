@@ -81,8 +81,8 @@ const Postfix = styled.div`
   background: #fafafa;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  height: 32px;
-  line-height: 32px;
+  height: 38px;
+  line-height: 38px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: ${props => props.theme.Color.text.light};
   padding: 0 ${props => props.theme.Density.spacing.sm};

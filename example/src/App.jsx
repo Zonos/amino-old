@@ -313,6 +313,10 @@ export const App = () => {
               action={<Button>Create your first coupon</Button>}
             />
           </Card>
+
+          <Card collapsible cardTitle="Hide my insides">
+            <EmptyState label="Hide me"/>
+          </Card>
         </CardStack>
       </Page>
     </Fragment>

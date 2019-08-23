@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { Text, TextStyle } from "./Text";
+import { DropdownIcon } from "../icons/DropdownIcon";
 
 const StyledCard = styled.section`
   background: white;
@@ -29,28 +30,35 @@ const Header = styled.header`
   }
 `;
 
+const StyledDropdownIcon = styled(DropdownIcon)`
+  fill: ${props => props.theme.Color.text.light};
+`;
+
 type Props = {
   className?: string;
   actions?: React.ReactNode;
   cardTitle?: string;
+  collapsible?: boolean;
 };
 
 export const Card: React.FC<Props> = props => {
-  const { children, cardTitle, actions } = props;
+  const { children, cardTitle, actions, collapsible } = props;
 
-  const headerVisible = Boolean(cardTitle) || (Boolean(actions) && Boolean(cardTitle));
+  const [ collapsed, setCollapsed] = useState(false);
+  const headerVisible = Boolean(cardTitle);
 
   const cardHeader = (
     <Header>
       <Text style={TextStyle.Heading1}>{cardTitle}</Text>
       {actions && actions}
+      {collapsible && <StyledDropdownIcon onClick={() => setCollapsed(!collapsed)}/>}
     </Header>
   );
 
   return (
     <StyledCard {...props}>
       {headerVisible && cardHeader}
-      {children}
+      {!collapsed && children}
     </StyledCard>
   );
 };

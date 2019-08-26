@@ -1,14 +1,9 @@
 import { IColorScale } from "../schemas/IColorScale";
 
 export class PrimaryColor implements IColorScale {
-  // veryLight = "#64AAF6";
-  // light = "#2D8BF3";
-  // base = "#2285F2";
-  // dark = "#207BE0";
-  // veryDark = "#1D71CE";
   veryLight = "#BEE3F8";
   light = "#63B3ED";
-  base = "#4299E1";
+  base = "#448EE1";
   dark = "#3182CE";
   veryDark = "#2A6CB0";
 }

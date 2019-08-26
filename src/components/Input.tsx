@@ -5,7 +5,7 @@ import { IDataConstraints } from "../schemas/IDataConstraints";
 
 const StyledInput = styled.input<Props>`
   border-radius: ${props => props.theme.Surface.defaultRadius};
-  border: 1px solid ${props => (props.valid ? props.theme.Color.border : "red")};
+  border: 2px solid ${props => (props.valid ? props.theme.Color.border : "red")};
   font-size: 14px;
   outline: none;
   box-sizing: border-box;
@@ -35,8 +35,9 @@ const StyledInput = styled.input<Props>`
   }
 
   &:focus {
-    border: 1px solid ${props => props.theme.Color.primary.veryLight};
-    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
+    //border: 1px solid ${props => props.theme.Color.primary.veryLight};
+    //box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
+    border: 2px solid ${props => props.theme.Color.primary.base};
   }
 
   &:disabled {
@@ -67,7 +68,7 @@ const Prefix = styled.div`
   //line-height: 32px;
   height: 38px;
   line-height: 38px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid ${props => props.theme.Color.border};
   color: ${props => props.theme.Color.text.light};
   padding: 0 ${props => props.theme.Density.spacing.sm};
   z-index: 10;
@@ -83,7 +84,7 @@ const Postfix = styled.div`
   border-bottom-right-radius: 4px;
   height: 38px;
   line-height: 38px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid ${props => props.theme.Color.border};
   color: ${props => props.theme.Color.text.light};
   padding: 0 ${props => props.theme.Density.spacing.sm};
   z-index: 10;

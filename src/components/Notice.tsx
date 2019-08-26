@@ -126,7 +126,7 @@ export const Notice: React.FC<Props> = props => {
 
   return (
     <Card>
-      {buildIntentRibbon()}
+      {/*{buildIntentRibbon()}*/}
 
       <IntentStack>
         <NoticeInfo>

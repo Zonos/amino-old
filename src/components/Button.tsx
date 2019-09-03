@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Color, Surface } from "../styles/Theme";
 import { Spinner } from "./Spinner";
-import { Density } from "../styles/Density";
 import { Intent } from "../schemas/Intent";
 
 const StyledButton = styled.button`
@@ -11,8 +9,8 @@ const StyledButton = styled.button`
   -moz-osx-font-smoothing: grayscale;
 
   border: 0;
-  border-radius: ${props => props.theme.Surface.defaultRadius};
-  font-weight: 500;
+  border-radius: 6px;
+  //font-weight: 500;
   padding-left: ${props => props.theme.Density.spacing.sm};
   padding-right: ${props => props.theme.Density.spacing.sm};
   outline: none;
@@ -21,14 +19,12 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 14px;
+  font-size: 15px;
   transition: all 100ms ease-in-out;
-  //height: 34px;
   height: 40px;
-  //border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.05),
-    0 1px 3px rgba(0, 0, 0, 0.1);
-  color: ${props => props.theme.Color.text.light};
+  //box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.05),
+  border: 1px solid ${props => props.theme.Color.border};
+  color: ${props => props.theme.Color.text.base};
   background: #fff;
   text-decoration: none;
 
@@ -37,13 +33,16 @@ const StyledButton = styled.button`
   }
 
   &:hover {
-    background: rgba(0, 0, 0, 0.015);
-    color: ${props => props.theme.Color.text.light};
+    background: #F9F9F9;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
   }
 
   &:active {
-    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
-    background: rgba(0, 0, 0, 0.015);
+    //box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
+    //background: rgba(0, 0, 0, 0.015);
+    background: #F9F9F9;
+    color: ${props => props.theme.Color.text.light};
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
   }
 
   &[disabled] {
@@ -57,7 +56,7 @@ const PrimaryButton = styled(StyledButton)`
   background: ${props => props.theme.Color.primary.base};
   color: #fff;
   border: 0;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 85, 255, 0.3);
+  //box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 85, 255, 0.3);
 
   &:hover {
     background: ${props => props.theme.Color.primary.dark};
@@ -82,7 +81,7 @@ const DangerButton = styled(StyledButton)`
 
   &:active {
     background: ${props => props.theme.Color.danger.dark};
-    box-shadow: 0 0 0 3px ${props => props.theme.Color.danger.light};
+    // box-shadow: 0 0 0 3px ${props => props.theme.Color.danger.light};
     color: #fff;
   }
 `;

@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { IDataConstraints } from "../schemas/IDataConstraints";
 
 const StyledInput = styled.input<Props>`
-  border-radius: ${props => props.theme.Surface.defaultRadius};
-  border: 2px solid ${props => (props.valid ? props.theme.Color.border : "red")};
-  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid ${props => (props.valid ? props.theme.Color.border : "red")};
+  font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
@@ -35,9 +35,9 @@ const StyledInput = styled.input<Props>`
   }
 
   &:focus {
-    //border: 1px solid ${props => props.theme.Color.primary.veryLight};
-    //box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
-    border: 2px solid ${props => props.theme.Color.primary.base};
+    border: 1px solid ${props => props.theme.Color.primary.veryLight};
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
+    //border: 1px solid ${props => props.theme.Color.primary.base};
   }
 
   &:disabled {
@@ -49,7 +49,7 @@ const StyledInput = styled.input<Props>`
 const InputLabel = styled.label`
   color: ${props => props.theme.Color.text.light};
   opacity: 0.6;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;
 `;
@@ -62,8 +62,8 @@ const InputWrapper = styled.div`
 
 const Prefix = styled.div`
   background: #fafafa;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   //height: 32px;
   //line-height: 32px;
   height: 38px;
@@ -80,8 +80,8 @@ const Prefix = styled.div`
 
 const Postfix = styled.div`
   background: #fafafa;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
   height: 38px;
   line-height: 38px;
   border: 1px solid ${props => props.theme.Color.border};

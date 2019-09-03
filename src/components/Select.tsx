@@ -7,8 +7,8 @@ import { Surface, Typography } from "../styles/Theme";
 import { Density } from "../styles/Density";
 
 const SelectContainer = styled.div`
-  border-radius: ${props => props.theme.Surface.defaultRadius};
-  font-size: 14px;
+  border-radius: 6px;
+  font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;
@@ -35,7 +35,7 @@ const StyledSelect = styled.select`
   width: 100%;
   //height: 34px;
   height: 40px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 17px;
   box-shadow: none;
   background: transparent;
@@ -52,7 +52,7 @@ const StyledSelect = styled.select`
 
 const SelectLabel = styled.label`
   color: ${props => props.theme.Color.text.light};
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.6;
   margin-bottom: 8px; /* TODO: subspacing from Theme.ts */
   display: block;

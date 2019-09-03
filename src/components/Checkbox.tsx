@@ -46,7 +46,7 @@ const CheckboxContainer = styled.div<any>`
 
 const Title = styled.div`
   * {
-    font-weight: 600;
+    font-weight: 500;
   }
 `;
 

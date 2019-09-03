@@ -13,26 +13,30 @@ export enum TextStyle {
 
 const Paragraph = styled.p`
   color: ${props => props.theme.Color.text.base};
-  font-size: 14px;
+  font-size: 15px;
 `;
 
 // TODO: Is this H2 maybe?
 const Heading1 = styled.h1`
-  color: ${props => props.theme.Color.text.dark};
+  // color: ${props => props.theme.Color.text.dark};
   margin: 0;
   box-sizing: border-box;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.05px;
+  //font-size: 20px;
+  //font-weight: 400;
+  //letter-spacing: -0.05px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  font-size: 20px;
+  font-weight: 500;
+  color: ${props => props.theme.Color.text.base};
 `;
 
 const Heading2 = styled.h2``;
 
 const Heading3 = styled.h3`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: ${props => props.theme.Color.text.base};
   margin: 0;
@@ -40,12 +44,11 @@ const Heading3 = styled.h3`
 
 const Subtitle = styled.p`
   color: ${props => props.theme.Color.text.veryLight};
-  font-size: 14px;
   margin: 0;
 `;
 
 const Unstyled = styled.div`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: normal;
   color: ${props => props.theme.Color.text.base};
 `;

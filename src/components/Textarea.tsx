@@ -8,7 +8,7 @@ import { Color } from "../styles/Color";
 export const Textarea = styled.textarea`
   border-radius: ${props => props.theme.Surface.defaultRadius};
   border: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 14px;
+  font-size: 15px;
   outline: none;
   box-sizing: border-box;
   transition: all 100ms ease-in-out;

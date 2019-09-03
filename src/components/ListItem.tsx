@@ -12,6 +12,7 @@ const StyledItem = styled.div`
   margin: 0 -${props => props.theme.Density.spacing.md};
   box-sizing: border-box;
   height: 64px;
+  line-height: 1.5;
   border-bottom: 1px solid ${props => props.theme.Color.border};
   cursor: ${props => (props.onClick ? "pointer" : "inherit")};
 
@@ -48,7 +49,8 @@ const StyledItem = styled.div`
   }
 
   &:hover {
-    background: ${props => (props.onClick ? "#E7F0FA33" : "transparent")};
+    background: ${props => (props.onClick ? "#F2F5F7" : "transparent")};
+    //background: ${props => (props.onClick ? "#E7F0FA33" : "transparent")};
   }
 `;
 

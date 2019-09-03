@@ -26,9 +26,9 @@ export class WarningColor implements IColorScale {
 
 export class TextColor implements IColorScale {
   veryLight = "#7B8B9A";
-  light = "#66788A";
-  base = "#425A70";
-  dark = "#234361";
+  light = "rgba(14,30,37,.54)";
+  base = "rgba(14,30,37,.87)";
+  dark = "rgba(14,30,37,.87)";
   veryDark = "";
 }
 

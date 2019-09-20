@@ -8,41 +8,38 @@ const StyledButton = styled.button`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  border: 0;
-  border-radius: 6px;
-  //font-weight: 500;
-  padding-left: ${props => props.theme.Density.spacing.sm};
-  padding-right: ${props => props.theme.Density.spacing.sm};
+  border-radius: ${p => p.theme.Surface.radius.sm};
+  padding-left: ${props => props.theme.Density.spacing.md};
+  padding-right: ${props => props.theme.Density.spacing.md};
   outline: none;
   cursor: pointer;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 15px;
+  font-size: ${p => p.theme.Typography.size.base};
   transition: all 100ms ease-in-out;
   height: 40px;
-  //box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.05),
-  border: 1px solid ${props => props.theme.Color.border};
+  font-weight: 500;
+  border: 1px solid ${props => props.theme.Color.gray.base};
   color: ${props => props.theme.Color.text.base};
   background: #fff;
   text-decoration: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.01);
 
   svg {
     fill: ${props => props.theme.Color.text.light};
   }
 
   &:hover {
-    background: #F9F9F9;
+    background: ${p => p.theme.Color.gray.veryLight};
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
   }
 
   &:active {
-    //box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
-    //background: rgba(0, 0, 0, 0.015);
-    background: #F9F9F9;
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
+    background: ${p => p.theme.Color.gray.veryLight};
     color: ${props => props.theme.Color.text.light};
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
   }
 
   &[disabled] {
@@ -55,8 +52,7 @@ const StyledButton = styled.button`
 const PrimaryButton = styled(StyledButton)`
   background: ${props => props.theme.Color.primary.base};
   color: #fff;
-  border: 0;
-  //box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 85, 255, 0.3);
+  border: 1px solid transparent;
 
   &:hover {
     background: ${props => props.theme.Color.primary.dark};
@@ -66,6 +62,8 @@ const PrimaryButton = styled(StyledButton)`
   &:active {
     background: ${props => props.theme.Color.primary.veryDark};
     color: #fff;
+    border: 1px solid ${props => props.theme.Color.primary.veryLight};
+    box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}88;
   }
 `;
 
@@ -81,7 +79,6 @@ const DangerButton = styled(StyledButton)`
 
   &:active {
     background: ${props => props.theme.Color.danger.dark};
-    // box-shadow: 0 0 0 3px ${props => props.theme.Color.danger.light};
     color: #fff;
   }
 `;

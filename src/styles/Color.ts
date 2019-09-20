@@ -25,11 +25,11 @@ export class WarningColor implements IColorScale {
 }
 
 export class TextColor implements IColorScale {
-  veryLight = "#7B8B9A";
-  light = "rgba(14,30,37,.54)";
-  base = "rgba(14,30,37,.87)";
-  dark = "rgba(14,30,37,.87)";
-  veryDark = "";
+  veryLight = "#a0aec0";
+  light = "#718096";
+  base = "#4a5568";
+  dark = "#2d3748";
+  veryDark = "#1a202c";
 }
 
 export class DarkColor implements IColorScale {
@@ -40,15 +40,24 @@ export class DarkColor implements IColorScale {
   veryDark = "";
 }
 
+export class GrayColor implements IColorScale {
+  veryLight = "#F7FAFC";
+  light = "#EDF2F7";
+  base = "#E2E8F0";
+  dark = "#4A5568";
+  veryDark = "#2D3748";
+}
+
 export const Color = {
   primary: new PrimaryColor(),
   danger: new DangerColor(),
   warning: new WarningColor(),
   dark: new DarkColor(),
   text: new TextColor(),
-  border: "#EDF0F2",
+  gray: new GrayColor(),
 
   // DEPRECATED
+  border: "rgb(223, 225, 228)",
   primaryColor: "#2285F2",
   superLightPrimaryColor: "#64AAF6",
   lightPrimaryColor: "#2D8BF3",

@@ -1,7 +1,16 @@
-import { PrimaryColor, DangerColor, WarningColor, DarkColor, TextColor, Color } from "./Color";
+import {
+  PrimaryColor,
+  DangerColor,
+  WarningColor,
+  DarkColor,
+  TextColor,
+  Color,
+  GrayColor
+} from "./Color";
 import { Padding } from "./Density";
-import { Shadow } from "./Surface";
+import { Radius, Shadow } from "./Surface";
 import { IColorScale } from "../schemas/IColorScale";
+import { Size } from "./Typography";
 
 export const DefaultTheme = {
   Color: {
@@ -10,14 +19,19 @@ export const DefaultTheme = {
     warning: new WarningColor(),
     dark: new DarkColor(),
     text: new TextColor(),
+    gray: new GrayColor(),
     border: Color.border
   },
   Surface: {
     defaultRadius: "4px",
+    radius: new Radius(),
     shadow: new Shadow()
   },
   Density: {
     spacing: new Padding()
+  },
+  Typography: {
+    size: new Size()
   }
 };
 
@@ -27,12 +41,14 @@ interface ThemeColors {
   warning?: IColorScale;
   dark?: IColorScale;
   text?: IColorScale;
+  gray?: IColorScale;
   border?: string;
 }
 
 interface ThemeSurface {
   defaultRadius: string;
   shadow: Shadow;
+  radius: Radius;
 }
 
 interface ThemeDensity {

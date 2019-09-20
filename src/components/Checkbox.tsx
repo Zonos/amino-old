@@ -3,20 +3,20 @@ import styled from "styled-components";
 import { Text, TextStyle } from "./Text";
 
 const StyledCheckbox = styled.div`
-  width: 16px;
-  height: 16px;
-  border-radius: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid ${p => p.theme.Color.gray.base};
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.01);
 
   &:active {
     box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
-    background: rgba(0, 0, 0, 0.015);
   }
 `;
 

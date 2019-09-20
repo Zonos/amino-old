@@ -26,7 +26,7 @@ import {
   FieldType
 } from "amino-ui";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const GridWrap = styled.div`
   margin: -20px;
@@ -44,9 +44,7 @@ export const App = () => {
         <CardStack>
           <SaveHeader />
 
-          <Notice intent={Intent.Primary}>
-            what's up, this is a notice
-          </Notice>
+          <Notice intent={Intent.Primary}>what's up, this is a notice</Notice>
 
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
@@ -54,31 +52,33 @@ export const App = () => {
 
           <Card>
             <form>
-              <Input label="hi" />
-              <Input label="hi" />
-              <Input label="hi" />
-              <Select
-                label="Select an item"
-                items={[
-                  {
-                    label: "item 1",
-                    value: "value1"
-                  },
-                  {
-                    label: "item 2",
-                    value: "value1"
-                  },
-                  {
-                    label: "item 3",
-                    value: "value3"
-                  },
-                  {
-                    label: "item 4",
-                    value: "value4"
-                  }
-                ]}
-                defaultValue="value 3"
-              />
+              <InputGroup>
+                <Input label="hi" helpText="This is an input" />
+                <Input label="hi" />
+                <Input label="hi" />
+                <Select
+                  label="Select an item"
+                  items={[
+                    {
+                      label: "item 1",
+                      value: "value1"
+                    },
+                    {
+                      label: "item 2",
+                      value: "value1"
+                    },
+                    {
+                      label: "item 3",
+                      value: "value3"
+                    },
+                    {
+                      label: "item 4",
+                      value: "value4"
+                    }
+                  ]}
+                  defaultValue="value 3"
+                />
+              </InputGroup>
             </form>
           </Card>
 
@@ -121,19 +121,59 @@ export const App = () => {
 
           <Card>
             <GridWrap>
-
-            <Grid
-              data={[
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-                { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" },
-              ]}
-            />
-
+              <Grid
+                data={[
+                  {
+                    one: "one",
+                    two: "two",
+                    three: "three",
+                    four: "four",
+                    five: "five",
+                    six: "six"
+                  },
+                  {
+                    one: "one",
+                    two: "two",
+                    three: "three",
+                    four: "four",
+                    five: "five",
+                    six: "six"
+                  },
+                  {
+                    one: "one",
+                    two: "two",
+                    three: "three",
+                    four: "four",
+                    five: "five",
+                    six: "six"
+                  },
+                  {
+                    one: "one",
+                    two: "two",
+                    three: "three",
+                    four: "four",
+                    five: "five",
+                    six: "six"
+                  },
+                  {
+                    one: "one",
+                    two: "two",
+                    three: "three",
+                    four: "four",
+                    five: "five",
+                    six: "six"
+                  },
+                  {
+                    one: "one",
+                    two: "two",
+                    three: "three",
+                    four: "four",
+                    five: "five",
+                    six: "six"
+                  },
+                  { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" }
+                ]}
+              />
             </GridWrap>
           </Card>
 
@@ -148,13 +188,22 @@ export const App = () => {
           <Card>
             <Button onClick={() => setChecked(!checked)}>toggle</Button>
             <Checkbox checked={checked} onChange={setChecked} label="Checkbox label" />
-            <Checkbox subtitle="This is a description of the checkbox content" checked={checked} onChange={setChecked} label="Checkbox label" />
-            <Checkbox disabled subtitle="This is a description of the checkbox content" checked={checked} onChange={setChecked} label="Checkbox label" />
+            <Checkbox
+              subtitle="This is a description of the checkbox content"
+              checked={checked}
+              onChange={setChecked}
+              label="Checkbox label"
+            />
+            <Checkbox
+              disabled
+              subtitle="This is a description of the checkbox content"
+              checked={checked}
+              onChange={setChecked}
+              label="Checkbox label"
+            />
           </Card>
 
-          <Notice intent={Intent.Primary}>
-            info!
-          </Notice>
+          <Notice intent={Intent.Primary}>info!</Notice>
 
           <Card cardTitle={"hello amino"}>
             <InputGroup>
@@ -252,7 +301,11 @@ export const App = () => {
                 labelWidth={300}
                 label="asdfasdfasdf List item"
                 subtitle="its a great item"
-                subtitleComponent={<div><Badge>its a greater item</Badge> <Spinner compact /></div>}
+                subtitleComponent={
+                  <div>
+                    <Badge>its a greater item</Badge> <Spinner compact />
+                  </div>
+                }
                 onClick={() => {
                   console.log("hi");
                 }}
@@ -284,11 +337,13 @@ export const App = () => {
                 subtitle="its a great item"
                 action={<Button>Action</Button>}
                 revealActions
+                icon="//placehold.it/64x64"
               />
               <ListItem
                 label="List item"
                 subtitle="its a great item"
                 action={<Button>Action</Button>}
+                icon="//placehold.it/64x64"
                 revealActions
               />
               <ListItem
@@ -296,14 +351,19 @@ export const App = () => {
                 subtitle="its a great item"
                 action={<Button>Action</Button>}
                 revealActions
+                icon="//placehold.it/64x64"
               />
               <ListItem
-              label="List item"
-              subtitle="its a great item"
-              subtitleComponent={<div><Badge>its a greater item</Badge> <Spinner compact /></div>}
-              action={<Button intent={Intent.Icon}>i</Button>}
-              revealActions
-            />
+                label="List item"
+                subtitle="its a great item"
+                subtitleComponent={
+                  <div>
+                    <Badge>its a greater item</Badge> <Spinner compact />
+                  </div>
+                }
+                action={<Button intent={Intent.Icon}>i</Button>}
+                revealActions
+              />
             </List>
           </Card>
           <Card>

@@ -30,7 +30,7 @@ const Link = styled.a`
 
 // TODO: use text style
 const Label = styled.span`
-  font-size: 15px;
+  font-size: 14px;
   color: ${props => props.theme.Color.text.veryLight};
   font-weight: 500;
 `;

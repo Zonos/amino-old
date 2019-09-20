@@ -5,7 +5,7 @@ import { Text, TextStyle } from "./Text";
 
 const StyledCard = styled.section`
   background: white;
-  border-radius: 8px;
+  border-radius: ${p => p.theme.Surface.radius.base};
   padding: ${props => props.theme.Density.spacing.md};
   box-shadow: ${props => props.theme.Surface.shadow.base};
   display: flex;
@@ -19,7 +19,7 @@ const Header = styled.header`
   height: 64px;
   flex-direction: row;
   align-items: center;
-  border-bottom: 1px solid ${props => props.theme.Color.border};
+  border-bottom: 1px solid ${p => p.theme.Color.gray.light};
   margin: -${props => props.theme.Density.spacing.md};
   margin-bottom: ${props => props.theme.Density.spacing.md};
   padding: 0 ${props => props.theme.Density.spacing.md};

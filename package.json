@@ -1,6 +1,6 @@
 {
   "name": "amino-ui",
-  "version": "0.5.12",
+  "version": "0.8.2",
   "description": "",
   "keywords": [],
   "main": "dist/amino-ui.umd.js",
@@ -117,8 +117,10 @@
   },
   "dependencies": {
     "@types/react-redux": "^7.0.9",
+    "@types/react-tooltip": "^3.9.3",
     "@types/react-transition-group": "^2.9.1",
     "griddle-react": "^1.13.1",
+    "react-tooltip": "^3.11.1",
     "react-transition-group": "^2.9.0"
   }
 }

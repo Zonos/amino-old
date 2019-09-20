@@ -13,7 +13,7 @@ const StyledItem = styled.div`
   box-sizing: border-box;
   height: 64px;
   line-height: 1.5;
-  border-bottom: 1px solid ${props => props.theme.Color.border};
+  border-bottom: 1px solid ${p => p.theme.Color.gray.light};
   cursor: ${props => (props.onClick ? "pointer" : "inherit")};
 
   .amino-pop-enter {
@@ -37,20 +37,19 @@ const StyledItem = styled.div`
 
   &:first-of-type {
     margin-top: -${props => props.theme.Density.spacing.md};
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: ${p => p.theme.Surface.radius.base};
+    border-top-right-radius: ${p => p.theme.Surface.radius.base};
   }
 
   &:last-of-type {
     margin-bottom: -${props => props.theme.Density.spacing.md};
     border-bottom: 0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-left-radius: ${p => p.theme.Surface.radius.base};
+    border-top-right-radius: ${p => p.theme.Surface.radius.base};
   }
 
   &:hover {
-    background: ${props => (props.onClick ? "#F2F5F7" : "transparent")};
-    //background: ${props => (props.onClick ? "#E7F0FA33" : "transparent")};
+    background: ${props => (props.onClick ? props.theme.Color.gray.veryLight : "transparent")};
   }
 `;
 
@@ -60,7 +59,7 @@ const CompactItem = styled(StyledItem)`
 `;
 
 const StyledIcon = styled.img`
-  border-radius: 4px;
+  border-radius: ${p => p.theme.Surface.radius.sm};
   width: 34px;
   height: 34px;
   margin-right: ${props => props.theme.Density.spacing.sm};

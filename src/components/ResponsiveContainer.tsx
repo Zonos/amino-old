@@ -4,28 +4,21 @@ import styled from "styled-components";
 export const ResponsiveContainer = styled.div`
   display: block;
   box-sizing: border-box;
-  width: 90%;
   margin: 0 auto;
 
-  /* Desktops and laptops */
-  @media only screen and (max-width: 1279px) {
-    width: 90%;
+  @media (min-width: 640px) {
+    max-width: 640px;
   }
 
-  /* Big screens */
-  @media only screen and (min-width: 1921px) {
-    width: 30%;
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px;
   }
 `;
-
-// export class ResponsiveContainer extends Component {
-//   static propTypes = {
-//     children: PropTypes.node.isRequired
-//   }
-
-//   render() {
-//     const { children } = this.props
-
-//     return <StyledContainer>{children}</StyledContainer>
-//   }
-// }

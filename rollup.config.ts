@@ -22,13 +22,14 @@ export default {
         'react': 'React',
         'react-dom': 'ReactDOM',
         'react-transition-group': 'react-transition-group',
-        'griddle-react': 'Griddle'
+        'griddle-react': 'Griddle',
+        'react-tooltip': 'ReactTooltip'
       }
     },
     { file: pkg.module, format: 'es', sourcemap: true }
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
-  external: ['styled-components', 'react', 'react-dom', 'react-transition-group', 'griddle-react'],
+  external: ['styled-components', 'react', 'react-dom', 'react-transition-group', 'griddle-react', 'react-tooltip'],
   watch: {
     include: 'src/**'
   },

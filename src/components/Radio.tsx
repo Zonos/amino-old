@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Color, Density } from "../styles/Theme";
 
 import { Text } from "./Text";
 
 const StyledRadio = styled.div`
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid ${p => p.theme.Color.gray.base};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -22,7 +21,6 @@ const StyledRadio = styled.div`
 
   &:active {
     box-shadow: 0 0 0 3px ${props => props.theme.Color.primary.veryLight}33;
-    background: rgba(0, 0, 0, 0.015);
   }
 `;
 

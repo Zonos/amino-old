@@ -4,12 +4,16 @@ import styled from "styled-components";
 import { Card } from "./Card";
 import { Button } from "./Button";
 import { Text, TextStyle } from "./Text";
-import { Color, Density, Surface } from "../styles/Theme";
 import { Intent } from "../schemas/Intent";
 
 const SaveCard = styled(Card)`
-  box-shadow: ${props => props.theme.Surface.shadow.high};
-  background: ${props => props.theme.Color.dark.base};
+  line-height: 1.5;
+  background: ${p => p.theme.Color.gray.dark};
+  color: white;
+
+  * {
+    color: white;
+  }
 `;
 
 const LinkButton = styled.button`
@@ -21,8 +25,9 @@ const LinkButton = styled.button`
   transition: all 150ms ease-in-out;
   background: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: ${props => props.theme.Typography.size.base};
   outline: none;
+  font-weight: normal;
 
   &:hover {
     text-decoration: underline;
@@ -61,18 +66,14 @@ export const SaveHeader: React.FC<Props> = props => {
     <SaveCard>
       <Row>
         <Info>
-          <Text light style={TextStyle.Heading3}>
-            Unsaved Changes
-          </Text>
-          <Text light style={TextStyle.Subtitle}>
-            Changes will be lost unless you save them.
-          </Text>
+          <Text style={TextStyle.Heading1}>Unsaved Changes</Text>
+          <Text style={TextStyle.Subtitle}>Changes will be lost unless you save them.</Text>
         </Info>
 
         <Buttons>
           <LinkButton onClick={onCancel}>Cancel</LinkButton>
           <Button saving={saving} onClick={onSave} intent={Intent.Primary}>
-            Save
+            Save changes
           </Button>
         </Buttons>
       </Row>

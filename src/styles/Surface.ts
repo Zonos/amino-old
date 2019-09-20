@@ -1,4 +1,13 @@
 import { IShadowScale } from "../schemas/IShadowScale";
+import { ISizeScale } from "../schemas/ISizeScale";
+
+export class Radius implements ISizeScale {
+  xs = "2px";
+  sm = "6px";
+  base = "8px";
+  lg = "10px";
+  xl = "12px";
+}
 
 export class Shadow implements IShadowScale {
   base = "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)";
@@ -7,6 +16,9 @@ export class Shadow implements IShadowScale {
 }
 
 export const Surface = {
-  defaultRadius: "4px",
-  shadow: new Shadow()
+  shadow: new Shadow(),
+  radius: new Radius(),
+
+  // Deprecated
+  defaultRadius: "4px"
 };

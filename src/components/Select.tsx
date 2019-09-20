@@ -1,8 +1,10 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
 import { DropdownIcon } from "../icons/DropdownIcon";
 import { Typography } from "../styles/Theme";
+import { Info } from "./Info";
 
 const SelectContainer = styled.div`
   border-radius: ${p => p.theme.Surface.radius.sm};
@@ -47,12 +49,18 @@ const StyledSelect = styled.select`
   }
 `;
 
-const SelectLabel = styled.label`
+const LabelWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: ${p => p.theme.Density.spacing.xs};
+`;
+
+const InputLabel = styled.label`
   color: ${props => props.theme.Color.text.light};
   font-size: ${p => p.theme.Typography.size.base};
   display: block;
   font-weight: 500;
-  margin-bottom: ${p => p.theme.Density.spacing.xs};
 `;
 
 const StyledDropdownIcon = styled(DropdownIcon)`
@@ -66,10 +74,11 @@ type Props = {
   itemValuePath?: string;
   onChange?: any;
   defaultValue?: any;
+  helpText?: string;
 };
 
 export const Select: React.FC<Props> = props => {
-  const { label, items, itemValuePath, itemLabelPath, onChange, defaultValue } = props;
+  const { helpText, label, items, itemValuePath, itemLabelPath, onChange, defaultValue } = props;
 
   const renderedOptions = items.map((item, index) => {
     const value = itemValuePath ? item[itemValuePath] : item.value;
@@ -84,7 +93,17 @@ export const Select: React.FC<Props> = props => {
 
   return (
     <div className="amino-input-wrapper">
-      {label && <SelectLabel>{label}</SelectLabel>}
+      {label && (
+        <LabelWrapper>
+          <InputLabel>{label}</InputLabel>
+          {helpText && (
+            <>
+              <Info data-tip={helpText}>i</Info>
+              <ReactTooltip className="amino-tooltip" effect="solid" place="right" />
+            </>
+          )}
+        </LabelWrapper>
+      )}
       <SelectContainer>
         <StyledSelect
           onChange={(e: any) => onChange && onChange(e.target.value)}

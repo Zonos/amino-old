@@ -57,6 +57,7 @@ export const App = () => {
                 <Input label="hi" />
                 <Input label="hi" />
                 <Select
+                  helpText="This is the help"
                   label="Select an item"
                   items={[
                     {

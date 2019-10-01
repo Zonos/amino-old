@@ -23,7 +23,9 @@ import {
   RadioGroup,
   Grid,
   Form,
-  FieldType
+  FieldType,
+  MenuButton,
+  Menu,
 } from "amino-ui";
 
 import styled from "styled-components";
@@ -50,7 +52,17 @@ export const App = () => {
             what's up, this is a notice
           </Notice>
 
-          <Card>
+          <Card cardTitle="Blah" actions={<MenuButton><Menu>
+            <a href="#">asdf</a>
+            <a href="#">asdf</a>
+            <a href="#">asdf</a>
+            <a href="#">asdf</a>
+            <a href="#">asdf</a>
+          </Menu></MenuButton>}>
+            try the card actions!
+          </Card>
+
+          <Card cardTitle="Example card" helpText="This card does this thing">
             <form>
               <InputGroup>
                 <Input label="hi" helpText="This is an input" />

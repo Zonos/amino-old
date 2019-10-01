@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import { Text, TextStyle } from "./Text";
+import { Info } from "./Info";
+import ReactTooltip from "react-tooltip";
 
 const StyledCard = styled.section`
   background: white;
@@ -24,9 +26,10 @@ const Header = styled.header`
   margin-bottom: ${props => props.theme.Density.spacing.md};
   padding: 0 ${props => props.theme.Density.spacing.md};
 
-  h1 {
+  .title {
     flex: 1;
     display: flex;
+    align-items: center;
   }
 `;
 
@@ -34,16 +37,25 @@ type Props = {
   className?: string;
   actions?: React.ReactNode;
   cardTitle?: string;
+  helpText?: string;
 };
 
 export const Card: React.FC<Props> = props => {
-  const { children, cardTitle, actions } = props;
+  const { children, cardTitle, actions, helpText } = props;
 
   const headerVisible = Boolean(cardTitle) || (Boolean(actions) && Boolean(cardTitle));
 
   const cardHeader = (
     <Header>
-      <Text style={TextStyle.Heading1}>{cardTitle}</Text>
+      <div className="title">
+        <Text style={TextStyle.Heading1}>{cardTitle}</Text>
+        {helpText && (
+          <>
+            <Info data-tip={helpText}>i</Info>
+            <ReactTooltip className="amino-tooltip" effect="solid" place="right" />
+          </>
+        )}
+      </div>
       {actions && actions}
     </Header>
   );

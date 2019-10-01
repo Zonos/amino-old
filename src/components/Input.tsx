@@ -59,7 +59,6 @@ const InputLabel = styled.label`
   color: ${props => props.theme.Color.text.light};
   font-size: ${p => p.theme.Typography.size.base};
   display: block;
-  font-weight: 500;
 `;
 
 const InputWrapper = styled.div`
@@ -69,34 +68,28 @@ const InputWrapper = styled.div`
 `;
 
 const Prefix = styled.div`
-  background: #fafafa;
-  border-top-left-radius: ${p => p.theme.Surface.radius.sm};
-  border-bottom-left-radius: ${p => p.theme.Surface.radius.sm};
-  height: 38px;
-  line-height: 38px;
-  border: 1px solid ${props => props.theme.Color.gray.base};
+  border-right: 1px solid ${props => props.theme.Color.gray.base};
   color: ${props => props.theme.Color.text.light};
+  opacity: 0.8;
   padding: 0 ${props => props.theme.Density.spacing.sm};
   z-index: 10;
+  box-sizing: border-box;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 2px;
+  top: 11px;
   user-select: none;
 `;
 
 const Postfix = styled.div`
-  background: #fafafa;
-  border-top-right-radius: ${p => p.theme.Surface.radius.sm};
-  border-bottom-right-radius: ${p => p.theme.Surface.radius.sm};
-  height: 38px;
-  line-height: 38px;
-  border: 1px solid ${props => props.theme.Color.gray.base};
+  border-left: 1px solid ${props => props.theme.Color.gray.base};
   color: ${props => props.theme.Color.text.light};
+  opacity: 0.8;
   padding: 0 ${props => props.theme.Density.spacing.sm};
   z-index: 10;
+  box-sizing: border-box;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 2px;
+  top: 11px;
   user-select: none;
 `;
 

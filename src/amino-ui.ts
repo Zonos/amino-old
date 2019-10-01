@@ -27,7 +27,8 @@ export * from "./components/CheckboxGroup";
 export * from "./components/Textarea";
 export * from "./components/RadioGroup";
 export * from "./components/Radio";
-export * from "./components/Grid";
+export * from "./components/MenuButton";
+export * from "./components/Menu";
 
 // Theme
 export * from "./styles/Color";

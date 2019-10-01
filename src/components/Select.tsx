@@ -60,7 +60,6 @@ const InputLabel = styled.label`
   color: ${props => props.theme.Color.text.light};
   font-size: ${p => p.theme.Typography.size.base};
   display: block;
-  font-weight: 500;
 `;
 
 const StyledDropdownIcon = styled(DropdownIcon)`

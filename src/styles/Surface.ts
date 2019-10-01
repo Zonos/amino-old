@@ -2,9 +2,9 @@ import { IShadowScale } from "../schemas/IShadowScale";
 import { ISizeScale } from "../schemas/ISizeScale";
 
 export class Radius implements ISizeScale {
-  xs = "2px";
-  sm = "6px";
-  base = "8px";
+  xs = ".125rem";
+  sm = ".33rem";
+  base = ".5rem";
   lg = "10px";
   xl = "12px";
 }

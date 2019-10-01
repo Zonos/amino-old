@@ -22,6 +22,7 @@ const StyledCheckbox = styled.div`
 
 const SelectedCheckbox = styled(StyledCheckbox)`
   background: ${props => props.theme.Color.primary.base} !important;
+  border: 1px solid ${p => p.theme.Color.primary.base};
 
   svg {
     fill: white;

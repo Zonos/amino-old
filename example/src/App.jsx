@@ -21,21 +21,20 @@ import {
   Checkbox,
   Radio,
   RadioGroup,
-  Grid,
   Form,
   FieldType,
   MenuButton,
   Menu,
+  StepperInput,
 } from "amino-ui";
 
 import styled from "styled-components";
 
-const GridWrap = styled.div`
-  margin: -20px;
-`;
-
 export const App = () => {
   const [checked, setChecked] = useState(false);
+
+
+  const [stepVal, setStepVal] = useState(1);
 
   return (
     <Fragment>
@@ -51,6 +50,10 @@ export const App = () => {
           <Notice action={<Button>Dismiss</Button>} intent={Intent.Warning}>
             what's up, this is a notice
           </Notice>
+
+          <Card cardTitle="Stepper">
+            <StepperInput value={stepVal} onChange={setStepVal} min={0} max={10} />
+          </Card>
 
           <Card cardTitle="Blah" actions={<MenuButton><Menu>
             <a href="#">asdf</a>
@@ -130,64 +133,6 @@ export const App = () => {
                 }
               }}
             />
-          </Card>
-
-          <Card>
-            <GridWrap>
-              <Grid
-                data={[
-                  {
-                    one: "one",
-                    two: "two",
-                    three: "three",
-                    four: "four",
-                    five: "five",
-                    six: "six"
-                  },
-                  {
-                    one: "one",
-                    two: "two",
-                    three: "three",
-                    four: "four",
-                    five: "five",
-                    six: "six"
-                  },
-                  {
-                    one: "one",
-                    two: "two",
-                    three: "three",
-                    four: "four",
-                    five: "five",
-                    six: "six"
-                  },
-                  {
-                    one: "one",
-                    two: "two",
-                    three: "three",
-                    four: "four",
-                    five: "five",
-                    six: "six"
-                  },
-                  {
-                    one: "one",
-                    two: "two",
-                    three: "three",
-                    four: "four",
-                    five: "five",
-                    six: "six"
-                  },
-                  {
-                    one: "one",
-                    two: "two",
-                    three: "three",
-                    four: "four",
-                    five: "five",
-                    six: "six"
-                  },
-                  { one: "one", two: "two", three: "three", four: "four", five: "five", six: "six" }
-                ]}
-              />
-            </GridWrap>
           </Card>
 
           <Card>

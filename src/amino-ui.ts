@@ -29,6 +29,7 @@ export * from "./components/RadioGroup";
 export * from "./components/Radio";
 export * from "./components/MenuButton";
 export * from "./components/Menu";
+export * from "./components/StepperInput";
 
 // Theme
 export * from "./styles/Color";
